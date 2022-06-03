@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title style="font-size: 15px; float: right; margin-top: 11px">{{title.params.title}}</ion-title>
+    <button class="btn-goback" mat-icon-button color="primary" (click)="goBack()">
+      <mat-icon>keyboard_backspace</mat-icon>
+    </button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+  <ion-list>
+    <ion-item *ngFor="let item of items">
+      {{ item }}
+    </ion-item>
+  </ion-list>
+</ion-content>

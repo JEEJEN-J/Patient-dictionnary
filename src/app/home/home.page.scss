@@ -1,0 +1,97 @@
+
+.header {
+  text-align: center;
+}
+
+#container {
+  text-align: center;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+#container strong {
+  font-size: 20px;
+  line-height: 26px;
+}
+
+#container p {
+  font-size: 16px;
+  line-height: 22px;
+
+  color: #8c8c8c;
+
+  margin: 0;
+}
+
+#container a {
+  text-decoration: none;
+}
+
+
+//-----------------------------------------------------
+
+.social-login-title {
+  width: 60%;
+  font-size: 10px;
+  color: #919aa3;
+  display: flex;
+  margin: 10px 0px;
+  margin-left: auto;
+  margin-right: auto;
+
+  &::before,
+  &::after {
+    content: '';
+    background-image: linear-gradient(#bbb8b8, #f3f3f3);
+    flex-grow: 1;
+    background-size: calc(100% - 20px) 1px;
+    background-repeat: no-repeat;
+  }
+
+  &::before {
+    background-position: center left;
+  }
+
+  &::after {
+    background-position: center right;
+  }
+
+}
+
+.btnhome {
+  width: 70%;
+  background-color: #4899CA;
+  border-radius: 20px;
+}
+
+.example-label {
+  margin: 20px;
+}
+
+.btn-accent {
+  height: 80px;
+  width: 80px;
+}
+
+.img-accent {
+  border-radius: 100px;
+  //height: 104px;
+  //width: 104px;
+  margin-top: -15px;
+  //border: 1px solid red;
+}
+
+.footer{
+  font-size: small;
+}
+.spn-footer{
+  color: #36abe0;
+  font-size: small;
+}
+//
+//#canvas1{
+//  border: 2px solid orange;
+//}

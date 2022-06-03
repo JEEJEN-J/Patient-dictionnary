@@ -1,0 +1,43 @@
+<ion-header [translucent]="true" class="header">
+  <ion-toolbar>
+    <ion-title>
+      Dictionary
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" padding>
+
+  <section><br/>
+    <div class="example-button-row">
+      <div class="example-flex-container">
+        <div class="example-button-container" align="center">
+          <button mat-fab color="" aria-label="Example icon button with a bookmark icon" class="btn-accent">
+            <img src="./assets/icon/charess-removebg-preview.png" class="img-accent"/>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <div id="container">
+    <h1><strong>Welcome</strong></h1>
+    <br/>
+    <span>This app is a dictionary for patient</span>
+    <p>Start with </p>
+
+    <section>
+      <div class="example-label">Are you a ?</div>
+      <div class="example-button-row">
+        <button class="btnhome" mat-raised-button color="primary" (click)="openPage()">Patient</button>
+        <h6 class="social-login-title">OR</h6>
+        <button class="btnhome" mat-raised-button color="primary" (click)="openParentPage()">Parent patient</button>
+      </div>
+    </section>
+  </div>
+
+</ion-content>
+<ion-footer class="footer">
+  <p align="center">Copyright &copy; 2022 <span class="spn-footer">CHARESS dev.</span> </p>
+</ion-footer>

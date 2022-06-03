@@ -1,0 +1,52 @@
+import {Component , OnInit} from '@angular/core';
+import {NavController} from "@ionic/angular";
+import {ActivatedRoute} from "@angular/router";
+
+@Component({
+  selector: 'app-dash-parent' ,
+  templateUrl: './dash-parent.page.html' ,
+  styleUrls: ['./dash-parent.page.scss'] ,
+})
+export class DashParentPage implements OnInit {
+
+  items;
+  title;
+
+
+  constructor(public navController: NavController , private activatedRoute: ActivatedRoute) {
+    this.initializeItems();
+  }
+
+  initializeItems() {
+    this.items = [
+    ];
+  }
+
+  getItems(ev) {
+    // Reset items back to all of the items
+    this.initializeItems();
+
+    // set val to the value of the ev target
+    var val = ev.target.value;
+
+    // if the value is an empty string don't filter the items
+    if (val && val.trim() != '') {
+      this.items = this.items.filter((item) => {
+        console.log(item.toLowerCase().toString())
+        return (item.toLowerCase().indexOf(val.toLowerCase()) > -1);
+      })
+    }
+  }
+
+  ngOnInit() {
+    this.activatedRoute.queryParamMap.subscribe(params => {
+      this.title = params;
+    })
+  }
+
+
+  goBack() {
+    this.navController.navigateBack("home" , {});
+  }
+
+}

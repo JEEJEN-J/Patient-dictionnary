@@ -1,0 +1,68 @@
+[
+  {
+    "header": "C’est quoi le VIH ?",
+    "data": {
+      "id": 1,
+      "title": "Generalite sur l’infection au VIH",
+      "subtitle": [
+        {
+          "id": 1,
+          "name": "C’est quoi le VIH ?",
+          "description": "Le virus de l’immunodeficience humaine est l’agent pathogene qui provoque une infection chronique evoluant vers le sida, en l’absence de traitement ARV. Il s’agit d’un retrovirus (un virus à ARN) de la famille des lentivirus, qui provoquent des maladies à evolution lente.\n\nLe VIH cible notamment les lymphocytes CD4, qui sont des cellules essentielles de notre systeme immunitaire.\n\n Il entraîne une infection chronique pouvant aboutir, en l’absence de traitement antiretroviral (ARV), à une immunodepression caracterisee baptisee « sida ».\n\nCe virus, d’une tres grande variabilite genetique, est connu sous deux types : le VIH-1, identifie en 1983 et le VIH-2, identifie en 1986, tous deux à l’Institut Pasteur et derivant de SIV (virus de l’immunodeficience simienne), virus existant chez le singe. Le VIH-2, moins virulent, est surtout frequent en Afrique occidentale et en Asie du Sud.  \n\n",
+          "subtitle1": []
+        },
+        {
+          "id": 2,
+          "name": "Comment peut-on s’infecter / Modes de transmission ?",
+          "description": "Le VIH envahit l’organisme depuis son entrée par les muqueuses ou la voie sanguine jusqu’à sa colonisation complète des tissus lymphoïdes. Une fois installé, le virus fabrique des copies de lui-même et les libère dans le sang. Cette phase, de quelques semaines à quelques mois, est très variable selon les individus, pouvant passer inaperçue ou s’exprimer par de nombreux symptômes type symptômes grippaux.\n\nLa quantité de VIH dans le sang (charge virale) est alors très élevée : en conséquence, les personnes atteintes sont très contagieuses, alors même qu’elles ignorent avoir contracté le virus. Les lymphocytes CD4 chutent de façon vertigineuse, attaqués par le virus. Le corps réagit en produisant de grandes quantités de CD8, qui fabriquent à leur tour des substances aidant à neutraliser les cellules infectées par le VIH, ce qui contribue à réduire la charge virale. Le système immunitaire apprend à reconnaître et combattre le VIH et se met à fabriquer des anticorps contre le virus. Cette séroconversion survient de un à",
+          "subtitle1": []
+        },
+        {
+          "id": 3,
+          "name": "Comment evolue la pathologie sans traitement ?",
+          "description": "La charge virale augmente rapidement au cours des premières semaines suivant l'infection. Cette phase se caractérise par l’apparition fréquente de symptômes similaires à ceux d’un refroidissement ou d’une grippe légère: fièvre, éruptions cutanées, fatigue, maux de tête, etc. Souvent, les personnes touchées ou même les médecins ne remarquent pas ces symptômes ou ne font pas le lien avec une possible infection par le VIH. Le risque de transmission s’avère particulièrement élevé durant la primo-infection en raison de la forte charge virale à ce stade de l’infection.\n\nLes premiers signes de la maladie disparaissent spontanément après quelques semaines, car le système immunitaire réagit à l’agression des virus. L’infection par le VIH évolue ensuite sans qu’on ne la remarque.",
+          "subtitle1": []
+        },
+        {
+          "id": 4,
+          "name": "Impact de l’infection sur l’individu et la communaute",
+          "description": "Le VIH-1 est apparu en Afrique Centrale au cours de la première moitié du 20e siècle lorsqu’un virus apparenté du chimpanzé a infecté l’homme. La propagation du VIH-1 dans le monde a commencé à la fin des années 1970, et le SIDA a été mis en évidence pour la première fois en 1981.\n\nEn 2019, environ 38 millions de personnes, dont 1,8 million d’enfants de moins de 15 ans, vivaient avec une infection par le VIH dans le monde. En 2019, environ 690 000 personnes sont décédées de maladies liées au SIDA dans le monde, contre 1,9 million en 2004 et 1,4 million en 2010. En 2019, environ 1,7 million de personnes, dont 150 000 enfants, ont été infectées par le VIH, contre 3,4 millions de nouvelles infections en 1996.\n\nLa plupart (86 %) des nouvelles infections surviennent dans les pays en voie de développement ; plus de la moitié des cas concernent des femmes en Afrique subsaharienne. Toutefois, dans de nombreux pays d’Afrique subsaharienne, le nombre de nouvelles infections par le VIH a significativement diminué, en partie en raison des efforts internationaux visant à fournir des traitements et stratégies de prévention.\n\nAux États-Unis, on estime que plus de 1,21 million de personnes âgées de 13 ans ou plus vivaient avec une infection par le VIH en 2018. Environ 14 % d’entre elles ne savent pas qu’elles sont infectées par le VIH. Il y a eu 22 % de cas de moins en 2018 qu’en 2008 et 7 % de moins qu’en 2014.",
+          "subtitle1": []
+        }
+      ]
+    }
+  },
+  {
+    "data": {
+      "id": 1,
+      "title": "Generalite sur l’infection au VIH",
+      "subtitle": [
+        {
+          "id": 1,
+          "name": "C’est quoi le VIH ?",
+          "description": "Le virus de l’immunodeficience humaine est l’agent pathogene qui provoque une infection chronique evoluant vers le sida, en l’absence de traitement ARV. Il s’agit d’un retrovirus (un virus à ARN) de la famille des lentivirus, qui provoquent des maladies à evolution lente.\n\nLe VIH cible notamment les lymphocytes CD4, qui sont des cellules essentielles de notre systeme immunitaire.\n\n Il entraîne une infection chronique pouvant aboutir, en l’absence de traitement antiretroviral (ARV), à une immunodepression caracterisee baptisee « sida ».\n\nCe virus, d’une tres grande variabilite genetique, est connu sous deux types : le VIH-1, identifie en 1983 et le VIH-2, identifie en 1986, tous deux à l’Institut Pasteur et derivant de SIV (virus de l’immunodeficience simienne), virus existant chez le singe. Le VIH-2, moins virulent, est surtout frequent en Afrique occidentale et en Asie du Sud.  \n\n",
+          "subtitle1": []
+        },
+        {
+          "id": 2,
+          "name": "Comment peut-on s’infecter / Modes de transmission ?",
+          "description": "Le VIH envahit l’organisme depuis son entrée par les muqueuses ou la voie sanguine jusqu’à sa colonisation complète des tissus lymphoïdes. Une fois installé, le virus fabrique des copies de lui-même et les libère dans le sang. Cette phase, de quelques semaines à quelques mois, est très variable selon les individus, pouvant passer inaperçue ou s’exprimer par de nombreux symptômes type symptômes grippaux.\n\nLa quantité de VIH dans le sang (charge virale) est alors très élevée : en conséquence, les personnes atteintes sont très contagieuses, alors même qu’elles ignorent avoir contracté le virus. Les lymphocytes CD4 chutent de façon vertigineuse, attaqués par le virus. Le corps réagit en produisant de grandes quantités de CD8, qui fabriquent à leur tour des substances aidant à neutraliser les cellules infectées par le VIH, ce qui contribue à réduire la charge virale. Le système immunitaire apprend à reconnaître et combattre le VIH et se met à fabriquer des anticorps contre le virus. Cette séroconversion survient de un à",
+          "subtitle1": []
+        },
+        {
+          "id": 3,
+          "name": "Comment evolue la pathologie sans traitement ?",
+          "description": "La charge virale augmente rapidement au cours des premières semaines suivant l'infection. Cette phase se caractérise par l’apparition fréquente de symptômes similaires à ceux d’un refroidissement ou d’une grippe légère: fièvre, éruptions cutanées, fatigue, maux de tête, etc. Souvent, les personnes touchées ou même les médecins ne remarquent pas ces symptômes ou ne font pas le lien avec une possible infection par le VIH. Le risque de transmission s’avère particulièrement élevé durant la primo-infection en raison de la forte charge virale à ce stade de l’infection.\n\nLes premiers signes de la maladie disparaissent spontanément après quelques semaines, car le système immunitaire réagit à l’agression des virus. L’infection par le VIH évolue ensuite sans qu’on ne la remarque.",
+          "subtitle1": []
+        },
+        {
+          "id": 4,
+          "name": "Impact de l’infection sur l’individu et la communaute",
+          "description": "Le VIH-1 est apparu en Afrique Centrale au cours de la première moitié du 20e siècle lorsqu’un virus apparenté du chimpanzé a infecté l’homme. La propagation du VIH-1 dans le monde a commencé à la fin des années 1970, et le SIDA a été mis en évidence pour la première fois en 1981.\n\nEn 2019, environ 38 millions de personnes, dont 1,8 million d’enfants de moins de 15 ans, vivaient avec une infection par le VIH dans le monde. En 2019, environ 690 000 personnes sont décédées de maladies liées au SIDA dans le monde, contre 1,9 million en 2004 et 1,4 million en 2010. En 2019, environ 1,7 million de personnes, dont 150 000 enfants, ont été infectées par le VIH, contre 3,4 millions de nouvelles infections en 1996.\n\nLa plupart (86 %) des nouvelles infections surviennent dans les pays en voie de développement ; plus de la moitié des cas concernent des femmes en Afrique subsaharienne. Toutefois, dans de nombreux pays d’Afrique subsaharienne, le nombre de nouvelles infections par le VIH a significativement diminué, en partie en raison des efforts internationaux visant à fournir des traitements et stratégies de prévention.\n\nAux États-Unis, on estime que plus de 1,21 million de personnes âgées de 13 ans ou plus vivaient avec une infection par le VIH en 2018. Environ 14 % d’entre elles ne savent pas qu’elles sont infectées par le VIH. Il y a eu 22 % de cas de moins en 2018 qu’en 2008 et 7 % de moins qu’en 2014.",
+          "subtitle1": []
+        }
+      ]
+    },
+    "header": "Comment evolue la pathologie sans traitement ?"
+  }
+]
