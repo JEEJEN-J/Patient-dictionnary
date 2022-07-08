@@ -23,6 +23,10 @@ const routes: Routes = [
     path: 'dash-parent',
     loadChildren: () => import('./dash-parent/dash-parent.module').then( m => m.DashParentPageModule)
   },
+  {
+    path: 'definition-parent',
+    loadChildren: () => import('./definition-parent/definition-parent.module').then( m => m.DefinitionParentPageModule)
+  },
 ];
 
 @NgModule({

@@ -25,14 +25,14 @@ export class DashboardPage implements OnInit {
   ngOnInit() {
     this.activatedRoute.queryParamMap.subscribe(params => {
       this.title = params;
-    })
+    });
     fetch("./assets/dictionary/data.json")
       .then((response) => response.json())
       .then((response) => {
         this.items = response;
+        console.log("response" , response);
       });
   }
-
 
 
   initializeItems() {

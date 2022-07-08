@@ -1,13 +1,13 @@
-import {Component , OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {NavController} from "@ionic/angular";
 import {ActivatedRoute} from "@angular/router";
 
 @Component({
-  selector: 'app-definition' ,
-  templateUrl: './definition.page.html' ,
-  styleUrls: ['./definition.page.scss'] ,
+  selector: 'app-definition-parent',
+  templateUrl: './definition-parent.page.html',
+  styleUrls: ['./definition-parent.page.scss'],
 })
-export class DefinitionPage implements OnInit {
+export class DefinitionParentPage implements OnInit {
 
   content: any;
   dashboard: any;
@@ -34,7 +34,7 @@ export class DefinitionPage implements OnInit {
 
 
   goBack() {
-    this.navController.navigateBack("dashboard" , {queryParams: {title: 'Dashboard patient'}});
+    this.navController.navigateBack("dashboard" , {queryParams: {title: 'Dashboard Parent patient'}});
   }
 
 

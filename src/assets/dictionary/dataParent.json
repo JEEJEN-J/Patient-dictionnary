@@ -1,25 +1,38 @@
 [
   {
-    "id": 2,
-    "categorie": "Client",
+    "id": 1,
+    "categorie": "Parent",
+    "title": "Prévention du VIH",
+    "subtitle": [
+      {
+        "id": 1,
+        "name": "ABC",
+        "description": "Voici les différentes facons pour éviter d'attraper le VIH. Abstinence, Fidélité, utilisation de condoms pendant les relations sexuelles constituent des méthodes de prévention du VIH et des autres IST\n",
+        "subtitle1": []
+      },
+      {
+        "id": 2,
+        "name": "PrEP",
+        "description": "En plus des  méthodes proposées dans l'ABC, si vous allez avoir des relations sexuelles dont vous doutez du risque d'attraper le VIH, PrEP est la meilleure méthode à choisir. Le comprimé facile à prendre mais il faut suivre fidèlement la prescription du prestataire.  TDF ou TAF+ FTC ou 3TC.",
+        "subtitle1": []
+      },
+      {
+        "id": 3,
+        "name": "PEP",
+        "description": "Vous vous pensez avoir été exposé au VIH a travers une relation sexuelle non protégée ou des matériels souillés de sang au cours des dernières 72 heures,  la prise d'ARV pendant 28 jours vous empêchera de contracter le VIH. Rendez-vous immédiatement dans une institution de santé pour prophylaxie appropriée.",
+        "subtitle1": []
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "categorie": "Parent",
     "title": "Information générale sur le VIH",
     "subtitle": [
       {
         "id": 1,
         "name": "VIH",
         "description": "Le VIH c'est le Virus de l'immuno déficience Humaine est responsable du Syndrome de l'immuno Déficience Acquise (SIDA). être infecté au VIH ne veut pas dire avoir le SIDA.",
-        "subtitle1": []
-      },
-      {
-        "id": 2,
-        "name": "SIDA",
-        "description": "Le Syndrome de l'immuno Déficience Acquise (SIDA): C'est la phase critique de l'infection au VIH. Caractérisée par:  diarrhée, perte de poids marques, atteintes cutanées, atteintes neurologiques, etc.  Il arrive quand une personne ne reçoit pas d'ARVs ou n'est pas adhérente à son traitement ou bien est infectée d'une souche de VIH qui est déjà resistant au ARVs qu'elle est en train de recevoir. D'ou la nécessité d'être adhérent à son médicament et de contacter son prestataire de soins régulièrement.",
-        "subtitle1": []
-      },
-      {
-        "id": 3,
-        "name": "ARVs",
-        "description": "ARV: AntiRétroViral. Ce sont les médicaments qui sont spécifiques au type de virus comme le VIH. Ils bloquent une étape du cycle de vie du VIH.",
         "subtitle1": []
       }
     ]
@@ -31,7 +44,7 @@
     "subtitle": [
       {
         "id": 1,
-        "name": "Mode de transmission",
+        "name": "mode de transmission",
         "description": "Le virus se transmet par voie sanguine surtout lors des rapports sexuels non protégés, par transmission verticale pendant la grossesse , l'accouchement et pendant l'allaitement maternel.",
         "subtitle1": []
       },
@@ -150,83 +163,14 @@
     ]
   },
   {
-    "id": 9,
-    "categorie": "Client",
-    "title": "Suivi du TAR",
-    "subtitle": [
-      {
-        "id": 1,
-        "name": "Prophylaxis anti-TB",
-        "description": "La TB est l'infection opportuniste la plus fréquente chez les PVVIHs et grande cause de décès. Au moment de votre diagnostic du VIH et pendant votre enrolement si vous presentez pas de signes faisant penser à la TB tels que, fièvre, Toux, perte de poids , sueurs profuses nocturnes, ganglions cervicaux et axillaires, le prestataire vous prescrira un traitement preventif a la TB constitue de INH B6 pour 6 mois ou INH associé à la Rifapentine et B6 pour 4 semaines à raison d'une dose par jour ou 12 semaines à raison d'une dose par semaine.",
-        "subtitle1": []
-      },
-      {
-        "id": 2,
-        "name": "Dois-je prendre d'autres médicaments avec les ARVs pour le VIH",
-        "description": "Le VIH affecte votre systeme de défense , c est pourquoi vous prenez les ARV pour bloquer la réplication virale et restaurer votre système immunitaire. Pendant que vous prenez les ARV, vous devez faire la prévention des infections opportunistes.Les médicaments les plus utilisés sont TMS pour la prévention de plusieurs IO et INH+Rifapentine B6 pour la prévention de laTB.",
-        "subtitle1": []
-      },
-      {
-        "id": 3,
-        "name": "Rendez-vous charge virale",
-        "description": "Le test de charge virale constitue le meilleur indicateur pour suivre l'évolution de votre traitement. Il se fera au moment de l'enrolement et après 3 mois de traitement. Si la charge virale est indétectable ou vous êtes en suppression virale, le traitement marche tres bien et le prochain test se fera après 12 mois. si la charge virale est détctable et supérieure a 1000 copies/ ml le prestataire va refaire le test dans 3 mois après renforcement de l'adhérence et décidera des tests subséquents selon le résultat. Il est important de toujours prendre ses ARV régulierement et respecter les rendez vous de test de charge virale.",
-        "subtitle1": []
-      }
-    ]
-  },
-  {
-    "id": 10,
-    "categorie": "Client",
-    "title": "Suivi du traitement (TAR)",
-    "subtitle": [
-      {
-        "id": 1,
-        "name": "Rendez-vous réapprovisionnement en ARVs",
-        "description": "Vous devez toujours avoir les ARV pour ne pas rater de dose. L'adhérence au traitement est capitale pour éviter l'évolution de la maladie. Vous pouvez vous reapprovisionner au niveau du site, à travers les points de distribution (DDP). Informez vous de la localisation des points de distribution au niveau de votre site de Prise en Charge.",
-        "subtitle1": []
-      },
-      {
-        "id": 2,
-        "name": "Date probable  de la  prochaine charge virale",
-        "description": "A calculer",
-        "subtitle1": []
-      },
-      {
-        "id": 3,
-        "name": "Date probable de reapprovisionnement en ARVs",
-        "description": "A calculer",
-        "subtitle1": []
-      }
-    ]
-  },
-  {
-    "id": 11,
-    "categorie": "Client",
+    "id": 12,
+    "categorie": "Parent",
     "title": "Numéro de téléphone important",
     "subtitle": [
       {
         "id": 1,
         "name": "Telephone bleu",
         "description": "*100",
-        "subtitle1": []
-      },
-      {
-        "id": 2,
-        "name": "Telephone migrant",
-        "description": "8724",
-        "subtitle1": []
-      }
-    ]
-  },
-  {
-    "id": 13,
-    "categorie": "Client",
-    "title": "Suivi psychosocial",
-    "subtitle": [
-      {
-        "id": 1,
-        "name": "Que dois-je faire quand le découragement et les mauvaises pensées veulent s'installer ?",
-        "description": "Vous devez toujours penser à voir un psychologue ou un trvailleur social qui sera en mesure de vous aider quand vous sentez que vous avez tendance  à avoir un sentiment de découragement ou des idées suicidaires.\n\nvous pouvez aussi appeler un numéro important comme le téléphone bleu pour partager vos inquiétudes \t",
         "subtitle1": []
       }
     ]

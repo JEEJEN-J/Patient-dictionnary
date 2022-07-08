@@ -9,9 +9,23 @@
 
 <ion-content>
   <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
-  <ion-list>
-    <ion-item *ngFor="let item of items">
-      {{ item }}
+  <ion-list style="padding-left: -20px; width: 96%">
+    <ion-item *ngFor="let item of items | paginate: { itemsPerPage: 8, currentPage: cp }" class="listMargin">
+      <mat-accordion style="box-shadow: none; border: none; width: 100%;">
+        <mat-expansion-panel hideToggle (opened)="panelOpenState = true"
+                             (closed)="panelOpenState = false">
+          <mat-expansion-panel-header style="">
+            <mat-panel-title style="margin-top: 15px;">
+              <h4 class="itemTitle">{{item.title}}</h4>
+            </mat-panel-title>
+
+          </mat-expansion-panel-header>
+          <h5 class="subtitleLI" *ngFor="let subT of item.subtitle" (click)="openPage(subT.name, item)">
+            <mat-icon class="iconSub" style="font-size: 12px;">question_answer</mat-icon>
+            {{subT.name}}</h5>
+        </mat-expansion-panel>
+      </mat-accordion>
     </ion-item>
   </ion-list>
+  <pagination-controls (pageChange)="cp = $event" class="pagin"></pagination-controls>
 </ion-content>

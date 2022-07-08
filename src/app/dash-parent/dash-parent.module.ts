@@ -9,6 +9,8 @@ import {DashParentPageRoutingModule} from './dash-parent-routing.module';
 import {DashParentPage} from './dash-parent.page';
 import {MatIconModule} from "@angular/material/icon";
 import {MatButtonModule} from "@angular/material/button";
+import {MatExpansionModule} from "@angular/material/expansion";
+import {NgxPaginationModule} from "ngx-pagination";
 
 @NgModule({
   imports: [
@@ -18,6 +20,8 @@ import {MatButtonModule} from "@angular/material/button";
     DashParentPageRoutingModule ,
     MatIconModule ,
     MatButtonModule ,
+    MatExpansionModule ,
+    NgxPaginationModule ,
   ] ,
   declarations: [DashParentPage]
 })

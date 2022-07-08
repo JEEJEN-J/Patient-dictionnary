@@ -10,6 +10,9 @@ import {ActivatedRoute} from "@angular/router";
 export class DashParentPage implements OnInit {
 
   items;
+  data;
+  cp: number = 1;
+  panelOpenState = false;
   title;
 
 
@@ -18,8 +21,12 @@ export class DashParentPage implements OnInit {
   }
 
   initializeItems() {
-    this.items = [
-    ];
+    fetch("./assets/dictionary/dataParent.json")
+      .then((response) => response.json())
+      .then((response) => {
+        this.data = response;
+      });
+    this.items = this.data;
   }
 
   getItems(ev) {
@@ -41,9 +48,23 @@ export class DashParentPage implements OnInit {
   ngOnInit() {
     this.activatedRoute.queryParamMap.subscribe(params => {
       this.title = params;
-    })
+    });
+    fetch("./assets/dictionary/dataParent.json")
+      .then((response) => response.json())
+      .then((response) => {
+        this.items = response;
+        console.log("response", response);
+      });
   }
 
+  openPage(header , item: any) {
+    this.navController.navigateForward("definition-parent" , {
+      queryParams: {
+        header: header ,
+        data: item
+      }
+    });
+  }
 
   goBack() {
     this.navController.navigateBack("home" , {});

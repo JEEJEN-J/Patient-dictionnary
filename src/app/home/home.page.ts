@@ -22,9 +22,7 @@ export class NavigationDetailsPage {
 })
 export class HomePage {
 
-
   constructor(public navController: NavController) {
-
   }
 
   openPage() {
@@ -33,7 +31,7 @@ export class HomePage {
 
 
   openParentPage() {
-    this.navController.navigateForward(["dash-parent"] , {queryParams: {title: 'Parent patient'}});
+    this.navController.navigateForward(["dash-parent"] , {queryParams: {title: 'Dashboard Parent patient'}});
   }
 
 
