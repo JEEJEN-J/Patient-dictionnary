@@ -14,14 +14,15 @@
     </button>
     <mat-menu #menu="matMenu">
       <h4 style="margin-left: 15px; font-size: 12px;">{{content.params.data.title}}</h4>
-      <button mat-menu-item style="font-size: 11px" *ngFor="let menuItem of content.params.data.subtitle" (click)="onChange(content, menuItem.name)">
+      <button mat-menu-item style="font-size: 11px" *ngFor="let menuItem of content.params.data.subtitle"
+              (click)="onChange(content, menuItem.name)">
         <mat-icon style="font-size: small">dialpad</mat-icon>
         <span>{{menuItem.name}}</span>
       </button>
     </mat-menu>
   </div>
 
-  <h5 style="margin: 15px 5px 10px 20px; color: steelblue; font-size: 13px;"><u>{{content.params.header}}</u></h5>
+  <h5 style="margin: 15px 5px 10px 20px; color: #6b83bd; font-size: 13px;"><u>{{content.params.header}}</u></h5>
 
   <ion-card style="border-radius: 0px 0px 30px 30px">
     <ion-item>
@@ -29,7 +30,8 @@
         <img src="assets/images/VIH.png">
       </ion-avatar>
       <h4 style="float: left; margin-left: 5px">VIH</h4>
-      <p style="font-size: x-small; float: left; margin-top: 25px; margin-left: -20px; color: gray">(virus de l’immunodeficience humaine)</p>
+      <p style="font-size: x-small; float: left; margin-top: 25px; margin-left: -20px; color: gray">(virus de
+        l’immunodeficience humaine)</p>
     </ion-item>
 
     <br/>
@@ -39,7 +41,8 @@
     <ion-card-content>
       <p style="text-align: justify; font-size: 13px;"
          *ngFor="let desciption of content.params.data.subtitle">
-      <span style='font-family: "Segoe UI", "Noto Sans", sans-serif; color: #363636' *ngIf="desciption.name == content.params.header">
+      <span style='font-family: "Segoe UI", "Noto Sans", sans-serif; color: #363636'
+            *ngIf="desciption.name == content.params.header">
         {{desciption.description}}
       </span>
       </p>

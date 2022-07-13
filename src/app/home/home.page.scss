@@ -63,8 +63,15 @@
 
 .btnhome {
   width: 70%;
-  background-color: #4899CA;
+  background-color: #6b83bd;
   border-radius: 20px;
+}
+.btnhome1 {
+  width: 70%;
+  background-color: #fff;
+  color: #4a63ad;
+  border-radius: 20px;
+  border: 1px solid #4a63ad;
 }
 
 .example-label {
@@ -72,14 +79,14 @@
 }
 
 .btn-accent {
-  height: 80px;
-  width: 80px;
+  height: 120px;
+  width: 120px;
 }
 
 .img-accent {
   border-radius: 100px;
-  //height: 104px;
-  //width: 104px;
+  height: 94%;
+  width: 94%;
   margin-top: -15px;
   //border: 1px solid red;
 }
@@ -88,7 +95,7 @@
   font-size: small;
 }
 .spn-footer{
-  color: #36abe0;
+  color: #a6bb1c;
   font-size: small;
 }
 //
