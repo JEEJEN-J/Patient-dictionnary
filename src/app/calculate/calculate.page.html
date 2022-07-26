@@ -1,7 +1,7 @@
 <ion-content>
   <div class="example-button-row">
     <button (click)="goBack()" mat-button color="warn"
-            style="border-radius: 50px 50px 50px 50px; font-size: xx-large; float: right; line-height: 60px; margin: 1.5%;">
+            style="border-radius: 50px 50px 50px 50px; font-size: xx-large; width: 50px; height: 50px; float: right; line-height: 60px; margin: 1.5%;">
       <mat-icon style="font-size: xx-large">clear</mat-icon>
     </button>
   </div>
@@ -14,7 +14,7 @@
 
       <section class="example-section" *ngIf="mode === 'determinate'">
         <label class="example-margin" style="margin-left: 10px">Progress : {{data[0].numberOfDays}}</label>
-        <mat-slider class="example-margin" [(ngModel)]="value" style="width: 100%"></mat-slider>
+        <mat-slider readonly class="example-margin" [(ngModel)]="value" style="width: 100%"></mat-slider>
       </section>
     </mat-card-content>
 
@@ -30,19 +30,18 @@
       </div>
     </mat-card-content>
 
-    <ion-list>
+    <ion-list style="margin-top: -5%;">
       <ion-list-header>
         Last and next date
       </ion-list-header>
       <ion-item lines="inset" *ngFor="let data of data">
         <ion-label>
-          <h5>{{data.numberOfDays}}</h5>
-          <p>{{data.lastDate}}</p>
-          <p>{{data.nextDate}}</p>
+          <h4>Value : {{data.numberOfDays}}</h4>
+          <p>Last date : {{data.lastDate}}</p>
+          <p>Next date : {{data.nextDate}}</p>
         </ion-label>
         <div class="item-note" item-end>
-          <ion-icon name="create" color="primary" style="zoom:2.0; margin-right: 10px;" (click)="openDialog()"></ion-icon>
-          <ion-icon name="trash" color="warn" style="zoom:2.0"></ion-icon>
+          <ion-icon name="create" color="primary" style="zoom:2.0; margin-right: 10px;" (click)="openDialog(data)"></ion-icon>
         </div>
       </ion-item>
     </ion-list>

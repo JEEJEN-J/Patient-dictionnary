@@ -4,7 +4,6 @@ import {ActivatedRoute} from "@angular/router";
 import {MatDialog} from "@angular/material/dialog";
 import {DialogCalculateComponent} from "./dialog-calculate/dialog-calculate.component";
 import {DbService} from "../services/db.service";
-import {DialogFormComponent} from "../calculate/dialog-form/dialog-form.component";
 
 
 @Component({
@@ -30,7 +29,7 @@ export class DashboardPage implements OnInit {
   }
 
   openDialog() {
-    const dialogRef = this.dialog.open(DialogFormComponent);
+    const dialogRef = this.dialog.open(DialogCalculateComponent);
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);
     });

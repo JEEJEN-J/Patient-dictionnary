@@ -6,7 +6,7 @@ import {ProgressSpinnerMode} from "@angular/material/progress-spinner";
 import {DbService} from "../services/db.service";
 import {MatDialog} from "@angular/material/dialog";
 import {DialogFormComponent} from "./dialog-form/dialog-form.component";
-import {DialogCalculateComponent} from "../dashboard/dialog-calculate/dialog-calculate.component";
+
 
 @Component({
   selector: 'app-calculate' ,
@@ -30,12 +30,14 @@ export class CalculatePage implements OnInit {
               private activatedRoute: ActivatedRoute ,
               private db: DbService ,
               private toast: ToastController ,
-              private router: Router ,
               public dialog: MatDialog) {
   }
 
-  openDialog() {
-    const dialogRef = this.dialog.open(DialogFormComponent);
+
+  openDialog(item) {
+    const dialogRef = this.dialog.open(DialogFormComponent , {
+      data: item
+    });
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);
     });
@@ -47,7 +49,7 @@ export class CalculatePage implements OnInit {
       if (res) {
         this.db.fetchCalculates().subscribe(item => {
           this.data = item;
-          console.log("data" , this.data);
+          this.value = 100 - ((this.data[0].numberOfDays * this.percentValue) / this.maxValue);
         });
       }
     });
@@ -55,9 +57,19 @@ export class CalculatePage implements OnInit {
     this.activatedRoute.queryParamMap.subscribe(params => {
       this.content = params;
       console.log("content : " , this.content);
-      this.value = 100 - ((this.data[0].numberOfDays * this.percentValue) / this.maxValue);
     });
 
+  }
+
+
+  deleteCalculate(id) {
+    this.db.deleteCalculate(id).then(async (res) => {
+      let toast = await this.toast.create({
+        message: 'Calculate deleted' ,
+        duration: 2500 ,
+      });
+      toast.present();
+    })
   }
 
 

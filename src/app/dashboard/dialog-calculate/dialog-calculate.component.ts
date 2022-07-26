@@ -16,6 +16,7 @@ export class DialogCalculateComponent implements OnInit {
   date = new FormControl(new Date());
   serializedDate = new FormControl(new Date().toISOString());
   mainForm: FormGroup;
+  currentDate = new Date();
 
   constructor(public navController: NavController ,
               private activatedRoute: ActivatedRoute ,
@@ -55,7 +56,8 @@ export class DialogCalculateComponent implements OnInit {
       this.mainForm.reset();
       let toast = await this.toast.create({
         message: 'Calculate created' ,
-        duration: 1500
+        duration: 1500,
+        color: "success"
       });
       toast.present();
       this.openCalculate('Calculate for');
