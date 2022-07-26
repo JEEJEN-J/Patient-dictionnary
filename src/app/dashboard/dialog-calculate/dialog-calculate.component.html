@@ -1,0 +1,27 @@
+<h2 mat-dialog-title align="center">Enregistrer votre progression</h2>
+<mat-dialog-content class="mat-typography">
+  <h3>Develop across all platforms</h3>
+
+  <form class="example-form" [formGroup]="mainForm">
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Nombre de Jours</mat-label>
+      <input matInput placeholder="" type="number" min="1" formControlName="numberOfDays">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" style="width: 100%;">
+      <mat-label>Derniere date charge virale</mat-label>
+      <input #minmaxInput matInput readonly [matDatepicker]="picker1" [max]="currentDate" [formControl]=date>
+      <mat-hint>DD/MM/YYYY</mat-hint>
+      <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+      <mat-datepicker #picker1></mat-datepicker>
+    </mat-form-field>
+    <br/>
+  </form>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <div class="example-button-row">
+    <button mat-raised-button color="warn" [mat-dialog-close]="true">Annuler</button>
+    <button mat-raised-button color="primary" [disabled]="!mainForm.valid" [mat-dialog-close]="true" type="submit" (click)="storeData()">Valider</button><br/>
+  </div>
+</mat-dialog-actions>

@@ -27,6 +27,18 @@ const routes: Routes = [
     path: 'definition-parent',
     loadChildren: () => import('./definition-parent/definition-parent.module').then( m => m.DefinitionParentPageModule)
   },
+  {
+    path: 'ordonnance',
+    loadChildren: () => import('./ordonnance/ordonnance.module').then( m => m.OrdonnancePageModule)
+  },
+  {
+    path: 'calculate',
+    loadChildren: () => import('./calculate/calculate.module').then( m => m.CalculatePageModule)
+  },
+  {
+    path: 'charge-virale',
+    loadChildren: () => import('./charge-virale/charge-virale.module').then( m => m.ChargeViralePageModule)
+  },
 ];
 
 @NgModule({

@@ -63,6 +63,8 @@
 
 .btnhome {
   width: 70%;
+  font-size: 16px;
+  height: 40px;
   background-color: #6b83bd;
   border-radius: 20px;
 }
@@ -79,8 +81,8 @@
 }
 
 .btn-accent {
-  height: 120px;
-  width: 120px;
+  height: 100px;
+  width: 100px;
 }
 
 .img-accent {
@@ -93,9 +95,11 @@
 
 .footer{
   font-size: small;
+  padding-top: 10px;
 }
 .spn-footer{
   color: #a6bb1c;
+  //color: #940089;
   font-size: small;
 }
 //

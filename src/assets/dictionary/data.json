@@ -20,7 +20,15 @@
         "id": 3,
         "name": "ARVs",
         "description": "ARV: AntiRétroViral. Ce sont les médicaments qui sont spécifiques au type de virus comme le VIH. Ils bloquent une étape du cycle de vie du VIH.",
-        "subtitle1": []
+        "subtitle1": [],
+        "images": [
+          {
+            "name": "assets/images/img2.png"
+          },
+          {
+            "name": "assets/images/img22.png"
+          }
+        ]
       }
     ]
   },
@@ -33,18 +41,40 @@
         "id": 1,
         "name": "Mode de transmission",
         "description": "Le virus se transmet par voie sanguine surtout lors des rapports sexuels non protégés, par transmission verticale pendant la grossesse , l'accouchement et pendant l'allaitement maternel.",
-        "subtitle1": []
+        "subtitle1": [],
+        "images": [
+          {
+            "name": "assets/images/img.png"
+          },
+          {
+            "name": "assets/images/imgg.png"
+          }
+        ]
       },
       {
         "id": 2,
         "name": "Comment on ne peut pas attraper le VIH",
         "description": "Une personne ne peut  pas être infectée par des contacts de la vie courante tels que s'embrasser, s'étreindre, serrer la main ou partager des objets personnels, de la nourriture ou de l'eau. Les personnes vivant avec le VIH qui suivent un  traitement antiretroviral (TAR) et dont la charge virale est indetectable (supprimée) ne transmettent pas le VIH à leurs partenaires sexuels.",
-        "subtitle1": []
+        "subtitle1": [],
+        "images": [
+          {
+            "name": "assets/images/img1.png"
+          },
+          {
+            "name": "assets/images/img11.png"
+          },
+          {
+            "name": "assets/images/img111.png"
+          },
+          {
+            "name": "assets/images/img1111.png"
+          }
+        ]
       },
       {
         "id": 3,
         "name": "Quels sont les facteurs de rique pour attraper le VIH?",
-        "description": "a) Avoir des relations sexuelles anales ou vaginales non protégées;  b) Avoir une autre infection sexuellement transmissible (IST) comme la syphilis, l'herpès, la chlamydia, la gonorrhée et la vaginose bactérienne ; c) Partager d'aiguilles, de seringues et d'autre matériel d'injection et de solutions médicamenteuses contaminés lors de l'injection de drogues ; d) Recevoir des injections dangereuses, des transfusions sanguines et des greffes de tissus, et des procédures médicales qui impliquent des coupures ou des perçages non stériles ; e) Victimes de blessures accidentelles par piqûre d'aiguille, y compris parmi les agents de santé.",
+        "description": "a) Avoir des relations sexuelles anales ou vaginales non protégées; b) Avoir une autre infection sexuellement transmissible (IST) comme la syphilis, l'herpès, la chlamydia, la gonorrhée et la vaginose bactérienne ; c) Partager d'aiguilles, de seringues et d'autre matériel d'injection et de solutions médicamenteuses contaminés lors de l'injection de drogues ; d) Recevoir des injections dangereuses, des transfusions sanguines et des greffes de tissus, et des procédures médicales qui impliquent des coupures ou des perçages non stériles ; e) Victimes de blessures accidentelles par piqûre d'aiguille, y compris parmi les agents de santé.",
         "subtitle1": []
       }
     ]
@@ -87,7 +117,7 @@
       },
       {
         "id": 4,
-        "name": "Que faire si j ai raté une dose ?",
+        "name": "Que faire si j'ai raté une dose ?",
         "description": "Le traitement est prescrit pour etre pris regulierement a la meme heure et sans rater de dose. Si vous ratez une dose, continuez avec la prochaine dose et en parler a votre prestataire de soins.",
         "subtitle1": []
       },
@@ -187,7 +217,7 @@
       },
       {
         "id": 2,
-        "name": "Date probable  de la  prochaine charge virale",
+        "name": "Date probable de la prochaine charge virale",
         "description": "A calculer",
         "subtitle1": []
       },

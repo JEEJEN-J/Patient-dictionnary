@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title style="font-size: small; float: right; margin-top: 15px">{{content.params.data.title}}</ion-title>
+    <ion-title style="font-size: small; float: right; margin-top: 17px">{{content.params.data.title}}</ion-title>
     <button class="btn-goback" mat-icon-button color="primary" (click)="goBack()">
       <mat-icon>keyboard_backspace</mat-icon>
     </button>
@@ -13,8 +13,8 @@
       <mat-icon>more_vert</mat-icon>
     </button>
     <mat-menu #menu="matMenu">
-      <h4 style="margin-left: 15px; font-size: 12px;">{{content.params.data.title}}</h4>
-      <button mat-menu-item style="font-size: 11px" *ngFor="let menuItem of content.params.data.subtitle"
+      <h4 style="margin-left: 15px; font-size: 13px;">{{content.params.data.title}}</h4>
+      <button mat-menu-item style="font-size: 12px" *ngFor="let menuItem of content.params.data.subtitle"
               (click)="onChange(content, menuItem.name)">
         <mat-icon style="font-size: small">dialpad</mat-icon>
         <span>{{menuItem.name}}</span>
@@ -22,7 +22,7 @@
     </mat-menu>
   </div>
 
-  <h5 style="margin: 15px 5px 10px 20px; color: #6b83bd; font-size: 13px;"><u>{{content.params.header}}</u></h5>
+  <h5 style="margin: 15px 5px 10px 20px; color: #6b83bd; font-size: 16px;"><u>{{content.params.header}}</u></h5>
 
   <ion-card style="border-radius: 0px 0px 30px 30px">
     <ion-item>
@@ -34,17 +34,17 @@
         l’immunodeficience humaine)</p>
     </ion-item>
 
-    <br/>
-    <img style="margin-left: 10px" src="assets/images/VIH.png">
-    <br/>
-
     <ion-card-content>
-      <p style="text-align: justify; font-size: 13px;"
+      <p style="text-align: justify; font-size: 15px; margin: -1px; padding: 0px;"
          *ngFor="let desciption of content.params.data.subtitle">
-      <span style='font-family: "Segoe UI", "Noto Sans", sans-serif; color: #363636'
-            *ngIf="desciption.name == content.params.header">
-        {{desciption.description}}
-      </span>
+        <span *ngIf="desciption.name === content.params.header">
+          <span *ngFor="let image of desciption.images" style="margin-left: 12%;">
+            <img [src]="image.name" style="height: 90px;">
+          </span>
+        </span>
+        <span *ngIf="desciption.name === content.params.header"><br/><br/>
+         {{desciption.description}}
+        </span>
       </p>
     </ion-card-content>
   </ion-card>

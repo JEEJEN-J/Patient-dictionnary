@@ -46,13 +46,35 @@
         "id": 1,
         "name": "mode de transmission",
         "description": "Le virus se transmet par voie sanguine surtout lors des rapports sexuels non protégés, par transmission verticale pendant la grossesse , l'accouchement et pendant l'allaitement maternel.",
-        "subtitle1": []
+        "subtitle1": [],
+        "images": [
+          {
+            "name": "assets/images/img.png"
+          },
+          {
+            "name": "assets/images/imgg.png"
+          }
+        ]
       },
       {
         "id": 2,
         "name": "Comment on ne peut pas attraper le VIH",
         "description": "Une personne ne peut  pas être infectée par des contacts de la vie courante tels que s'embrasser, s'étreindre, serrer la main ou partager des objets personnels, de la nourriture ou de l'eau. Les personnes vivant avec le VIH qui suivent un  traitement antiretroviral (TAR) et dont la charge virale est indetectable (supprimée) ne transmettent pas le VIH à leurs partenaires sexuels.",
-        "subtitle1": []
+        "subtitle1": [],
+        "images": [
+          {
+            "name": "assets/images/img1.png"
+          },
+          {
+            "name": "assets/images/img11.png"
+          },
+          {
+            "name": "assets/images/img111.png"
+          },
+          {
+            "name": "assets/images/img1111.png"
+          }
+        ]
       },
       {
         "id": 3,

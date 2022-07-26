@@ -22,7 +22,6 @@ import {IonicModule} from "@ionic/angular";
     MatButtonModule ,
     MatCardModule ,
     IonicModule ,
-
   ],
   declarations: [HomePage]
 })

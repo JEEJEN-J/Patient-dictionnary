@@ -1,19 +1,6 @@
 import {Component} from '@angular/core';
 import {NavController , NavParams} from "@ionic/angular";
-import {NavigationExtras} from "@angular/router";
 
-
-@Component({
-  templateUrl: 'navigation-details.html' ,
-})
-export class NavigationDetailsPage {
-  item;
-
-  constructor(params: NavParams) {
-    this.item = params.data.item;
-  }
-
-}
 
 @Component({
   selector: 'app-home' ,

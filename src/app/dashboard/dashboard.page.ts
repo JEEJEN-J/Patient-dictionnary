@@ -1,6 +1,10 @@
 import {Component , OnInit} from '@angular/core';
 import {NavController} from "@ionic/angular";
 import {ActivatedRoute} from "@angular/router";
+import {MatDialog} from "@angular/material/dialog";
+import {DialogCalculateComponent} from "./dialog-calculate/dialog-calculate.component";
+import {DbService} from "../services/db.service";
+import {DialogFormComponent} from "../calculate/dialog-form/dialog-form.component";
 
 
 @Component({
@@ -12,13 +16,24 @@ export class DashboardPage implements OnInit {
 
   items;
   data;
+  Data: any[] = [];
   cp: number = 1;
   panelOpenState = false;
   title;
 
 
-  constructor(public navController: NavController , private activatedRoute: ActivatedRoute) {
+  constructor(public navController: NavController ,
+              private activatedRoute: ActivatedRoute,
+              public dialog: MatDialog,
+              private db: DbService) {
     this.initializeItems();
+  }
+
+  openDialog() {
+    const dialogRef = this.dialog.open(DialogFormComponent);
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
   }
 
 
@@ -26,12 +41,22 @@ export class DashboardPage implements OnInit {
     this.activatedRoute.queryParamMap.subscribe(params => {
       this.title = params;
     });
+
     fetch("./assets/dictionary/data.json")
       .then((response) => response.json())
       .then((response) => {
         this.items = response;
         console.log("response" , response);
       });
+
+    this.db.dbState().subscribe((res) => {
+      if (res) {
+        this.db.fetchCalculates().subscribe(item => {
+          this.Data = item;
+          console.log("data", this.Data);
+        });
+      }
+    });
   }
 
 
@@ -50,6 +75,30 @@ export class DashboardPage implements OnInit {
       queryParams: {
         header: header ,
         data: item
+      }
+    });
+  }
+
+  openCalculate(header: any) {
+    this.navController.navigateForward("calculate" , {
+      queryParams: {
+        header: header
+      }
+    });
+  }
+
+  openOrdonnance(header: any) {
+    this.navController.navigateForward("ordonnance" , {
+      queryParams: {
+        header: header
+      }
+    });
+  }
+
+  openChargeVirale(header: any) {
+    this.navController.navigateForward("charge-virale" , {
+      queryParams: {
+        header: header
       }
     });
   }

@@ -34,7 +34,7 @@ export class DefinitionParentPage implements OnInit {
 
 
   goBack() {
-    this.navController.navigateBack("dashboard" , {queryParams: {title: 'Dashboard Parent patient'}});
+    this.navController.navigateBack("dash-parent" , {queryParams: {title: 'Dashboard Parent patient'}});
   }
 
 

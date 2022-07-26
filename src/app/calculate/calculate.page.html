@@ -1,0 +1,51 @@
+<ion-content>
+  <div class="example-button-row">
+    <button (click)="goBack()" mat-button color="warn"
+            style="border-radius: 50px 50px 50px 50px; font-size: xx-large; float: right; line-height: 60px; margin: 1.5%;">
+      <mat-icon style="font-size: xx-large">clear</mat-icon>
+    </button>
+  </div>
+
+  <br><br/><br/><br/><br/>
+
+  <mat-card style="box-shadow: none;">
+    <mat-card-content>
+      <h2 class="example-h2" align="center">Progression Charge virale</h2><br/>
+
+      <section class="example-section" *ngIf="mode === 'determinate'">
+        <label class="example-margin" style="margin-left: 10px">Progress : {{data[0].numberOfDays}}</label>
+        <mat-slider class="example-margin" [(ngModel)]="value" style="width: 100%"></mat-slider>
+      </section>
+    </mat-card-content>
+
+    <mat-card-content>
+      <h2 class="example-h2" align="center">Nombre de Jours</h2>
+      <div style="width: 100px; margin-left: auto; margin-right: auto">
+        <mat-progress-spinner [color]="color"
+                              [mode]="mode"
+                              [value]="value"
+                              aria-label="Rating">
+        </mat-progress-spinner>
+        <div style="position:relative; top: -60px; left: 22px;"><span style="font-size: xx-large">{{data[0].numberOfDays}}</span></div>
+      </div>
+    </mat-card-content>
+
+    <ion-list>
+      <ion-list-header>
+        Last and next date
+      </ion-list-header>
+      <ion-item lines="inset" *ngFor="let data of data">
+        <ion-label>
+          <h5>{{data.numberOfDays}}</h5>
+          <p>{{data.lastDate}}</p>
+          <p>{{data.nextDate}}</p>
+        </ion-label>
+        <div class="item-note" item-end>
+          <ion-icon name="create" color="primary" style="zoom:2.0; margin-right: 10px;" (click)="openDialog()"></ion-icon>
+          <ion-icon name="trash" color="warn" style="zoom:2.0"></ion-icon>
+        </div>
+      </ion-item>
+    </ion-list>
+  </mat-card>
+
+</ion-content>
