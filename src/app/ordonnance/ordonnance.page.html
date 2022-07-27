@@ -1,5 +1,46 @@
 <ion-content>
-  <ion-toolbar>
-    <ion-title>Ordonnance</ion-title>
-  </ion-toolbar>
+  <div class="example-button-row">
+    <button (click)="goBack()" mat-button color="warn"
+            style="border-radius: 50px 50px 50px 50px; font-size: xx-large; width: 50px; height: 50px; float: right; line-height: 60px; margin: 1.5%;">
+      <mat-icon style="font-size: xx-large">clear</mat-icon>
+    </button>
+  </div>
+
+  <br><br/><br/><br/><br/>
+
+  <mat-card style="box-shadow: none;">
+    <mat-card-content>
+      <h2 class="example-h2" align="center">Marge de progression Ordonnance medicale</h2><br/>
+    </mat-card-content>
+
+    <mat-card-content>
+      <h2 class="example-h2" align="center">Nombre de jour restant</h2>
+      <div style="width: 100px; margin-left: auto; margin-right: auto">
+        <mat-progress-spinner color="primary"
+                              [mode]="mode"
+                              [value]="value"
+                              aria-label="Rating">
+        </mat-progress-spinner>
+        <div style="position:relative; top: -62px; left: auto; right: auto;"><h3 style="font-size: 25px; width: 100%;" align="center">{{data[0].valueOrdn}}</h3></div>
+
+      </div>
+    </mat-card-content>
+
+    <ion-list>
+      <ion-list-header>
+        Last and next date
+      </ion-list-header>
+      <ion-item lines="inset" *ngFor="let data of data">
+        <ion-label>
+          <h4>Value : {{data.valueOrdn}} jour restant</h4>
+          <p>Last date : {{data.lastDate}}</p>
+          <p>Next date : {{data.nextDate}}</p>
+        </ion-label>
+        <div class="item-note" item-end>
+          <ion-icon name="create" color="primary" style="zoom:2.0; margin-right: 10px;" (click)="openDialog(data)"></ion-icon>
+        </div>
+      </ion-item>
+    </ion-list>
+  </mat-card>
+
 </ion-content>

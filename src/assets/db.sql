@@ -1,5 +1,6 @@
 CREATE TABLE IF NOT EXISTS Calculate(
   id INTEGER PRIMARY KEY AUTOINCREMENT,
+  status TEXT,
   numberOfDays INTEGER,
   lastDate TEXT,
   nextDate TEXT
@@ -8,13 +9,6 @@ CREATE TABLE IF NOT EXISTS Calculate(
 CREATE TABLE IF NOT EXISTS Ordonnance(
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   valueOrdn INTEGER,
-  lastDate TEXT,
-  nextDate TEXT
-);
-
-CREATE TABLE IF NOT EXISTS ChargeVirale(
-  id INTEGER PRIMARY KEY AUTOINCREMENT,
-  valueChrgv INTEGER,
   lastDate TEXT,
   nextDate TEXT
 );

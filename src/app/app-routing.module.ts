@@ -34,11 +34,7 @@ const routes: Routes = [
   {
     path: 'calculate',
     loadChildren: () => import('./calculate/calculate.module').then( m => m.CalculatePageModule)
-  },
-  {
-    path: 'charge-virale',
-    loadChildren: () => import('./charge-virale/charge-virale.module').then( m => m.ChargeViralePageModule)
-  },
+  }
 ];
 
 @NgModule({

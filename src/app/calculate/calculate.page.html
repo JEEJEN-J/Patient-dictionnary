@@ -10,23 +10,18 @@
 
   <mat-card style="box-shadow: none;">
     <mat-card-content>
-      <h2 class="example-h2" align="center">Progression Charge virale</h2><br/>
-
-      <section class="example-section" *ngIf="mode === 'determinate'">
-        <label class="example-margin" style="margin-left: 10px">Progress : {{data[0].numberOfDays}}</label>
-        <mat-slider readonly class="example-margin" [(ngModel)]="value" style="width: 100%"></mat-slider>
-      </section>
+      <h2 class="example-h2" align="center">Marge de progression Charge virale</h2><br/>
     </mat-card-content>
 
     <mat-card-content>
-      <h2 class="example-h2" align="center">Nombre de Jours</h2>
+      <h2 class="example-h2" align="center">Nombre de jour restant</h2>
       <div style="width: 100px; margin-left: auto; margin-right: auto">
         <mat-progress-spinner [color]="color"
                               [mode]="mode"
                               [value]="value"
                               aria-label="Rating">
         </mat-progress-spinner>
-        <div style="position:relative; top: -60px; left: 22px;"><span style="font-size: xx-large">{{data[0].numberOfDays}}</span></div>
+        <div style="position:relative; top: -62px; left: auto; right: auto;"><h3 style="font-size: 25px; width: 100%;" align="center">{{data[0].numberOfDays}}</h3></div>
       </div>
     </mat-card-content>
 
@@ -36,7 +31,8 @@
       </ion-list-header>
       <ion-item lines="inset" *ngFor="let data of data">
         <ion-label>
-          <h4>Value : {{data.numberOfDays}}</h4>
+          <p>Status : {{data.status}}</p>
+          <p>Charge virale dans {{data.numberOfDays}} jour(s)</p>
           <p>Last date : {{data.lastDate}}</p>
           <p>Next date : {{data.nextDate}}</p>
         </ion-label>

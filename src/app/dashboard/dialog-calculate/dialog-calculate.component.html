@@ -1,11 +1,29 @@
-<h2 mat-dialog-title align="center">Enregistrer votre progression</h2>
+<h2 mat-dialog-title align="center">{{title}}</h2>
 <mat-dialog-content class="mat-typography">
   <h3>Develop across all platforms</h3>
 
   <form class="example-form" [formGroup]="mainForm">
-    <mat-form-field class="example-full-width" appearance="fill">
+
+    <section class="example-section" *ngIf="title=='Charge virale'">
+      <label class="example-margin"><strong>Status :</strong></label><br/><br/>
+      <mat-radio-group formControlName="status">
+        <mat-radio-button class="example-margin" value="Détectable">
+          Détectable
+        </mat-radio-button>
+        <mat-radio-button class="example-margin" value="Indétectable" style="float: right; margin-right: 5px">
+          Indétectable
+        </mat-radio-button>
+      </mat-radio-group>
+    </section><br/>
+
+    <mat-form-field class="example-full-width" appearance="fill" *ngIf="title=='Charge virale'">
       <mat-label>Nombre de Jours</mat-label>
       <input matInput placeholder="" type="number" min="1" max="1000" formControlName="numberOfDays">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width" appearance="fill" *ngIf="title=='Ordonnance'">
+      <mat-label>Nombre de Jours</mat-label>
+      <input matInput placeholder="Valeur ordonnance" type="number" min="1" formControlName="valueOrdn">
     </mat-form-field>
 
     <mat-form-field appearance="fill" style="width: 100%;">
@@ -22,6 +40,9 @@
 <mat-dialog-actions align="end">
   <div class="example-button-row">
     <button mat-raised-button color="warn" [mat-dialog-close]="true">Annuler</button>
-    <button mat-raised-button color="primary" [disabled]="!mainForm.valid" [mat-dialog-close]="true" type="submit" (click)="storeData()">Valider</button><br/>
+    <button mat-raised-button color="primary" [disabled]="!mainForm.valid" [mat-dialog-close]="true" type="submit"
+            (click)="storeData()">Valider
+    </button>
+    <br/>
   </div>
 </mat-dialog-actions>

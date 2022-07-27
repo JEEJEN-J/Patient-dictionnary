@@ -5,6 +5,7 @@ import {BehaviorSubject , Observable} from 'rxjs';
 import {SQLitePorter} from '@ionic-native/sqlite-porter/ngx';
 import {SQLite , SQLiteObject} from '@ionic-native/sqlite/ngx';
 import {Calculate} from "../models/calculate";
+import {Ordonnance} from "../models/ordonnance";
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +15,6 @@ export class DbService {
   private storage: SQLiteObject;
   calculatesList = new BehaviorSubject([]);
   ordonnancesList = new BehaviorSubject([]);
-  chargeViralesList = new BehaviorSubject([]);
   private isDbReady: BehaviorSubject<boolean> = new BehaviorSubject(false);
 
   constructor(
@@ -35,21 +35,21 @@ export class DbService {
     });
   }
 
+
   dbState() {
     return this.isDbReady.asObservable();
   }
+
 
   fetchCalculates(): Observable<Calculate[]> {
     return this.calculatesList.asObservable();
   }
 
-  fetchOrdonnances(): Observable<Calculate[]> {
+
+  fetchOrdonnances(): Observable<Ordonnance[]> {
     return this.ordonnancesList.asObservable();
   }
 
-  fetchChargeVirales(): Observable<Calculate[]> {
-    return this.chargeViralesList.asObservable();
-  }
 
   // Render fake data
   getFakeData() {
@@ -60,11 +60,13 @@ export class DbService {
       this.sqlPorter.importSqlToDb(this.storage , data)
         .then(_ => {
           this.getCalculates();
+          this.getOrdonnances();
           this.isDbReady.next(true);
         })
         .catch(error => console.error(error));
     });
   }
+
 
   /**
    * Get all Calculates list
@@ -76,6 +78,7 @@ export class DbService {
         for (var i = 0; i < res.rows.length; i++) {
           items.push({
             id: res.rows.item(i).id ,
+            status: res.rows.item(i).status ,
             numberOfDays: res.rows.item(i).numberOfDays ,
             lastDate: res.rows.item(i).lastDate ,
             nextDate: res.rows.item(i).nextDate
@@ -86,16 +89,50 @@ export class DbService {
     });
   }
 
+
+  /**
+   * Get all Ordonnances list
+   * */
+  getOrdonnances() {
+    return this.storage.executeSql('SELECT * FROM Ordonnance' , []).then(res => {
+      let items: Ordonnance[] = [];
+      if (res.rows.length > 0) {
+        for (var i = 0; i < res.rows.length; i++) {
+          items.push({
+            id: res.rows.item(i).id ,
+            valueOrdn: res.rows.item(i).valueOrdn ,
+            lastDate: res.rows.item(i).lastDate ,
+            nextDate: res.rows.item(i).nextDate
+          });
+        }
+      }
+      this.ordonnancesList.next(items);
+    });
+  }
+
   /**
    * Add a new Calculate
    *
    * @param {numberOfDays and lastDate}
    * */
-  addCalculate(numberOfDays , lastDate , nextDate) {
-    let data = [numberOfDays , lastDate , nextDate];
-    return this.storage.executeSql('INSERT INTO Calculate (numberOfDays, lastDate, nextDate) VALUES (?, ?, ?)' , data)
+  addCalculate(status , numberOfDays , lastDate , nextDate) {
+    let data = [status , numberOfDays , lastDate , nextDate];
+    return this.storage.executeSql('INSERT INTO Calculate (status, numberOfDays, lastDate, nextDate) VALUES (?, ?, ?, ?)' , data)
       .then((res) => {
         this.getCalculates();
+      });
+  }
+
+  /**
+   * Add a new Ordonnance
+   *
+   * @param {valueOrdn and lastDate}
+   * */
+  addOrdonnance(valueOrdn , lastDate , nextDate) {
+    let data = [valueOrdn , lastDate , nextDate];
+    return this.storage.executeSql('INSERT INTO Ordonnance (valueOrdn, lastDate, nextDate) VALUES (?, ?, ?)' , data)
+      .then((res) => {
+        this.getOrdonnances();
       });
   }
 
@@ -108,7 +145,24 @@ export class DbService {
     return this.storage.executeSql('SELECT * FROM Calculate WHERE id = ?' , [id]).then(res => {
       return {
         id: res.rows.item(0).id ,
+        status: res.rows.item(0).status ,
         numberOfDays: res.rows.item(0).numberOfDays ,
+        lastDate: res.rows.item(0).lastDate ,
+        nextDate: res.rows.item(0).nextDate
+      }
+    });
+  }
+
+  /**
+   * Get a Ordonnance by ID
+   *
+   * @param id
+   * */
+  getOrdonnance(id): Promise<Ordonnance> {
+    return this.storage.executeSql('SELECT * FROM Ordonnance WHERE id = ?' , [id]).then(res => {
+      return {
+        id: res.rows.item(0).id ,
+        valueOrdn: res.rows.item(0).valueOrdn ,
         lastDate: res.rows.item(0).lastDate ,
         nextDate: res.rows.item(0).nextDate
       }
@@ -120,15 +174,33 @@ export class DbService {
    *
    * @param {id and {calculate}}
    * */
-  updateCalculate(id , numberOfDays , lastDate , nextDate) {
-    let data = [numberOfDays , lastDate , nextDate];
+  updateCalculate(id , status, numberOfDays , lastDate , nextDate) {
+    let data = [status, numberOfDays, lastDate , nextDate];
     return this.storage.executeSql(`UPDATE Calculate
-                                    SET numberOfDays = ?,
+                                    SET status       = ?,
+                                        numberOfDays = ?,
                                         lastDate     = ?,
                                         nextDate     = ?
                                     WHERE id = ${id}` , data)
       .then(data => {
         this.getCalculates();
+      })
+  }
+
+  /**
+   * Update the Ordonnance
+   *
+   * @param {id and {ordonnance}}
+   * */
+  updateOrdonnance(id , valueOrdn , lastDate , nextDate) {
+    let data = [valueOrdn , lastDate , nextDate];
+    return this.storage.executeSql(`UPDATE Ordonnance
+                                    SET valueOrdn = ?,
+                                        lastDate  = ?,
+                                        nextDate  = ?
+                                    WHERE id = ${id}` , data)
+      .then(data => {
+        this.getOrdonnances();
       })
   }
 

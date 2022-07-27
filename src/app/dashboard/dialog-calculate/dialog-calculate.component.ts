@@ -1,9 +1,10 @@
-import {Component , OnInit} from '@angular/core';
+import {Component , Inject , OnInit} from '@angular/core';
 import {FormBuilder , FormControl , FormGroup , Validator , Validators} from '@angular/forms';
 import {NavController , ToastController} from "@ionic/angular";
 import {ActivatedRoute , Router} from "@angular/router";
 import {DbService} from "../../services/db.service";
 import {DatePipe , formatDate} from "@angular/common";
+import {MAT_DIALOG_DATA} from "@angular/material/dialog";
 
 @Component({
   selector: 'app-dialog-calculate' ,
@@ -23,14 +24,33 @@ export class DialogCalculateComponent implements OnInit {
               public formBuilder: FormBuilder ,
               private toast: ToastController ,
               private db: DbService ,
-              private datePipe: DatePipe) {
+              private datePipe: DatePipe ,
+              @Inject(MAT_DIALOG_DATA) public title: any) {
   }
 
+
   ngOnInit() {
-    this.mainForm = this.formBuilder.group({
-      numberOfDays: ['' , Validators.required] ,
-      date: ['']
+    this.db.dbState().subscribe((res) => {
+      if (res) {
+        this.db.fetchCalculates().subscribe(item => {
+        });
+        this.db.fetchOrdonnances().subscribe(item => {
+        });
+      }
     });
+
+    if (this.title == 'Charge virale') {
+      this.mainForm = this.formBuilder.group({
+        status: ['' , Validators.required] ,
+        numberOfDays: ['' , Validators.required] ,
+        date: ['']
+      });
+    } else if (this.title == 'Ordonnance') {
+      this.mainForm = this.formBuilder.group({
+        valueOrdn: ['' , Validators.required] ,
+        date: ['']
+      });
+    }
   }
 
   openCalculate(header: any) {
@@ -41,27 +61,60 @@ export class DialogCalculateComponent implements OnInit {
     });
   }
 
+  openOrdonnance(header: any) {
+    this.navController.navigateForward("ordonnance" , {
+      queryParams: {
+        header: header
+      }
+    });
+  }
+
   storeData() {
     let lastDate = this.datePipe.transform(this.date.value , 'dd-MM-yyyy HH:mm:ss' , null , 'en').toString();
-
     let nextDateCurrent = new Date(this.date.value);
-    nextDateCurrent.setDate(nextDateCurrent.getDate() + 30);
-    let nextDate = this.datePipe.transform(nextDateCurrent , 'dd-MM-yyyy HH:mm:ss' , null , 'en').toString();
 
-    this.db.addCalculate(
-      this.mainForm.getRawValue().numberOfDays ,
-      lastDate,
-      nextDate
-    ).then(async (res) => {
-      this.mainForm.reset();
-      let toast = await this.toast.create({
-        message: 'Calculate created' ,
-        duration: 1500,
-        color: "success"
+    if (this.title == 'Charge virale') {
+      if ((this.mainForm.getRawValue().status == 'Indétectable') || this.mainForm.getRawValue().numberOfDays < 1000)
+        nextDateCurrent.setDate(nextDateCurrent.getDate() + 90);
+      else if ((this.mainForm.getRawValue().status == 'Détectable') || this.mainForm.getRawValue().numberOfDays >= 1000)
+        nextDateCurrent.setDate(nextDateCurrent.getDate() + 365);
+
+      let nextDate = this.datePipe.transform(nextDateCurrent , 'dd-MM-yyyy HH:mm:ss' , null , 'en').toString();
+
+      this.db.addCalculate(
+        this.mainForm.getRawValue().status ,
+        this.mainForm.getRawValue().numberOfDays ,
+        lastDate ,
+        nextDate
+      ).then(async (res) => {
+        this.mainForm.reset();
+        let toast = await this.toast.create({
+          message: 'Charge virale created' ,
+          duration: 1500 ,
+          color: "success"
+        });
+        toast.present();
+        this.openCalculate('Calculate');
       });
-      toast.present();
-      this.openCalculate('Calculate for');
-    });
+    } else if (this.title == 'Ordonnance') {
+      nextDateCurrent.setDate(nextDateCurrent.getDate() + 91);
+      let nextDate = this.datePipe.transform(nextDateCurrent , 'dd-MM-yyyy HH:mm:ss' , null , 'en').toString();
+      this.db.addOrdonnance(
+        this.mainForm.getRawValue().valueOrdn ,
+        lastDate ,
+        nextDate
+      ).then(async (res) => {
+        this.mainForm.reset();
+        let toast = await this.toast.create({
+          message: 'Ordonnance created' ,
+          duration: 1500 ,
+          color: "success"
+        });
+        toast.present();
+        this.openOrdonnance('Ordonnance');
+      });
+    }
+
   }
 
 }

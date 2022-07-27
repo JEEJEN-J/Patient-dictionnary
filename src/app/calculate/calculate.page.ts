@@ -53,23 +53,10 @@ export class CalculatePage implements OnInit {
         });
       }
     });
-
     this.activatedRoute.queryParamMap.subscribe(params => {
       this.content = params;
       console.log("content : " , this.content);
     });
-
-  }
-
-
-  deleteCalculate(id) {
-    this.db.deleteCalculate(id).then(async (res) => {
-      let toast = await this.toast.create({
-        message: 'Calculate deleted' ,
-        duration: 2500 ,
-      });
-      toast.present();
-    })
   }
 
 

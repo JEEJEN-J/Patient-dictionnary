@@ -21,6 +21,8 @@ import {MatFormFieldModule} from "@angular/material/form-field";
 import {MAT_DATE_LOCALE , MatNativeDateModule} from "@angular/material/core";
 import {MatButtonToggleModule} from "@angular/material/button-toggle";
 import {MatListModule} from "@angular/material/list";
+import {MatRadioModule} from "@angular/material/radio";
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 
 @NgModule({
@@ -38,10 +40,12 @@ import {MatListModule} from "@angular/material/list";
     MatMenuModule ,
     MatDialogModule ,
     MatDatepickerModule ,
-    ReactiveFormsModule,
-    MatButtonToggleModule,
-    MatListModule,
-    MatNativeDateModule,
+    ReactiveFormsModule ,
+    MatButtonToggleModule ,
+    MatListModule ,
+    MatNativeDateModule ,
+    MatRadioModule ,
+    MatProgressSpinnerModule
   ],
   exports:[
     MatDatepickerModule,

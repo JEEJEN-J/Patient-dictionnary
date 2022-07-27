@@ -16,20 +16,23 @@ export class DashboardPage implements OnInit {
   items;
   data;
   Data: any[] = [];
+  Data1: any[] = [];
   cp: number = 1;
   panelOpenState = false;
   title;
 
-
   constructor(public navController: NavController ,
-              private activatedRoute: ActivatedRoute,
-              public dialog: MatDialog,
+              private activatedRoute: ActivatedRoute ,
+              public dialog: MatDialog ,
               private db: DbService) {
     this.initializeItems();
   }
 
-  openDialog() {
-    const dialogRef = this.dialog.open(DialogCalculateComponent);
+
+  openDialog(title) {
+    const dialogRef = this.dialog.open(DialogCalculateComponent , {
+      data: title
+    });
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);
     });
@@ -52,7 +55,9 @@ export class DashboardPage implements OnInit {
       if (res) {
         this.db.fetchCalculates().subscribe(item => {
           this.Data = item;
-          console.log("data", this.Data);
+        });
+        this.db.fetchOrdonnances().subscribe(item => {
+          this.Data1 = item;
         });
       }
     });
@@ -88,14 +93,6 @@ export class DashboardPage implements OnInit {
 
   openOrdonnance(header: any) {
     this.navController.navigateForward("ordonnance" , {
-      queryParams: {
-        header: header
-      }
-    });
-  }
-
-  openChargeVirale(header: any) {
-    this.navController.navigateForward("charge-virale" , {
       queryParams: {
         header: header
       }

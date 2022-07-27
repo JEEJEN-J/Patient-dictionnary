@@ -1,24 +1,18 @@
 import {Component , Inject , OnInit} from '@angular/core';
+import {DatePipe} from "@angular/common";
 import {FormBuilder , FormControl , FormGroup , Validators} from "@angular/forms";
 import {NavController , ToastController} from "@ionic/angular";
 import {ActivatedRoute} from "@angular/router";
 import {DbService} from "../../services/db.service";
-import {DatePipe} from "@angular/common";
 import {MAT_DIALOG_DATA} from "@angular/material/dialog";
-import {ThemePalette} from "@angular/material/core";
-import {ProgressSpinnerMode} from "@angular/material/progress-spinner";
 
 @Component({
-  selector: 'app-dialog-form' ,
-  templateUrl: './dialog-form.component.html' ,
-  styleUrls: ['./dialog-form.component.scss'] ,
+  selector: 'app-dialog-ordonn',
+  templateUrl: './dialog-ordonn.component.html',
+  styleUrls: ['./dialog-ordonn.component.scss'],
   providers: [DatePipe]
 })
-export class DialogFormComponent implements OnInit {
-
-  color: ThemePalette = 'primary';
-  mode: ProgressSpinnerMode = 'determinate';
-  value = 50;
+export class DialogOrdonnComponent implements OnInit {
 
   date = new FormControl(new Date());
   serializedDate = new FormControl(new Date().toISOString());
@@ -30,53 +24,48 @@ export class DialogFormComponent implements OnInit {
               public formBuilder: FormBuilder ,
               private toast: ToastController ,
               private db: DbService ,
-              private datePipe: DatePipe ,
+              private datePipe: DatePipe,
               @Inject(MAT_DIALOG_DATA) public data: any) {
   }
-
 
   ngOnInit() {
     this.db.dbState().subscribe((res) => {
       if (res) {
-        this.db.fetchCalculates().subscribe(item => {
+        this.db.fetchOrdonnances().subscribe(item => {
         });
       }
     });
     this.mainForm = this.formBuilder.group({
-      status: [this.data.status , Validators.required] ,
-      numberOfDays: [this.data.numberOfDays , Validators.required] ,
+      valueOrdn: [this.data.valueOrdn , Validators.required] ,
       date: [this.date]
     });
   }
 
-
-  openCalculate(header: any) {
-    this.navController.navigateForward("calculate" , {
+  openOrdonnance(header: any) {
+    this.navController.navigateForward("ordonnance" , {
       queryParams: {
         header: header
       }
     });
   }
 
-
   storeData() {
     let lastDate = this.datePipe.transform(this.date.value , 'dd-MM-yyyy HH:mm:ss' , null , 'en').toString();
 
     let nextDateCurrent = new Date(this.date.value);
-    nextDateCurrent.setDate(nextDateCurrent.getDate() + 30);
+    nextDateCurrent.setDate(nextDateCurrent.getDate() + this.mainForm.getRawValue().valueOrdn);
     let nextDate = this.datePipe.transform(nextDateCurrent , 'dd-MM-yyyy HH:mm:ss' , null , 'en').toString();
 
-    this.db.updateCalculate(this.data.id , this.mainForm.getRawValue().status , this.mainForm.getRawValue().numberOfDays , lastDate , nextDate).then(async (res) => {
+    this.db.updateOrdonnance(this.data.id, this.mainForm.getRawValue().valueOrdn, lastDate, nextDate).then(async (res) => {
       this.mainForm.reset();
       let toast = await this.toast.create({
-        message: 'Calculate updated' ,
-        duration: 1500 ,
+        message: 'Update successful' ,
+        duration: 1500,
         color: "primary"
       });
       toast.present();
-      this.openCalculate('Calculate for');
+      this.openOrdonnance('Ordonnance medicale');
     });
   }
-
 
 }

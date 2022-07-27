@@ -9,29 +9,33 @@
 
 <section style="">
   <div class="example-button-row" style="float: right; margin: 10px">
-    <button mat-mini-fab="primary" [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
-      <mat-icon>filter_list</mat-icon>
+    <button mat-mini-fab color="primary" [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+      <mat-icon style="font-size: 30px; margin-left: -3px; margin-top: -2px">menu</mat-icon>
     </button>
   </div>
+
   <mat-menu #menu="matMenu">
-    <h4 style="margin-left: 15px; font-size: 12px;"></h4>
-    <button *ngIf="Data.length==0" mat-menu-item style="font-size: 13px" (click)="openDialog()">
-      <mat-icon style="font-size: small">dialpad</mat-icon>
-      <span>Calculate</span>
-    </button>
-    <button *ngIf="Data.length>0" mat-menu-item style="font-size: 13px"
-            (click)="openCalculate('Calculate progression')">
-      <mat-icon style="font-size: small">dialpad</mat-icon>
-      <span>Calculate</span>
-    </button>
-    <button mat-menu-item style="font-size: 13px" (click)="openOrdonnance('Ordonnance')">
-      <mat-icon style="font-size: small">dialpad</mat-icon>
-      <span>Ordonnance</span>
-    </button>
-    <button mat-menu-item style="font-size: 13px" (click)="openChargeVirale('Charge virale')">
+    <h4 style="margin-left: 15px; font-size: 12px;">Others actions</h4>
+
+    <button *ngIf="Data.length==0" mat-menu-item style="font-size: 13px" (click)="openDialog('Charge virale')">
       <mat-icon style="font-size: small">dialpad</mat-icon>
       <span>Charge virale</span>
     </button>
+    <button *ngIf="Data.length>0" mat-menu-item style="font-size: 13px" (click)="openCalculate('Charge virale')">
+      <mat-icon style="font-size: small">dialpad</mat-icon>
+      <span>Charge virale</span>
+    </button>
+
+
+    <button *ngIf="Data1.length==0" mat-menu-item style="font-size: 13px" (click)="openDialog('Ordonnance')">
+      <mat-icon style="font-size: small">dialpad</mat-icon>
+      <span>Ordonnance</span>
+    </button>
+    <button *ngIf="Data1.length>0" mat-menu-item style="font-size: 13px" (click)="openOrdonnance('Ordonnance')">
+      <mat-icon style="font-size: small">dialpad</mat-icon>
+      <span>Ordonnance</span>
+    </button>
+
   </mat-menu>
 </section>
 
