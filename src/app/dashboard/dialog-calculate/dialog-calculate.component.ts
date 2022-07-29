@@ -34,6 +34,10 @@ export class DialogCalculateComponent implements OnInit {
       if (res) {
         this.db.fetchCalculates().subscribe(item => {
         });
+      }
+    });
+    this.db.dbState().subscribe((res) => {
+      if (res) {
         this.db.fetchOrdonnances().subscribe(item => {
         });
       }
@@ -70,7 +74,7 @@ export class DialogCalculateComponent implements OnInit {
   }
 
   storeData() {
-    let lastDate = this.datePipe.transform(this.date.value , 'dd-MM-yyyy HH:mm:ss' , null , 'en').toString();
+    let lastDate = this.datePipe.transform(this.date.value , 'yyyy-MM-dd' , null , 'en').toString();
     let nextDateCurrent = new Date(this.date.value);
 
     if (this.title == 'Charge virale') {
@@ -79,7 +83,7 @@ export class DialogCalculateComponent implements OnInit {
       else if ((this.mainForm.getRawValue().status == 'Détectable') || this.mainForm.getRawValue().numberOfDays >= 1000)
         nextDateCurrent.setDate(nextDateCurrent.getDate() + 365);
 
-      let nextDate = this.datePipe.transform(nextDateCurrent , 'dd-MM-yyyy HH:mm:ss' , null , 'en').toString();
+      let nextDate = this.datePipe.transform(nextDateCurrent , 'yyyy-MM-dd' , null , 'en').toString();
 
       this.db.addCalculate(
         this.mainForm.getRawValue().status ,
@@ -97,7 +101,7 @@ export class DialogCalculateComponent implements OnInit {
         this.openCalculate('Calculate');
       });
     } else if (this.title == 'Ordonnance') {
-      nextDateCurrent.setDate(nextDateCurrent.getDate() + 91);
+      nextDateCurrent.setDate(nextDateCurrent.getDate() + this.mainForm.getRawValue().valueOrdn);
       let nextDate = this.datePipe.transform(nextDateCurrent , 'dd-MM-yyyy HH:mm:ss' , null , 'en').toString();
       this.db.addOrdonnance(
         this.mainForm.getRawValue().valueOrdn ,

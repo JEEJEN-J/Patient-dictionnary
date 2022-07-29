@@ -28,6 +28,7 @@ export class OrdonnancePage implements OnInit {
               private db: DbService ,
               private toast: ToastController ,
               public dialog: MatDialog) {
+    this.ngOnInit();
   }
 
 
@@ -40,10 +41,10 @@ export class OrdonnancePage implements OnInit {
         });
       }
     });
-    this.activatedRoute.queryParamMap.subscribe(params => {
-      this.content = params;
-      console.log("content : " , this.content);
-    });
+    // this.activatedRoute.queryParamMap.subscribe(params => {
+    //   this.content = params;
+    //   console.log("content : " , this.content);
+    // });
   }
 
 

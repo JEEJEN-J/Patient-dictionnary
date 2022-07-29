@@ -7,7 +7,7 @@
 }
 
 .pagin {
-  font-size: x-small;
+  font-size: small;
 }
 
 .mat-form-field + .mat-form-field {
@@ -16,19 +16,20 @@
 
 .itemTitle {
   color: #6b83bd;
-  font-size: 13px;
+  font-size: 15px;
 }
 
 .subtitle {
   margin-top: 0px;
-  font-size: small
+  font-size: 19px;
 }
 
 .subtitleLI {
   //padding: 4px;
   font-synthesis: none;
   list-style: none;
-  text-align: justify;
+  font-size: 14px;
+  //text-align: justify;
 }
 
 .subtitleLI:hover {

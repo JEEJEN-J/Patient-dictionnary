@@ -13,7 +13,7 @@
       <mat-icon>more_vert</mat-icon>
     </button>
     <mat-menu #menu="matMenu">
-      <h4 style="margin-left: 17px; font-size: 13px;">{{content.params.data.title}}</h4>
+      <h4 style="margin-left: 15px; font-size: 13px;">{{content.params.data.title}}</h4>
       <button mat-menu-item style="font-size: 12px" *ngFor="let menuItem of content.params.data.subtitle" (click)="onChange(content, menuItem.name)">
         <mat-icon style="font-size: small">dialpad</mat-icon>
         <span>{{menuItem.name}}</span>
@@ -33,7 +33,7 @@
     </ion-item>
 
     <ion-card-content>
-      <p style="text-align: justify; font-size: 16px; margin: -1px; padding: 0px;"
+      <p style="text-align: justify; font-size: 15px; margin: -1px; padding: 0px;"
          *ngFor="let desciption of content.params.data.subtitle">
         <span *ngIf="desciption.name === content.params.header">
           <span *ngFor="let image of desciption.images" style="margin-left: 12%;">

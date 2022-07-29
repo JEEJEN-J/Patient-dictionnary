@@ -26,6 +26,7 @@ export class DashboardPage implements OnInit {
               public dialog: MatDialog ,
               private db: DbService) {
     this.initializeItems();
+    this.ngOnInit();
   }
 
 

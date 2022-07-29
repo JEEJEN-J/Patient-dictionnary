@@ -60,11 +60,15 @@ export class DialogFormComponent implements OnInit {
 
 
   storeData() {
-    let lastDate = this.datePipe.transform(this.date.value , 'dd-MM-yyyy HH:mm:ss' , null , 'en').toString();
-
+    let lastDate = this.datePipe.transform(this.date.value , 'yyyy-MM-dd' , null , 'en').toString();
     let nextDateCurrent = new Date(this.date.value);
-    nextDateCurrent.setDate(nextDateCurrent.getDate() + 30);
-    let nextDate = this.datePipe.transform(nextDateCurrent , 'dd-MM-yyyy HH:mm:ss' , null , 'en').toString();
+
+    if ((this.mainForm.getRawValue().status == 'Indétectable') || this.mainForm.getRawValue().numberOfDays < 1000)
+      nextDateCurrent.setDate(nextDateCurrent.getDate() + 90);
+    else if ((this.mainForm.getRawValue().status == 'Détectable') || this.mainForm.getRawValue().numberOfDays >= 1000)
+      nextDateCurrent.setDate(nextDateCurrent.getDate() + 365);
+
+    let nextDate = this.datePipe.transform(nextDateCurrent , 'yyyy-MM-dd' , null , 'en').toString();
 
     this.db.updateCalculate(this.data.id , this.mainForm.getRawValue().status , this.mainForm.getRawValue().numberOfDays , lastDate , nextDate).then(async (res) => {
       this.mainForm.reset();

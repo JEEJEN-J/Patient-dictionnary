@@ -29,6 +29,10 @@ export class DashParentPage implements OnInit {
     this.items = this.data;
   }
 
+  getInfo() {
+
+  }
+
   getItems(ev) {
     // Reset items back to all of the items
     this.initializeItems();
@@ -53,7 +57,7 @@ export class DashParentPage implements OnInit {
       .then((response) => response.json())
       .then((response) => {
         this.items = response;
-        console.log("response", response);
+        console.log("response" , response);
       });
   }
 
