@@ -56,8 +56,8 @@ export class CalculatePage implements OnInit {
     });
   }
 
-  deleteCalculate(item) {
-    this.db.deleteCalculate(item.id);
+  deleteCalculate() {
+    this.db.deleteCalculate(this.data[0].id);
     this.goBack();
   }
 
@@ -116,6 +116,9 @@ export class CalculatePage implements OnInit {
     this.hours = hours;
     this.minutes = minutes;
     this.seconds = seconds;
+
+    if (days == 0)
+      this.deleteCalculate();
   }
 
 

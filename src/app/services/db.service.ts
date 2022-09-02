@@ -217,4 +217,17 @@ export class DbService {
         this.getCalculates();
       });
   }
+
+  /**
+   * Delete a ordonnance
+   *
+   * @param id
+   * */
+  deleteOrdonnance(id) {
+    return this.storage.executeSql('DELETE FROM Ordonnance WHERE id = ?' , [id])
+      .then(_ => {
+        this.getOrdonnances();
+      });
+  }
+
 }

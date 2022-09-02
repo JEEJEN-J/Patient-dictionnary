@@ -73,6 +73,12 @@ export class OrdonnancePage implements OnInit {
   }
 
 
+  deleteOrdonnance() {
+    this.db.deleteOrdonnance(this.data[0].id);
+    this.goBack();
+  }
+
+
   commingSoonTime = () => {
     const endTimeParse = (Date.parse(new Date(this.data[0].nextDate).toString())) / 1000;
     const now = new Date();
@@ -94,6 +100,9 @@ export class OrdonnancePage implements OnInit {
     this.hours = hours;
     this.minutes = minutes;
     this.seconds = seconds;
+
+    if (days == 0)
+      this.deleteOrdonnance();
   }
 
 
