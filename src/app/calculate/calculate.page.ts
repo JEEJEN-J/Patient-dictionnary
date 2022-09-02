@@ -56,6 +56,11 @@ export class CalculatePage implements OnInit {
     });
   }
 
+  deleteCalculate(item) {
+    this.db.deleteCalculate(item.id);
+    this.goBack();
+  }
+
 
   dateDiffInDays(a , b) {
     const utc1 = Date.UTC(a.getFullYear() , a.getMonth() , a.getDate());
