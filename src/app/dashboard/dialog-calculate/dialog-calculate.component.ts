@@ -102,7 +102,7 @@ export class DialogCalculateComponent implements OnInit {
       });
     } else if (this.title == 'Ordonnance') {
       nextDateCurrent.setDate(nextDateCurrent.getDate() + this.mainForm.getRawValue().valueOrdn);
-      let nextDate = this.datePipe.transform(nextDateCurrent , 'dd-MM-yyyy HH:mm:ss' , null , 'en').toString();
+      let nextDate = this.datePipe.transform(nextDateCurrent , 'yyyy-MM-dd' , null , 'en').toString();
       this.db.addOrdonnance(
         this.mainForm.getRawValue().valueOrdn ,
         lastDate ,

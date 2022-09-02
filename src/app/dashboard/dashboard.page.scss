@@ -1,11 +1,11 @@
 .btn-goback {
-  //margin-left: 5px;
+  margin-left: 7px;
   margin-top: 5px;
-  color: #940089;
+  color: #e15177;
   float: left;
 }
 
-.pagin {
+.pagination {
   font-size: small;
 }
 
@@ -13,9 +13,19 @@
   margin-left: 8px;
 }
 
+.listMargin {
+  margin-left: 4%;
+  padding: 0;
+}
+
 .itemTitle {
-  color: #6b83bd;
+  color: #fff;
   font-size: 15px;
+}
+
+.ion-padding {
+  border: 1px solid red;
+  padding: -100px;
 }
 
 .subtitle {
@@ -24,11 +34,15 @@
 }
 
 .subtitleLI {
-  //padding: 4px;
+  padding: 8px;
   font-synthesis: none;
   list-style: none;
-  font-size: 14px;
-  //text-align: justify;
+  font-size: 13px;
+  color: #404040;
+  margin-top: 2px;
+  margin-bottom: 1px;
+  margin-left: 8px;
+  width: 97%;
 }
 
 .subtitleLI:hover {
@@ -37,5 +51,35 @@
 
 .iconSub {
   color: #940089;
-  //color: forestgreen;
+  background: linear-gradient(to right, #e15177, #f0be6d);
+  border-radius: 50px;
+}
+
+
+
+::ng-deep ul > li:not(.active) > a {
+  background: linear-gradient(to right, #e15177, #f0be6d) !important;
+  //background-color: #b64161 !important;
+  border-color: black !important;
+  border-radius: 50px;
+  color: #fff;
+}
+
+::ng-deep ul > li.disabled > span {
+  //background-color: red;
+  border-color: black !important;
+}
+
+::ng-deep ul.disabled > span {
+  background-color: red;
+  border-color: black !important;
+}
+
+::ng-deep ul > li.active > a {
+  background-color: green !important;
+  border-color: red !important;
+}
+
+:host ::ng-deep .track circle {
+  stroke-opacity: 0.3 !important;
 }

@@ -15,7 +15,7 @@ export class DbService {
   private storage: SQLiteObject;
   calculatesList = new BehaviorSubject([]);
   ordonnancesList = new BehaviorSubject([]);
-  private isDbReady: BehaviorSubject<boolean> = new BehaviorSubject(false);
+  public isDbReady: BehaviorSubject<boolean> = new BehaviorSubject(false);
 
   constructor(
     private platform: Platform ,
@@ -86,6 +86,7 @@ export class DbService {
         }
       }
       this.calculatesList.next(items);
+      this.isDbReady.next(true);
     });
   }
 
@@ -107,6 +108,7 @@ export class DbService {
         }
       }
       this.ordonnancesList.next(items);
+      this.isDbReady.next(true);
     });
   }
 

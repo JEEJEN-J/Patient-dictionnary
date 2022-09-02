@@ -1,54 +1,65 @@
-<ion-header [translucent]="true" class="header">
-  <ion-toolbar>
-    <ion-title style="font-family: 'Century Schoolbook L'">
-      <strong><span style="color: #4a63ad">P</span><span style="color: #940089">E</span><span style="color: mediumseagreen">K</span></strong>
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content [fullscreen]="true" style="height: 100%;">
+  <div align="center"
+       style="height: 100%; background: url('../../assets/fond/home.jpg');
+        background-size: 100% 45%; background-repeat: no-repeat; background-position: top">
+    <div style="padding-top: 10px">
+      <ion-title style="font-family: 'Century Schoolbook L';">
+        <strong align="center" style="margin-right: auto; color: #fff">PEK</strong>
+      </ion-title>
+    </div>
 
-<ion-content [fullscreen]="true" padding>
-
-  <section><br/><br/>
-    <div class="example-button-row">
-      <div class="example-flex-container">
-        <div class="example-button-container" align="center">
-          <a mat-fab color="" aria-label="Example icon button with a bookmark icon" class="btn-accent" href="https://www.facebook.com/Cippress-100117798061997/">
-            <img src="./assets/icon/logo.png" class="img-accent"/>
-          </a>
+    <br/><br/><br/><br/>
+    <section><br/>
+      <div class="example-button-row">
+        <div class="">
+          <div class="example-button-container" align="center">
+            <a mat-fab color="" aria-label="Example icon button with a bookmark icon" class="btn-accent"
+               href="https://www.facebook.com/Cippress-100117798061997/">
+              <img src="./assets/icon/5696637.png" class="img-accent"/>
+            </a>
+          </div>
         </div>
       </div>
+    </section>
+
+
+    <div id="container" style="height: 100%">
+      <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+      <h2 style="font-size: x-large; font-weight: normal; color: #404040">Bienvenue</h2>
+      <span>Dans</span><br/>
+      <h2 style="color: #63676b; font-family: 'Century Schoolbook L'"><strong>P</strong>latfòm <strong>E</strong>dikasyon
+        <strong>K</strong>liyan</h2>
+      <ion-slides #slides pager="true" color="warn">
+        <ion-slide>
+          <h4 style="color: black; font-size: 14px; width: 80%; font-weight: lighter"><br/>
+            Cette application, developpée par <a href="https://www.facebook.com/Cippress-100117798061997"
+                                                 style="font-weight: bold; font-size: 12px; color: dimgray;">CIPPRESS</a>,
+            est dediée à
+            l'éducation sur
+            la prévention et le traitement du VIH, ainsi que la lutte contre la stigmatisation et
+            la discrimination des personnes infectées ou affectées.
+          </h4>
+        </ion-slide>
+        <ion-slide>
+          <section style="width: 100%;">
+            <h4 class="example-label">Démarer avec</h4>
+            <div class="example-button-row">
+              <a class="btnhome" mat-raised-button color="primary" (click)="openPage()">Patient</a>
+              <h6 class="social-login-title">OR</h6>
+              <a class="btnhome1" mat-raised-button color="primary" (click)="openParentPage()">Parent patient
+              </a>
+            </div>
+            <br/><br/><br/>
+          </section>
+        </ion-slide>
+      </ion-slides>
+      <ion-button class="btnSlides" color="warn" (click)="slides.slidePrev()">
+        <ion-icon name="chevron-back"></ion-icon>
+      </ion-button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <ion-button class="btnSlides" color="warn" (click)="slides.slideNext()">
+        <ion-icon name="chevron-forward"></ion-icon>
+      </ion-button>
     </div>
-  </section>
-
-
-  <div id="container">
-    <br/><br/><br/><br/><br/><br/><br/><br/><br/>
-    <h2 style="font-size: x-large">Bienvenue</h2>
-    <span>Dans</span><br/>
-    <h2 style="color: #63676b; font-family: 'Century Schoolbook L'"><strong>P</strong>latfòm <strong>E</strong>dikasyon <strong>K</strong>liyan</h2>
-    <ion-slides pager>
-      <ion-slide>
-        <h4 style="color: #4d4d4d; font-size: 15px; width: 80%; text-align: center"><br/>
-          Cette application, developpée par <a href="https://www.facebook.com/Cippress-100117798061997" style="font-weight: bold; font-size: 13px;">CIPPRESS</a>, est dediée à l'éducation sur
-          la prévention et  le traitement du VIH, ainsi que la lutte contre la stigmatisation et
-          la discrimination contre les personnes qui sont infectées ou affectées.
-        </h4>
-      </ion-slide>
-      <ion-slide>
-        <section style="width: 100%;">
-          <h4 class="example-label">Démarer avec</h4>
-          <div class="example-button-row">
-            <button class="btnhome" mat-raised-button color="primary" (click)="openPage()">Patient</button>
-            <h6 class="social-login-title">OR</h6>
-            <button class="btnhome" mat-raised-button color="primary" (click)="openParentPage()">Parent patient</button>
-          </div>
-          <br/><br/><br/>
-        </section>
-      </ion-slide>
-    </ion-slides>
   </div>
-
 </ion-content>
-<ion-footer class="footer">
-  <p align="center">Copyright &copy; 2022 <span class="spn-footer">CHARESS dev.</span></p>
-</ion-footer>
+

@@ -32,6 +32,9 @@ export class DashboardPage implements OnInit {
 
   openDialog(title) {
     const dialogRef = this.dialog.open(DialogCalculateComponent , {
+      width: '80%',
+      disableClose: true,
+      closeOnNavigation: false,
       data: title
     });
     dialogRef.afterClosed().subscribe(result => {
@@ -57,11 +60,17 @@ export class DashboardPage implements OnInit {
         this.db.fetchCalculates().subscribe(item => {
           this.Data = item;
         });
+      }
+    });
+
+    this.db.dbState().subscribe((res) => {
+      if (res) {
         this.db.fetchOrdonnances().subscribe(item => {
           this.Data1 = item;
         });
       }
     });
+
   }
 
 

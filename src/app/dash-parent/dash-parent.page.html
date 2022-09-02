@@ -1,31 +1,41 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title style="font-size: 18px; float: right; margin-top: 11px">{{title.params.title}}</ion-title>
-    <button class="btn-goback" mat-icon-button color="primary" (click)="goBack()">
-      <mat-icon>keyboard_backspace</mat-icon>
-    </button>
-  </ion-toolbar>
-</ion-header>
+<ion-content color="warn" style="height: 100%; width: 100%;">
+  <div color="warn" style="width: 100%; height: 100%; background: url('../../assets/fond/Fond-de-page-html-vertical.png');
+        background-size: 100% 100%; background-repeat: no-repeat;">
+    <ion-header>
+      <ion-toolbar>
+        <ion-title style="font-size: 18px; float: right; margin-top: 15px">{{title.params.title}}</ion-title>
+        <button class="btn-goback" mat-icon-button color="primary" (click)="goBack()">
+          <ion-icon name="arrow-back-outline" style="font-size: x-large; margin-top: -3px;"></ion-icon>
+        </button>
+      </ion-toolbar>
+    </ion-header>
 
-<ion-content>
-  <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
-  <ion-list style="padding-left: -20px; width: 96%">
-    <ion-item *ngFor="let item of items | paginate: { itemsPerPage: 8, currentPage: cp }" class="listMargin">
-      <mat-accordion style="box-shadow: none; border: none; width: 100%;">
-        <mat-expansion-panel hideToggle (opened)="panelOpenState = true"
-                             (closed)="panelOpenState = false">
-          <mat-expansion-panel-header style="">
-            <mat-panel-title style="margin-top: 15px;">
-              <h4 class="itemTitle">{{item.title}}</h4>
-            </mat-panel-title>
+    <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
 
-          </mat-expansion-panel-header>
-          <h5 class="subtitleLI" *ngFor="let subT of item.subtitle" (click)="openPage(subT.name, item)">
-            <mat-icon class="iconSub" style="font-size: 12px;">question_answer</mat-icon>
-            {{subT.name}}</h5>
-        </mat-expansion-panel>
-      </mat-accordion>
-    </ion-item>
-  </ion-list>
-  <pagination-controls (pageChange)="cp = $event" class="pagin"></pagination-controls>
+    <ion-accordion-group color="warn"
+                         style="margin: 7px; box-shadow: 0px 25px 20px -40px; border-radius: 15px; border: 1px solid #f2f2f2"
+                         *ngFor="let item of items | paginate: { itemsPerPage: 7, currentPage: cp }">
+
+      <ion-accordion value="first" style="border-radius: 15px;">
+        <ion-item slot="header" color="warn"
+                  style="background: #ffffff; border-radius: 15px 15px 0px 0px; border-bottom: 1px solid #f2f2f2; font-size: 15px; color: #9f3954">
+          <ion-label>{{item.title}}</ion-label>
+        </ion-item>
+        <h5 *ngFor="let subT of item.subtitle; let i=index" class="subtitleLI" slot="content"
+            (click)="openPage(subT.name, item)">
+          <ion-icon class="iconSub" style="font-size: 12px; margin-right: 5px" name="navigate"></ion-icon>
+          {{(i + 1) + '. ' + subT.name}}
+        </h5>
+      </ion-accordion>
+
+    </ion-accordion-group>
+
+    <pagination-controls color="warn" (pageChange)="cp = $event"
+                         class="pagination"></pagination-controls>
+    <br/><br/>
+
+
+
+  </div>
 </ion-content>
+

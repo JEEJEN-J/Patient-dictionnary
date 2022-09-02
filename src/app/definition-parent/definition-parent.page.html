@@ -1,51 +1,58 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title style="font-size: small; float: right; margin-top: 17px">{{content.params.data.title}}</ion-title>
-    <button class="btn-goback" mat-icon-button color="primary" (click)="goBack()">
-      <mat-icon>keyboard_backspace</mat-icon>
-    </button>
-  </ion-toolbar>
-</ion-header>
+<ion-content style="width: 100%; height: 100%;">
+  <div style="background-color: #f8f8f8;  width: 100%; height: 100%; background: linear-gradient(to right, #f2f2f2 , #f8f8f8);">
+    <ion-header>
+      <ion-toolbar>
+        <ion-title style="font-size: small; float: right; margin-top: 17px">{{content.params.data.title}}</ion-title>
+        <button class="btn-goback" mat-icon-button color="primary" (click)="goBack()">
+          <ion-icon name="arrow-back-outline" style="font-size: x-large; margin-top: -3px;"></ion-icon>
+        </button>
+      </ion-toolbar>
+    </ion-header>
 
-<ion-content>
-  <div style="float: right;">
-    <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
-      <mat-icon>more_vert</mat-icon>
-    </button>
-    <mat-menu #menu="matMenu">
-      <h4 style="margin-left: 15px; font-size: 13px;">{{content.params.data.title}}</h4>
-      <button mat-menu-item style="font-size: 12px" *ngFor="let menuItem of content.params.data.subtitle" (click)="onChange(content, menuItem.name)">
-        <mat-icon style="font-size: small">dialpad</mat-icon>
-        <span>{{menuItem.name}}</span>
+    <div style="float: right;">
+      <button style="margin-right: 5px; margin-top: 3px" mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+        <ion-icon name="ellipsis-vertical-circle-outline"
+                  style="font-size: xx-large; color: #fff; background: linear-gradient(to right, #e15177 , #f0be6d); border-radius: 50px;"></ion-icon>
       </button>
-    </mat-menu>
-  </div>
+      <mat-menu #menu="matMenu">
+        <h4 style="margin-left: 15px; font-size: 13px;">{{content.params.data.title}}</h4>
+        <button mat-menu-item style="font-size: 12px" *ngFor="let menuItem of content.params.data.subtitle"
+                (click)="onChange(content, menuItem.name)">
+          <ion-icon name="arrow-redo-circle-outline"
+                    style="font-size: large; color: #e15177; margin-right: 10px; margin-top: 10px;"></ion-icon>
+          <span>{{menuItem.name}}</span>
+        </button>
+      </mat-menu>
+    </div>
 
-  <h5 style="margin: 15px 5px 10px 20px; color: steelblue; font-size: 15px;"><u>{{content.params.header}}</u></h5>
+    <h5 style="margin: 15px 5px 10px 20px; color: #9f3954; font-size: 16px;"><u>{{content.params.header}}</u></h5>
 
-  <ion-card style="border-radius: 0px 0px 30px 30px">
-    <ion-item>
-      <ion-avatar item-start>
-        <img src="assets/images/VIH.png">
-      </ion-avatar>
-      <h4 style="float: left; margin-left: 5px">VIH</h4>
-      <p style="font-size: x-small; float: left; margin-top: 25px; margin-left: -20px; color: gray">(virus de l’immunodeficience humaine)</p>
-    </ion-item>
+    <ion-card style="border-radius: 1px 1px 30px 30px; box-shadow: 0px 10px 30px -20px; border: 1px solid #f5f5f5">
+      <ion-item>
+        <ion-avatar item-start>
+          <img src="assets/images/VIH.png">
+        </ion-avatar>
+        <h4 style="float: left; margin-left: 5px">VIH</h4>
+        <p style="font-size: x-small; float: left; margin-top: 25px; margin-left: -20px; color: gray">(virus de
+          l’immunodeficience humaine)</p>
+      </ion-item>
 
-    <ion-card-content>
-      <p style="text-align: justify; font-size: 15px; margin: -1px; padding: 0px;"
-         *ngFor="let desciption of content.params.data.subtitle">
+      <ion-card-content>
+        <p style="text-align: justify; font-size: 15px; margin: -1px; padding: 0px;"
+           *ngFor="let desciption of content.params.data.subtitle">
         <span *ngIf="desciption.name === content.params.header">
           <span *ngFor="let image of desciption.images" style="margin-left: 12%;">
             <img [src]="image.name" style="height: 90px;">
           </span>
         </span>
-        <span *ngIf="desciption.name === content.params.header"><br/><br/>
-          {{desciption.description}}
+          <span *ngIf="desciption.name === content.params.header"><br/><br/>
+            {{desciption.description}}
         </span>
-      </p>
-    </ion-card-content>
-  </ion-card>
+        </p>
+      </ion-card-content>
+    </ion-card>
+  </div>
+
 </ion-content>
 
 

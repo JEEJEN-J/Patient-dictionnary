@@ -7,9 +7,9 @@ import {DbService} from "../../services/db.service";
 import {MAT_DIALOG_DATA} from "@angular/material/dialog";
 
 @Component({
-  selector: 'app-dialog-ordonn',
-  templateUrl: './dialog-ordonn.component.html',
-  styleUrls: ['./dialog-ordonn.component.scss'],
+  selector: 'app-dialog-ordonn' ,
+  templateUrl: './dialog-ordonn.component.html' ,
+  styleUrls: ['./dialog-ordonn.component.scss'] ,
   providers: [DatePipe]
 })
 export class DialogOrdonnComponent implements OnInit {
@@ -24,7 +24,7 @@ export class DialogOrdonnComponent implements OnInit {
               public formBuilder: FormBuilder ,
               private toast: ToastController ,
               private db: DbService ,
-              private datePipe: DatePipe,
+              private datePipe: DatePipe ,
               @Inject(MAT_DIALOG_DATA) public data: any) {
   }
 
@@ -50,17 +50,17 @@ export class DialogOrdonnComponent implements OnInit {
   }
 
   storeData() {
-    let lastDate = this.datePipe.transform(this.date.value , 'dd-MM-yyyy HH:mm:ss' , null , 'en').toString();
+    let lastDate = this.datePipe.transform(this.date.value , 'yyyy-MM-dd' , null , 'en').toString();
 
     let nextDateCurrent = new Date(this.date.value);
     nextDateCurrent.setDate(nextDateCurrent.getDate() + this.mainForm.getRawValue().valueOrdn);
-    let nextDate = this.datePipe.transform(nextDateCurrent , 'dd-MM-yyyy HH:mm:ss' , null , 'en').toString();
+    let nextDate = this.datePipe.transform(nextDateCurrent , 'yyyy-MM-dd' , null , 'en').toString();
 
-    this.db.updateOrdonnance(this.data.id, this.mainForm.getRawValue().valueOrdn, lastDate, nextDate).then(async (res) => {
+    this.db.updateOrdonnance(this.data.id , this.mainForm.getRawValue().valueOrdn , lastDate , nextDate).then(async (res) => {
       this.mainForm.reset();
       let toast = await this.toast.create({
         message: 'Update successful' ,
-        duration: 1500,
+        duration: 1500 ,
         color: "primary"
       });
       toast.present();

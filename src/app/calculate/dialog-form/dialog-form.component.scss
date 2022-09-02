@@ -11,3 +11,22 @@
 mat-form-field {
   margin-right: 12px;
 }
+
+.btnhome1 {
+  background: linear-gradient(to right, #e15177 , #f0be6d);
+  border-radius: 20px;
+  font-weight: lighter;
+  box-shadow: none;
+}
+
+.btnhome {
+  background-color: #eeeeee;
+  //background-image: linear-gradient(to right, #d54d71 , #e5c85b);
+  border-radius: 20px;
+  color: #404040;
+  font-weight: lighter;
+  box-shadow: none;
+}
+.btnhome1:hover {
+  background-color: #dddddd;
+}

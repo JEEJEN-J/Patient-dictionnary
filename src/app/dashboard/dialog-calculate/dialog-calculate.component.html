@@ -1,7 +1,5 @@
 <h2 mat-dialog-title align="center">{{title}}</h2>
 <mat-dialog-content class="mat-typography">
-  <h3>Develop across all platforms</h3>
-
   <form class="example-form" [formGroup]="mainForm">
 
     <section class="example-section" *ngIf="title=='Charge virale'">
@@ -14,7 +12,8 @@
           Indétectable
         </mat-radio-button>
       </mat-radio-group>
-    </section><br/>
+    </section>
+    <br/>
 
     <mat-form-field class="example-full-width" appearance="fill" *ngIf="title=='Charge virale'">
       <mat-label>Nombre de Jours</mat-label>
@@ -39,8 +38,8 @@
 
 <mat-dialog-actions align="end">
   <div class="example-button-row">
-    <button mat-raised-button color="warn" [mat-dialog-close]="true">Annuler</button>
-    <button mat-raised-button color="primary" [disabled]="!mainForm.valid" [mat-dialog-close]="true" type="submit"
+    <button class="btnhome" mat-raised-button color="warn" [mat-dialog-close]="true">Annuler</button>&nbsp;&nbsp;&nbsp;
+    <button class="btnhome1" mat-raised-button color="primary" [disabled]="!mainForm.valid" [mat-dialog-close]="true" type="submit"
             (click)="storeData()">Valider
     </button>
     <br/>
