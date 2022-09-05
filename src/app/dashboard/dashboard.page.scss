@@ -56,7 +56,6 @@
 }
 
 
-
 ::ng-deep ul > li:not(.active) > a {
   background: linear-gradient(to right, #e15177, #f0be6d) !important;
   //background-color: #b64161 !important;
@@ -82,4 +81,41 @@
 
 :host ::ng-deep .track circle {
   stroke-opacity: 0.3 !important;
+}
+
+.btn {
+  color: #9f3954;
+  border-radius: 30px;
+  background-color: #eeeeee;
+  margin: 5px;
+}
+
+.chargv {
+  color: #9f3954;
+  border-radius: 30px;
+  background-color: #eeeeee;
+}
+
+.ordonn {
+  color: #9f3954;
+  border-radius: 30px;
+  background-color: #eeeeee;
+}
+
+.header {
+  margin-bottom: 0px;
+  margin-top: 0px;
+  height: 16%;
+  background: url('../../assets/fond/header.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.example-button-row {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  //border: 2px solid yellow;
+  height: 100%;
 }

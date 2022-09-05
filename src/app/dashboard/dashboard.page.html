@@ -11,41 +11,26 @@
       </ion-toolbar>
     </ion-header>
 
-    <section>
-      <div class="example-button-row" style="float: right; margin: 10px">
-        <button mat-mini-fab color="primary" style="background: linear-gradient(to right, #e15177 , #f0be6d);"
-                [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
-          <ion-icon style="font-size: 25px; margin-top: -2px;" name="menu"></ion-icon>
+
+    <div align="center" class="header">
+      <div align="center" class="example-button-row">
+        <button class="btn" *ngIf="Data.length==0" mat-flat-button color="primary"
+                (click)="openDialog('Charge virale')">Charge virale
+        </button>
+        <button class="btn" *ngIf="Data.length>0" mat-flat-button color="primary"
+                (click)="openCalculate('Charge virale')">Charge virale
+        </button>
+
+        <button class="btn" mat-flat-button color="primary"><a href="https://www.mesi.ht/">Statistique</a></button>
+
+        <button class="btn" *ngIf="Data1.length==0" mat-flat-button color="warn" (click)="openDialog('Ordonnance')">
+          Ordonnance
+        </button>
+        <button class="btn" *ngIf="Data1.length>0" mat-flat-button color="warn" (click)="openOrdonnance('Ordonnance')">
+          Ordonnance
         </button>
       </div>
-
-      <mat-menu #menu="matMenu">
-        <h4 style="margin-left: 15px; font-size: 12px;">Others actions</h4>
-
-        <button *ngIf="Data.length==0" mat-menu-item style="font-size: 13px" (click)="openDialog('Charge virale')">
-          <ion-icon style="font-size: medium; color: #e15177; margin-right: 10px"
-                    name="arrow-redo-circle-outline"></ion-icon>
-          <span>Charge virale</span>
-        </button>
-        <button *ngIf="Data.length>0" mat-menu-item style="font-size: 13px" (click)="openCalculate('Charge virale')">
-          <ion-icon style="font-size: medium; color: #e15177; margin-right: 10px"
-                    name="arrow-redo-circle-outline"></ion-icon>
-          <span>Charge virale</span>
-        </button>
-
-        <button *ngIf="Data1.length==0" mat-menu-item style="font-size: 13px" (click)="openDialog('Ordonnance')">
-          <ion-icon style="font-size: medium; color: #e15177; margin-right: 10px"
-                    name="arrow-redo-circle-outline"></ion-icon>
-          <span>Ordonnance</span>
-        </button>
-        <button *ngIf="Data1.length>0" mat-menu-item style="font-size: 13px" (click)="openOrdonnance('Ordonnance')">
-          <ion-icon style="font-size: medium; color: #e15177; margin-right: 10px"
-                    name="arrow-redo-circle-outline"></ion-icon>
-          <span>Ordonnance</span>
-        </button>
-
-      </mat-menu>
-    </section>
+    </div>
 
 
     <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
@@ -56,7 +41,7 @@
 
       <ion-accordion value="first" style="border-radius: 15px;">
         <ion-item slot="header" color="warn"
-                  style="background: #c50d2f; border-radius: 15px 15px 0px 0px; font-size: 15px; color: #ffffff">
+                  style="background: #ffffff; border-radius: 15px 15px 0px 0px; border-bottom: 1px solid #f2f2f2; font-size: 15px; color: #9f3954">
           <ion-label>{{item.title}}</ion-label>
         </ion-item>
         <h5 *ngFor="let subT of item.subtitle; let i=index" class="subtitleLI" slot="content"
@@ -72,17 +57,17 @@
                          class="pagination"></pagination-controls>
     <br/><br/>
 
-<!--    <div align="center" style="border: 1px solid red">-->
-<!--      <mat-spinner align="center" style="position: relative; zoom: 1.1" class="track"-->
-<!--                   mode="determinate" value="100" diameter="200">-->
-<!--      </mat-spinner>-->
-<!--      <mat-spinner color="red" style="position: relative; margin-left: 33.33%; color: red"-->
-<!--                   mode="determinate"-->
-<!--                   diameter="200"-->
-<!--                   value="90">-->
+    <!--    <div align="center" style="border: 1px solid red">-->
+    <!--      <mat-spinner align="center" style="position: relative; zoom: 1.1" class="track"-->
+    <!--                   mode="determinate" value="100" diameter="200">-->
+    <!--      </mat-spinner>-->
+    <!--      <mat-spinner color="red" style="position: relative; margin-left: 33.33%; color: red"-->
+    <!--                   mode="determinate"-->
+    <!--                   diameter="200"-->
+    <!--                   value="90">-->
 
-<!--      </mat-spinner>-->
-<!--    </div>-->
+    <!--      </mat-spinner>-->
+    <!--    </div>-->
 
 
   </div>
