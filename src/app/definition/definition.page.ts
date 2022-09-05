@@ -1,6 +1,7 @@
 import {Component , OnInit} from '@angular/core';
 import {NavController} from "@ionic/angular";
 import {ActivatedRoute} from "@angular/router";
+import {EmbedVideoService} from "ngx-embed-video";
 
 @Component({
   selector: 'app-definition' ,
@@ -11,8 +12,13 @@ export class DefinitionPage implements OnInit {
 
   content: any;
   dashboard: any;
+  public embedVideo: any;
+  link='https://youtu.be/Pg83WeGB2CQ';
 
-  constructor(public navController: NavController , private activatedRoute: ActivatedRoute) {
+
+  constructor(public navController: NavController ,
+              private activatedRoute: ActivatedRoute,
+              private embedService: EmbedVideoService) {
   }
 
 
@@ -21,6 +27,7 @@ export class DefinitionPage implements OnInit {
       this.content = params;
       console.log("content : " , this.content);
     })
+    this.getPropertyById();
   }
 
 
@@ -30,6 +37,10 @@ export class DefinitionPage implements OnInit {
     this.content.params = null;
     this.content.params = obj;
     console.log("changed : " , this.content);
+  }
+
+  public getPropertyById() {
+      this.embedVideo = this.embedService.embed(this.link);
   }
 
 

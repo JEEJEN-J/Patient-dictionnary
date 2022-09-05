@@ -10,6 +10,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {HttpClientModule} from "@angular/common/http";
 import {SQLite} from "@ionic-native/sqlite/ngx";
 import {SQLitePorter} from "@ionic-native/sqlite-porter/ngx";
+import {EmbedVideo} from "ngx-embed-video";
 
 @NgModule({
   declarations: [AppComponent] ,
@@ -19,7 +20,8 @@ import {SQLitePorter} from "@ionic-native/sqlite-porter/ngx";
     IonicModule.forRoot() ,
     AppRoutingModule ,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    EmbedVideo.forRoot()
   ] ,
   providers: [
     SQLite,
