@@ -13,11 +13,11 @@ export class DefinitionPage implements OnInit {
   content: any;
   dashboard: any;
   public embedVideo: any;
-  link='https://youtu.be/Pg83WeGB2CQ';
+  link = 'https://youtu.be/Pg83WeGB2CQ';
 
 
   constructor(public navController: NavController ,
-              private activatedRoute: ActivatedRoute,
+              private activatedRoute: ActivatedRoute ,
               private embedService: EmbedVideoService) {
   }
 
@@ -27,7 +27,12 @@ export class DefinitionPage implements OnInit {
       this.content = params;
       console.log("content : " , this.content);
     })
-    this.getPropertyById();
+    this.getPropertyById()
+
+    this.embedService.embed(this.link, {
+      query: { portrait: 0, color: '333' },
+      attr: { width: 600, height: 500 }
+    });
   }
 
 
@@ -37,10 +42,16 @@ export class DefinitionPage implements OnInit {
     this.content.params = null;
     this.content.params = obj;
     console.log("changed : " , this.content);
+    this.getPropertyById();
   }
 
   public getPropertyById() {
-      this.embedVideo = this.embedService.embed(this.link);
+    this.content.params.data.subtitle.forEach(datas => {
+      if (datas.name == this.content.params.header)
+        this.link = datas.video;
+        console.log('video : ', datas.video)
+    })
+    this.embedVideo = this.embedService.embed(this.link);
   }
 
 
