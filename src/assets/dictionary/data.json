@@ -191,9 +191,15 @@
     "subtitle": [
       {
         "id": 1,
-        "name": "Pourquoi dois-je  prendre mes médicaments comme préscrit ?",
+        "name": "Pourquoi prendre les ARVs tel que  prescrits ?",
         "description": "Le succès du traitement dépend de l'adhérence du client. Si vous êtes pas adhérent c'est à dire vous prenez pas les ARV tel que indiqué par le prestataire, le virus va répliquer,la charge virale va augmenter donc la maladie va progresser. Le virus peut devenir résistant aux ARV à cause de votre mauvaise adhérence et vous pourrez mourir d'infections opportunistes.",
-        "subtitle1": []
+        "subtitle1": [],
+        "video": "https://youtu.be/gNMLFJxp844",
+        "images": [
+          {
+            "name": "assets/images/prescrit.png"
+          }
+        ]
       }
     ]
   },
@@ -204,9 +210,15 @@
     "subtitle": [
       {
         "id": 1,
-        "name": "Endetektab = Entransmisib",
+        "name": "Indetectable = Intransmisible",
         "description": "La quantite de virus est si basse que la méthode utilisée ne permet pas de le détecter. Cela veut dire que votre traitement marche tres bien mais vous n êtes pas guéri parce que le virus est toujours là. La chargevirale peut augmenter et devenir détectable si vous prenez pas les ARV. Quand vous êtes indétectable, vous pouvez pas transmettre le virus dans un rapport sexuel non protégé ou à votre enfant si vous êtes enceinte.L'objectif du traitement est de rendre le virus indetectable. Prenez bien vos ARV pour tre indétectable.",
-        "subtitle1": []
+        "subtitle1": [],
+        "video": "https://youtu.be/gNMLFJxp844",
+        "images": [
+          {
+            "name": "assets/images/EE.png"
+          }
+        ]
       }
     ]
   },
@@ -219,13 +231,24 @@
         "id": 1,
         "name": "Prophylaxis anti-TB",
         "description": "La TB est l'infection opportuniste la plus fréquente chez les PVVIHs et grande cause de décès. Au moment de votre diagnostic du VIH et pendant votre enrolement si vous presentez pas de signes faisant penser à la TB tels que, fièvre, Toux, perte de poids , sueurs profuses nocturnes, ganglions cervicaux et axillaires, le prestataire vous prescrira un traitement preventif a la TB constitue de INH B6 pour 6 mois ou INH associé à la Rifapentine et B6 pour 4 semaines à raison d'une dose par jour ou 12 semaines à raison d'une dose par semaine.",
-        "subtitle1": []
+        "subtitle1": [],
+        "video": "https://youtu.be/gNMLFJxp844",
+        "images": [
+          {
+            "name": "assets/images/prophylaxis.png"
+          }
+        ]
       },
       {
         "id": 2,
         "name": "Dois-je prendre d'autres médicaments avec les ARVs pour le VIH",
         "description": "Le VIH affecte votre systeme de défense , c est pourquoi vous prenez les ARV pour bloquer la réplication virale et restaurer votre système immunitaire. Pendant que vous prenez les ARV, vous devez faire la prévention des infections opportunistes.Les médicaments les plus utilisés sont TMS pour la prévention de plusieurs IO et INH+Rifapentine B6 pour la prévention de laTB.",
-        "subtitle1": []
+        "subtitle1": [],
+        "images": [
+          {
+            "name": "assets/images/vihAffecte.png"
+          }
+        ]
       },
       {
         "id": 3,
@@ -291,7 +314,7 @@
   {
     "id": 13,
     "categorie": "Client",
-    "title": "Suivi psychosocial",
+    "title": "Suivi psycho-social",
     "subtitle": [
       {
         "id": 1,
