@@ -46,7 +46,6 @@ export class DialogCalculateComponent implements OnInit {
     if (this.title == 'Charge virale') {
       this.mainForm = this.formBuilder.group({
         status: ['' , Validators.required] ,
-        numberOfDays: ['' , Validators.required] ,
         date: ['']
       });
     } else if (this.title == 'Ordonnance') {
@@ -87,7 +86,6 @@ export class DialogCalculateComponent implements OnInit {
 
       this.db.addCalculate(
         this.mainForm.getRawValue().status ,
-        this.mainForm.getRawValue().numberOfDays ,
         lastDate ,
         nextDate
       ).then(async (res) => {

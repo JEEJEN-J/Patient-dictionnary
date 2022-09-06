@@ -5,7 +5,7 @@
   <form class="example-form" [formGroup]="mainForm">
 
     <section class="example-section">
-      <label class="example-margin"><strong>Status :</strong></label><br/><br/>
+      <label class="example-margin"><strong>Resultat charge virale :</strong></label><br/><br/>
       <mat-radio-group formControlName="status">
         <mat-radio-button class="example-margin" value="Détectable">
           Détectable
@@ -15,11 +15,6 @@
         </mat-radio-button>
       </mat-radio-group>
     </section><br/>
-
-    <mat-form-field class="example-full-width" appearance="fill">
-      <mat-label>Nombre de Jours</mat-label>
-      <input matInput placeholder="" type="number" min="1" formControlName="numberOfDays">
-    </mat-form-field>
 
     <mat-form-field appearance="fill" style="width: 100%;">
       <mat-label>Derniere date charge virale</mat-label>

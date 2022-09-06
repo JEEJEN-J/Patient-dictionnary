@@ -3,7 +3,7 @@
   <form class="example-form" [formGroup]="mainForm">
 
     <section class="example-section" *ngIf="title=='Charge virale'">
-      <label class="example-margin"><strong>Status :</strong></label><br/><br/>
+      <label class="example-margin"><strong>Resultat charge virale : </strong></label><br/><br/>
       <mat-radio-group formControlName="status">
         <mat-radio-button class="example-margin" value="Détectable">
           Détectable
@@ -15,14 +15,9 @@
     </section>
     <br/>
 
-    <mat-form-field class="example-full-width" appearance="fill" *ngIf="title=='Charge virale'">
-      <mat-label>Nombre de Jours</mat-label>
-      <input matInput placeholder="" type="number" min="1" formControlName="numberOfDays">
-    </mat-form-field>
-
     <mat-form-field class="example-full-width" appearance="fill" *ngIf="title=='Ordonnance'">
-      <mat-label>Nombre de Jours</mat-label>
-      <input matInput placeholder="Valeur ordonnance" type="number" min="1" formControlName="valueOrdn">
+      <mat-label>Nombre de jour de la charge virale précédente</mat-label>
+      <input matInput placeholder="Nombre de jour" type="number" min="1" formControlName="valueOrdn">
     </mat-form-field>
 
     <mat-form-field appearance="fill" style="width: 100%;">

@@ -44,7 +44,6 @@ export class DialogFormComponent implements OnInit {
     });
     this.mainForm = this.formBuilder.group({
       status: [this.data.status , Validators.required] ,
-      numberOfDays: [this.data.numberOfDays , Validators.required] ,
       date: [this.date]
     });
   }
@@ -70,7 +69,7 @@ export class DialogFormComponent implements OnInit {
 
     let nextDate = this.datePipe.transform(nextDateCurrent , 'yyyy-MM-dd' , null , 'en').toString();
 
-    this.db.updateCalculate(this.data.id , this.mainForm.getRawValue().status , this.mainForm.getRawValue().numberOfDays , lastDate , nextDate).then(async (res) => {
+    this.db.updateCalculate(this.data.id , this.mainForm.getRawValue().status, lastDate , nextDate).then(async (res) => {
       this.mainForm.reset();
       let toast = await this.toast.create({
         message: 'Calculate updated' ,

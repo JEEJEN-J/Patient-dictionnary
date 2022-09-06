@@ -47,6 +47,7 @@ export class CalculatePage implements OnInit {
 
   openDialog(item) {
     const dialogRef = this.dialog.open(DialogFormComponent , {
+      width: '80%',
       disableClose: true ,
       closeOnNavigation: false ,
       data: item
@@ -81,9 +82,9 @@ export class CalculatePage implements OnInit {
           const difference = this.dateDiffInDays(date , b);
           this.remainingDays = difference;
 
-          if ((this.data[0].status == 'Indétectable') || this.data[0].numberOfDays < 1000)
+          if ((this.data[0].status == 'Indétectable'))
             this.realValue = Math.round(((difference) / 90) * 100);
-          else if ((this.data[0].status == 'Détectable') || this.data[0].numberOfDays >= 1000)
+          else if ((this.data[0].status == 'Détectable'))
             this.realValue = Math.round(((difference) / 365) * 100);
         });
       }

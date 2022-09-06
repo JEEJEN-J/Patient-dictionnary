@@ -1,59 +1,3 @@
-<!--<ion-content>-->
-<!--  <div class="example-button-row">-->
-<!--    <button routerLinkActive="active" style="float: right; margin: 10px; background-color: #eee;" (click)="goBack()" mat-icon-button class="example-icon"-->
-<!--            aria-label="Example icon-button with share icon">-->
-<!--      <ion-icon style="font-size: xx-large; margin-top: -3px; color: red" name="close-outline"></ion-icon>-->
-<!--    </button>-->
-<!--  </div>-->
-
-<!--  <br><br/><br/><br/><br/>-->
-
-<!--  <mat-card align="center" style="box-shadow: none;">-->
-<!--    <mat-card-content>-->
-<!--      <h2 class="example-h2" align="center"><u>Marge de progression Ordonnance medicale</u></h2><br/>-->
-<!--    </mat-card-content>-->
-
-<!--    <mat-card-content>-->
-<!--      <p class="example-h2" style="font-size: 16px; margin-left: auto; margin-right: auto;" align="center">Pourcentage de nombre de jour restant</p><br/>-->
-<!--      <div style="width: 100px; margin-left: auto; margin-right: auto">-->
-<!--        <mat-progress-spinner color="primary"-->
-<!--                              [mode]="mode"-->
-<!--                              [value]="realValue"-->
-<!--                              aria-label="Rating">-->
-<!--        </mat-progress-spinner>-->
-<!--        <div style="position:relative; top: -62px; left: auto; right: auto;"><h3 style="font-size: 25px; width: 100%;" align="center">{{realValue}}%</h3></div>-->
-
-<!--      </div>-->
-<!--    </mat-card-content>-->
-
-<!--    <ion-list>-->
-<!--      <ion-list-header>-->
-<!--        Informations essentielles-->
-<!--      </ion-list-header>-->
-<!--      <ion-item lines="inset" *ngFor="let data of data">-->
-<!--        <ion-label>-->
-<!--          <h4>{{remainingDays}} jour restant</h4>-->
-<!--          <p>Valeur : {{data.valueOrdn}}</p>-->
-<!--          <p>Dernière date : {{data.lastDate}}</p>-->
-<!--          <p>Prochaine date : {{data.nextDate}}</p>-->
-<!--        </ion-label>-->
-
-<!--        <div class="item-note" item-end>-->
-<!--          <ion-icon name="create" color="primary" style="zoom:2.0; margin-right: 10px;" (click)="openDialog(data)"></ion-icon>-->
-<!--        </div>-->
-
-<!--        <div>-->
-<!--          <h3>{{days}} <span style="font-size: x-small; font-style: italic">Days</span></h3>-->
-<!--          <h3>{{hours}} <span style="font-size: x-small; font-style: italic">Hours</span></h3>-->
-<!--          <h3>{{minutes}} <span style="font-size: x-small; font-style: italic">Minutes</span></h3>-->
-<!--          <h3>{{seconds}} <span style="font-size: x-small; font-style: italic">Seconds</span></h3>-->
-<!--        </div>-->
-<!--      </ion-item>-->
-<!--    </ion-list>-->
-<!--  </mat-card>-->
-
-<!--</ion-content>-->
-
 
 <ion-content style="width: 100%; height: 100%;">
   <div style="background-color: #f2f2f2; width: 100%; height: 100%;">
@@ -108,10 +52,10 @@
           </div>
 
           <div>
-            <h3>{{days}} <span style="font-size: x-small; font-style: italic">Days</span></h3>
-            <h3>{{hours}} <span style="font-size: x-small; font-style: italic">Hours</span></h3>
-            <h3>{{minutes}} <span style="font-size: x-small; font-style: italic">Minutes</span></h3>
-            <h3>{{seconds}} <span style="font-size: x-small; font-style: italic">Seconds</span></h3>
+            <h4>{{days}} <span style="font-size: x-small; font-style: italic">Days</span></h4>
+            <h4>{{hours}} <span style="font-size: x-small; font-style: italic">Hours</span></h4>
+            <h4>{{minutes}} <span style="font-size: x-small; font-style: italic">Minutes</span></h4>
+            <h4>{{seconds}} <span style="font-size: x-small; font-style: italic">Seconds</span></h4>
           </div>
         </ion-item>
       </ion-list>

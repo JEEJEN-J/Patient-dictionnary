@@ -79,7 +79,6 @@ export class DbService {
           items.push({
             id: res.rows.item(i).id ,
             status: res.rows.item(i).status ,
-            numberOfDays: res.rows.item(i).numberOfDays ,
             lastDate: res.rows.item(i).lastDate ,
             nextDate: res.rows.item(i).nextDate
           });
@@ -117,9 +116,9 @@ export class DbService {
    *
    * @param {numberOfDays and lastDate}
    * */
-  addCalculate(status , numberOfDays , lastDate , nextDate) {
-    let data = [status , numberOfDays , lastDate , nextDate];
-    return this.storage.executeSql('INSERT INTO Calculate (status, numberOfDays, lastDate, nextDate) VALUES (?, ?, ?, ?)' , data)
+  addCalculate(status , lastDate , nextDate) {
+    let data = [status , lastDate , nextDate];
+    return this.storage.executeSql('INSERT INTO Calculate (status, lastDate, nextDate) VALUES (?, ?, ?)' , data)
       .then((res) => {
         this.getCalculates();
       });
@@ -148,7 +147,6 @@ export class DbService {
       return {
         id: res.rows.item(0).id ,
         status: res.rows.item(0).status ,
-        numberOfDays: res.rows.item(0).numberOfDays ,
         lastDate: res.rows.item(0).lastDate ,
         nextDate: res.rows.item(0).nextDate
       }
@@ -176,11 +174,10 @@ export class DbService {
    *
    * @param {id and {calculate}}
    * */
-  updateCalculate(id , status, numberOfDays , lastDate , nextDate) {
-    let data = [status, numberOfDays, lastDate , nextDate];
+  updateCalculate(id , status , lastDate , nextDate) {
+    let data = [status, lastDate , nextDate];
     return this.storage.executeSql(`UPDATE Calculate
                                     SET status       = ?,
-                                        numberOfDays = ?,
                                         lastDate     = ?,
                                         nextDate     = ?
                                     WHERE id = ${id}` , data)
