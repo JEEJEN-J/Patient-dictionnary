@@ -30,11 +30,6 @@ export class DefinitionPage implements OnInit {
       console.log("content : " , this.content);
     })
     this.getPropertyById()
-
-    this.embedService.embed(this.link , {
-      query: {portrait: 0 , color: '333'} ,
-      attr: {width: 600 , height: 500}
-    });
   }
 
 
@@ -49,11 +44,14 @@ export class DefinitionPage implements OnInit {
 
 
   public getPropertyById() {
+    this.embedVideo = null;
     this.content.params.data.subtitle.forEach(datas => {
       if (datas.name == this.content.params.header) {
         this.link = datas.video;
-        console.log('video : ' , datas.video)
-        this.embedVideo = this.embedService.embed(this.link);
+        if (this.link != null) {
+          console.log('youtube : ' , this.link)
+          this.embedVideo = this.embedService.embed(this.link);
+        }
       }
     })
   }

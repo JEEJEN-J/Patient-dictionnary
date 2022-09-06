@@ -8,7 +8,8 @@
         "id": 1,
         "name": "VIH",
         "description": "Le VIH c'est le Virus de l'immuno déficience Humaine est responsable du Syndrome de l'immuno Déficience Acquise (SIDA). être infecté au VIH ne veut pas dire avoir le SIDA.",
-        "subtitle1": []
+        "subtitle1": [],
+        "video": "https://youtu.be/gNMLFJxp844"
       },
       {
         "id": 2,
@@ -62,12 +63,6 @@
           },
           {
             "name": "assets/images/img11.png"
-          },
-          {
-            "name": "assets/images/img111.png"
-          },
-          {
-            "name": "assets/images/img1111.png"
           }
         ]
       },
@@ -213,7 +208,7 @@
         "name": "Indetectable = Intransmisible",
         "description": "La quantite de virus est si basse que la méthode utilisée ne permet pas de le détecter. Cela veut dire que votre traitement marche tres bien mais vous n êtes pas guéri parce que le virus est toujours là. La chargevirale peut augmenter et devenir détectable si vous prenez pas les ARV. Quand vous êtes indétectable, vous pouvez pas transmettre le virus dans un rapport sexuel non protégé ou à votre enfant si vous êtes enceinte.L'objectif du traitement est de rendre le virus indetectable. Prenez bien vos ARV pour tre indétectable.",
         "subtitle1": [],
-        "video": "https://youtu.be/gNMLFJxp844",
+        "video": "https://youtu.be/SzosslNBEew",
         "images": [
           {
             "name": "assets/images/EE.png"
