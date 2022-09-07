@@ -15,18 +15,19 @@
     </section>
     <br/>
 
-    <mat-form-field class="example-full-width" appearance="fill" *ngIf="title=='Ordonnance'">
-      <mat-label>Nombre de jour de la charge virale précédente</mat-label>
-      <input matInput placeholder="Nombre de jour" type="number" min="1" formControlName="valueOrdn">
-    </mat-form-field>
-
     <mat-form-field appearance="fill" style="width: 100%;">
-      <mat-label>Derniere date charge virale</mat-label>
+      <mat-label>Date de la derniere viste</mat-label>
       <input #minmaxInput matInput readonly [matDatepicker]="picker1" [max]="currentDate" [formControl]=date>
       <mat-hint>DD/MM/YYYY</mat-hint>
       <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
       <mat-datepicker #picker1></mat-datepicker>
     </mat-form-field>
+
+    <mat-form-field class="example-full-width" appearance="fill" *ngIf="title=='Ordonnance'">
+      <mat-label>Nombre de jour d'aprivisionnement </mat-label>
+      <input matInput placeholder="Nombre de jour" type="number" min="1" formControlName="valueOrdn">
+    </mat-form-field>
+
     <br/>
   </form>
 </mat-dialog-content>

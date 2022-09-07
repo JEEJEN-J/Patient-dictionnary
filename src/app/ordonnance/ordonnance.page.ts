@@ -101,7 +101,7 @@ export class OrdonnancePage implements OnInit {
     this.minutes = minutes;
     this.seconds = seconds;
 
-    if (days == 0)
+    if (seconds == 0)
       this.deleteOrdonnance();
   }
 

@@ -15,13 +15,15 @@
         "id": 2,
         "name": "SIDA",
         "description": "Le Syndrome de l'immuno Déficience Acquise (SIDA): C'est la phase critique de l'infection au VIH. Caractérisée par:  diarrhée, perte de poids marques, atteintes cutanées, atteintes neurologiques, etc.  Il arrive quand une personne ne reçoit pas d'ARVs ou n'est pas adhérente à son traitement ou bien est infectée d'une souche de VIH qui est déjà resistant au ARVs qu'elle est en train de recevoir. D'ou la nécessité d'être adhérent à son médicament et de contacter son prestataire de soins régulièrement.",
-        "subtitle1": []
+        "subtitle1": [],
+        "video": "https://youtu.be/gNMLFJxp844"
       },
       {
         "id": 3,
         "name": "ARVs",
         "description": "ARV: AntiRétroViral. Ce sont les médicaments qui sont spécifiques au type de virus comme le VIH. Ils bloquent une étape du cycle de vie du VIH.",
         "subtitle1": [],
+        "video": "https://youtu.be/gNMLFJxp844",
         "images": [
           {
             "name": "assets/images/img2.png"
@@ -211,7 +213,7 @@
         "video": "https://youtu.be/SzosslNBEew",
         "images": [
           {
-            "name": "assets/images/EE.png"
+            "name": "assets/images/EE.jpg"
           }
         ]
       }

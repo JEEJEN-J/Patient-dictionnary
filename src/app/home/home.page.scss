@@ -63,7 +63,8 @@
 .btnhome {
   width: 70%;
   font-size: 16px;
-  height: 40px;
+  height: 47px;
+  padding-top: 5px;
   //background-color: #c2285e;
   background-color: rgba(0, 0, 0, 0.6);
   border-radius: 20px;
@@ -76,12 +77,14 @@
 .btnhome1 {
   width: 70%;
   font-size: 16px;
-  height: 40px;
+  height: 47px;
+  padding-top: 5px;
   background-color: rgba(0, 0, 0, 0.6);
   //background-image: linear-gradient(to right, #d54d71 , #e5c85b);
   border-radius: 20px;
   border: 1px solid #eeeeee;
-  color: #ffffff;  font-weight: lighter;
+  color: #ffffff;
+  font-weight: lighter;
   box-shadow: none;
 }
 

@@ -15,7 +15,12 @@
         "name": "PrEP",
         "description": "En plus des  méthodes proposées dans l'ABC, si vous allez avoir des relations sexuelles dont vous doutez du risque d'attraper le VIH, PrEP est la meilleure méthode à choisir. Le comprimé facile à prendre mais il faut suivre fidèlement la prescription du prestataire.  TDF ou TAF+ FTC ou 3TC.",
         "subtitle1": [],
-        "video": "https://youtu.be/gNMLFJxp844"
+        "video": "https://youtu.be/jiFkHJViSlU",
+        "images": [
+          {
+            "name": "assets/images/prep.jpeg"
+          }
+        ]
       },
       {
         "id": 3,
@@ -194,7 +199,12 @@
         "id": 1,
         "name": "Pourquoi dois-je  prendre mes médicaments comme préscrit ?",
         "description": "Le succès du traitement dépend de l'adhérence du client. Si vous êtes pas adhérent c'est à dire vous prenez pas les ARV tel que indiqué par le prestataire, le virus va répliquer,la charge virale va augmenter donc la maladie va progresser. Le virus peut devenir résistant aux ARV à cause de votre mauvaise adhérence et vous pourrez mourir d'infections opportunistes.",
-        "subtitle1": []
+        "subtitle1": [],
+        "images": [
+          {
+            "name": "assets/images/EE.jpg"
+          }
+        ]
       }
     ]
   },

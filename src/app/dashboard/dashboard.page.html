@@ -24,29 +24,29 @@
         <button class="btn" mat-flat-button color="primary"><a style="text-decoration: none" href="https://www.mesi.ht/">Statistique</a></button>
 
         <button class="btn" *ngIf="Data1.length==0" mat-flat-button color="warn" (click)="openDialog('Ordonnance')">
-          Ordonnance
+          Reaprovisionnement
         </button>
         <button class="btn" *ngIf="Data1.length>0" mat-flat-button color="warn" (click)="openOrdonnance('Ordonnance')">
-          Ordonnance
+          Reaprovisionnement
         </button>
       </div>
     </div>
 
 
-    <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+    <ion-searchbar style="margin: 10px; width: 95.5%;" (ionInput)="getItems($event)"></ion-searchbar>
 
     <ion-accordion-group color="warn"
-                         style="margin: 7px; box-shadow: 0px 25px 20px -40px; border-radius: 15px; border: 1px solid #f2f2f2"
+                         style="margin: 15px; box-shadow: 0px 25px 20px -40px; border-radius: 15px; border: 1px solid #eeeeee"
                          *ngFor="let item of items | paginate: { itemsPerPage: 7, currentPage: cp }">
 
       <ion-accordion value="first" style="border-radius: 15px;">
         <ion-item slot="header" color="warn"
-                  style="background: #ffffff; border-radius: 15px 15px 0px 0px; border-bottom: 1px solid #f2f2f2; font-size: 15px; color: #9f3954">
+                  style="background: #ffffff; border-radius: 15px 15px 0px 0px; border-bottom: 1px solid #eeeeee; font-size: 16px; color: #9f3954">
           <ion-label>{{item.title}}</ion-label>
         </ion-item>
         <h5 *ngFor="let subT of item.subtitle; let i=index" class="subtitleLI" slot="content"
             (click)="openPage(subT.name, item)">
-          <ion-icon class="iconSub" style="font-size: 12px; margin-right: 5px" name="navigate"></ion-icon>
+          <ion-icon class="iconSub" style="font-size: 15px; margin-right: 5px" name="navigate"></ion-icon>
           {{(i + 1) + '. ' + subT.name}}
         </h5>
       </ion-accordion>
@@ -56,18 +56,6 @@
     <pagination-controls color="warn" (pageChange)="cp = $event"
                          class="pagination"></pagination-controls>
     <br/><br/>
-
-    <!--    <div align="center" style="border: 1px solid red">-->
-    <!--      <mat-spinner align="center" style="position: relative; zoom: 1.1" class="track"-->
-    <!--                   mode="determinate" value="100" diameter="200">-->
-    <!--      </mat-spinner>-->
-    <!--      <mat-spinner color="red" style="position: relative; margin-left: 33.33%; color: red"-->
-    <!--                   mode="determinate"-->
-    <!--                   diameter="200"-->
-    <!--                   value="90">-->
-
-    <!--      </mat-spinner>-->
-    <!--    </div>-->
 
 
   </div>
