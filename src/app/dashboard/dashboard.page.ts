@@ -22,8 +22,6 @@ export class DashboardPage implements OnInit {
   panelOpenState = false;
   title;
 
-  myHTML = "<p>Go to this <a href='https://google.com'>website </a></p>";
-
 
   constructor(public navController: NavController ,
               private activatedRoute: ActivatedRoute ,
@@ -58,7 +56,6 @@ export class DashboardPage implements OnInit {
 
 
   ngOnInit() {
-    // document.getElementById("demo").innerHTML = JSON.parse(JSON.stringify(this.myHTML));
 
     this.activatedRoute.queryParamMap.subscribe(params => {
       this.title = params;

@@ -99,7 +99,7 @@ export class DialogCalculateComponent implements OnInit {
         this.openCalculate('Calculate');
       });
     } else if (this.title == 'Ordonnance') {
-      nextDateCurrent.setDate(nextDateCurrent.getDate() + (this.mainForm.getRawValue().valueOrdn * 30));
+      nextDateCurrent.setDate(nextDateCurrent.getDate() + ((this.mainForm.getRawValue().valueOrdn - 1) * 30));
       let nextDate = this.datePipe.transform(nextDateCurrent , 'yyyy-MM-dd' , null , 'en').toString();
       this.db.addOrdonnance(
         this.mainForm.getRawValue().valueOrdn ,

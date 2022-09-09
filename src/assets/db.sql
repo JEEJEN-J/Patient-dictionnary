@@ -14,3 +14,16 @@ CREATE TABLE IF NOT EXISTS Ordonnance(
 );
 
 -- INSERT or IGNORE INTO Calculate(id, numberOfDays, lastDate, nextDate) VALUES (1, 867, '2022-07-21T16:51:08.681Z', '2022-07-21T16:51:08.681Z');
+
+-- profil (PIN Calculatrice)
+-- profil generic
+-- parent malade
+-- date prevoir pour les rendez-vous
+-- alert de la date donnees
+-- tuto
+
+-- a venir dans d''autre version
+-- Mappage des sites les plus proches
+-- Reaction corporelle
+-- statistique du patient
+
