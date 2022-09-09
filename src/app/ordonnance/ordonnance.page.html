@@ -1,4 +1,3 @@
-
 <ion-content style="width: 100%; height: 100%;">
   <div style="background-color: #f2f2f2; width: 100%; height: 100%;">
     <div class="example-button-row">
@@ -41,7 +40,7 @@
         <ion-item lines="inset" *ngFor="let data of data">
           <ion-label>
             <h4>{{remainingDays}} jour restant</h4>
-            <p>Valeur : {{data.valueOrdn}}</p>
+            <p>Aprovisionnemen dans : {{(data.valueOrdn - 1) * 30}} jours</p>
             <p>Dernière date : {{data.lastDate}}</p>
             <p>Prochaine date : {{data.nextDate}}</p>
           </ion-label>

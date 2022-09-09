@@ -77,9 +77,9 @@ export class DialogCalculateComponent implements OnInit {
     let nextDateCurrent = new Date(this.date.value);
 
     if (this.title == 'Charge virale') {
-      if ((this.mainForm.getRawValue().status == 'Indétectable') || this.mainForm.getRawValue().numberOfDays < 1000)
+      if ((this.mainForm.getRawValue().status == 'Indétectable'))
         nextDateCurrent.setDate(nextDateCurrent.getDate() + 90);
-      else if ((this.mainForm.getRawValue().status == 'Détectable') || this.mainForm.getRawValue().numberOfDays >= 1000)
+      else if ((this.mainForm.getRawValue().status == 'Détectable'))
         nextDateCurrent.setDate(nextDateCurrent.getDate() + 365);
 
       let nextDate = this.datePipe.transform(nextDateCurrent , 'yyyy-MM-dd' , null , 'en').toString();
@@ -99,7 +99,7 @@ export class DialogCalculateComponent implements OnInit {
         this.openCalculate('Calculate');
       });
     } else if (this.title == 'Ordonnance') {
-      nextDateCurrent.setDate(nextDateCurrent.getDate() + this.mainForm.getRawValue().valueOrdn);
+      nextDateCurrent.setDate(nextDateCurrent.getDate() + (this.mainForm.getRawValue().valueOrdn * 30));
       let nextDate = this.datePipe.transform(nextDateCurrent , 'yyyy-MM-dd' , null , 'en').toString();
       this.db.addOrdonnance(
         this.mainForm.getRawValue().valueOrdn ,

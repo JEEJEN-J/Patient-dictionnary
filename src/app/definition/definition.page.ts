@@ -26,7 +26,7 @@ export class DefinitionPage implements OnInit {
 
   ngOnInit() {
     this.activatedRoute.queryParamMap.subscribe(params => {
-      this.content = params;
+      this.content = JSON.parse(JSON.stringify(params));
       console.log("content : " , this.content);
     })
     this.getPropertyById()

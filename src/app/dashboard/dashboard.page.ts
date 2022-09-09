@@ -4,6 +4,7 @@ import {ActivatedRoute} from "@angular/router";
 import {MatDialog} from "@angular/material/dialog";
 import {DialogCalculateComponent} from "./dialog-calculate/dialog-calculate.component";
 import {DbService} from "../services/db.service";
+import {LocalNotifications} from "@ionic-native/local-notifications/ngx";
 
 
 @Component({
@@ -21,12 +22,25 @@ export class DashboardPage implements OnInit {
   panelOpenState = false;
   title;
 
+  myHTML = "<p>Go to this <a href='https://google.com'>website </a></p>";
+
+
   constructor(public navController: NavController ,
               private activatedRoute: ActivatedRoute ,
+              private localNotifications: LocalNotifications,
               public dialog: MatDialog ,
               private db: DbService) {
     this.initializeItems();
     this.ngOnInit();
+    this.simpleNotif()
+  }
+
+  simpleNotif() {
+    this.localNotifications.schedule({
+      id: 1,
+      text: 'Single Local Notification',
+      data: { secret: 'secret' }
+    });
   }
 
 
@@ -44,6 +58,8 @@ export class DashboardPage implements OnInit {
 
 
   ngOnInit() {
+    // document.getElementById("demo").innerHTML = JSON.parse(JSON.stringify(this.myHTML));
+
     this.activatedRoute.queryParamMap.subscribe(params => {
       this.title = params;
     });

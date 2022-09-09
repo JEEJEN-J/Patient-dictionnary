@@ -32,7 +32,8 @@
     </div>
 
 
-    <ion-card style="border-radius: 5px 5px 10px 10px; box-shadow: 0px 10px 30px -20px; border: 1px solid #f1f1f1; margin: 15px">
+    <ion-card
+      style="border-radius: 5px 5px 10px 10px; box-shadow: 0px 10px 30px -20px; border: 1px solid #f1f1f1; margin: 15px">
       <ion-item>
         <ion-avatar item-start>
           <img src="assets/images/vihruban.png"
@@ -47,20 +48,32 @@
         <div style="font-size: 16px; margin: -1px; padding: 0px; color: #1a1a1a; font-weight: normal"
              *ngFor="let desciption of content.params.data.subtitle">
 
-        <span *ngIf="desciption.name === content.params.header">
-          <span *ngFor="let image of desciption.images">
-            <img [src]="image.name" style="width: 100%">
+        <span *ngIf="desciption.images">
+          <span *ngIf="desciption.name === content.params.header">
+            <span *ngIf="desciption.name=='Telephone migrant'">
+              <span *ngFor="let image of desciption.images">
+                <a href="Tel:8427"><img [src]="image.name" style="width: 100%"></a>
+              </span>
+            </span>
+            <span *ngIf="desciption.name=='Telephone bleu'">
+              <span *ngFor="let image of desciption.images">
+                <a href="Tel:100"><img [src]="image.name" style="width: 100%"></a>
+              </span>
+            </span>
+            <span *ngIf="desciption.name!='Telephone migrant' && desciption.name!='Telephone bleu'">
+              <span *ngFor="let image of desciption.images">
+                <img [src]="image.name" style="width: 100%">
+              </span>
+            </span>
           </span>
         </span>
 
-          <span *ngIf="desciption.name === content.params.header"><br/><br/>
-            {{desciption.description}}
+          <span *ngIf="desciption.name === content.params.header">
+            <span [innerHTML]="desciption.description"></span>
           </span>
 
-          <mat-card style="margin-top: 10px; margin-bottom: 5px" class="mt-3" *ngIf="embedVideo && desciption.name === content.params.header">
-            <mat-card-header align="center">
-              <mat-card-title align="center">Videos</mat-card-title>
-            </mat-card-header>
+          <mat-card style="margin-top: 10px; margin-bottom: 5px" class="mt-3"
+                    *ngIf="embedVideo && desciption.name === content.params.header">
             <mat-card-content align="center">
               <div class="mt-5" align="center">
                 <div style="" [innerHtml]="embedVideo" class="videoWrapper"></div>

@@ -1,6 +1,6 @@
 <ion-content color="warn" style="height: 100%; width: 100%;">
-  <div color="warn" style="width: 100%; height: 100%; background: url('../../assets/fond/Fond-de-page-html-vertical.png');
-        background-size: 100% 100%; background-repeat: no-repeat;">
+
+  <div color="warn" style="width: 100%; height: 100%; background: #eeeeee">
     <ion-header>
       <ion-toolbar>
         <ion-title style="font-size: 18px; float: right; margin-top: 15px">{{title.params.title}}</ion-title>
@@ -10,21 +10,22 @@
       </ion-toolbar>
     </ion-header>
 
-    <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+
+    <ion-searchbar showCancelButton="focus" animated style="margin: 10px; width: 96.5%;"
+                   (ionInput)="getItems($event)"></ion-searchbar>
 
     <ion-accordion-group color="warn"
-                         style="margin: 7px; box-shadow: 0px 25px 20px -40px; border-radius: 15px; border: 1px solid #f2f2f2"
+                         style="margin: 15px; box-shadow: 0px 25px 20px -40px; border-radius: 15px; border: 1px solid #eeeeee"
                          *ngFor="let item of items | paginate: { itemsPerPage: 7, currentPage: cp }">
 
       <ion-accordion value="first" style="border-radius: 15px;">
         <ion-item slot="header" color="warn"
-                  style="background: #ffffff; border-radius: 15px 15px 0px 0px; border-bottom: 1px solid #f2f2f2; font-size: 15px; color: #9f3954">
+                  style="background: #ffffff; border-radius: 15px 15px 0px 0px; border-bottom: 1px solid #eeeeee; font-size: 16px; color: #9f3954">
           <ion-label>{{item.title}}</ion-label>
         </ion-item>
-        <h5 *ngFor="let subT of item.subtitle; let i=index" class="subtitleLI" slot="content"
-            (click)="openPage(subT.name, item)">
-          <ion-icon class="iconSub" style="font-size: 12px; margin-right: 5px" name="navigate"></ion-icon>
-          {{(i + 1) + '. ' + subT.name}}
+        <h5 *ngFor="let subT of item.subtitle; let i=index" class="subtitleLI" slot="content" (click)="openPage(subT.name, item)">
+          <ion-icon class="iconSub" style="font-size: 15px; margin-right: 5px" name="navigate"></ion-icon>
+          {{(i + 1) + '. '}}<span [innerHTML]="subT.name"></span>
         </h5>
       </ion-accordion>
 
@@ -33,7 +34,6 @@
     <pagination-controls color="warn" (pageChange)="cp = $event"
                          class="pagination"></pagination-controls>
     <br/><br/>
-
 
 
   </div>

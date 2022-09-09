@@ -11,6 +11,9 @@ import {HttpClientModule} from "@angular/common/http";
 import {SQLite} from "@ionic-native/sqlite/ngx";
 import {SQLitePorter} from "@ionic-native/sqlite-porter/ngx";
 import {EmbedVideo} from "ngx-embed-video";
+import { LocalNotifications} from '@ionic-native/local-notifications/ngx'
+import { ScreenOrientation } from '@ionic-native/screen-orientation';
+
 
 @NgModule({
   declarations: [AppComponent] ,
@@ -24,6 +27,7 @@ import {EmbedVideo} from "ngx-embed-video";
     EmbedVideo.forRoot()
   ] ,
   providers: [
+    LocalNotifications,
     SQLite,
     SQLitePorter,
     {

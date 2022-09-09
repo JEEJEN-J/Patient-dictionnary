@@ -62,7 +62,7 @@ export class OrdonnancePage implements OnInit {
           const difference = this.dateDiffInDays(date , b);
 
           this.remainingDays = difference;
-          this.realValue = Math.round(((difference) / this.data[0].valueOrdn) * 100);
+          this.realValue = Math.round(((difference) / ((this.data[0].valueOrdn - 1) * 30)) * 100);
         });
       }
     });
@@ -101,7 +101,7 @@ export class OrdonnancePage implements OnInit {
     this.minutes = minutes;
     this.seconds = seconds;
 
-    if (seconds == 0)
+    if (days == 0)
       this.deleteOrdonnance();
   }
 

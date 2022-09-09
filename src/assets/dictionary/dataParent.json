@@ -80,7 +80,7 @@
       {
         "id": 3,
         "name": "Quels sont les facteurs de risque pour attraper le VIH?",
-        "description": "a) Avoir des relations sexuelles anales ou vaginales non protégées; \n b) Avoir une autre infection sexuellement transmissible (IST) comme la syphilis, l'herpès, la chlamydia, la gonorrhée et la vaginose bactérienne ; c) Partager d'aiguilles, de seringues et d'autre matériel d'injection et de solutions médicamenteuses contaminés lors de l'injection de drogues ; d) Recevoir des injections dangereuses, des transfusions sanguines et des greffes de tissus, et des procédures médicales qui impliquent des coupures ou des perçages non stériles ; e) Victimes de blessures accidentelles par piqûre d'aiguille, y compris parmi les agents de santé.",
+        "description": "a) Avoir des relations sexuelles anales ou vaginales non protégées; <br/><br/> b) Avoir une autre infection sexuellement transmissible <a href='https://www.mspp.gouv.ht/site/downloads/Strategie%20de%20communication%20pour%20la%20prevention%20du%20VIH.pdf'>(IST)</a> comme la syphilis, l'herpès, la chlamydia, la gonorrhée et la vaginose bactérienne ; <br/><br/> c) Partager d'aiguilles, de seringues et d'autre matériel d'injection et de solutions médicamenteuses contaminés lors de l'injection de drogues ;<br/><br/> d) Recevoir des injections dangereuses, des transfusions sanguines et des greffes de tissus, et des procédures médicales qui impliquent des coupures ou des perçages non stériles ; <br/><br/>e) Victimes de blessures accidentelles par piqûre d'aiguille, y compris parmi les agents de santé.",
         "subtitle1": []
       }
     ]
@@ -93,8 +93,13 @@
       {
         "id": 1,
         "name": "Comment peut-on diagnostiquer le VIH",
-        "description": "Le VIH peut être diagnostiqué grâce à des tests de diagnostic rapide qui fournissent des résultats le jour même. Les gens peuvent également utiliser les autotests de dépistage du VIH pour se tester. Cependant, aucun test unique ne peut fournir un diagnostic complet du VIH. Après un diagnostic positif, il convient d’effectuer un nouveau test avant de commencer le traitement et les soins afin d’exclure toute erreur de dépistage ou de notification.",
-        "subtitle1": []
+        "description": "Le VIH peut être diagnostiqué grâce à des tests de diagnostic rapide qui fournissent des résultats le jour même. <br/><br/> Les gens peuvent également utiliser les autotests de dépistage du VIH pour se tester. Cependant, aucun test unique ne peut fournir un diagnostic complet du VIH. <br/><br/> Après un diagnostic positif, il convient d’effectuer un nouveau test avant de commencer le traitement et les soins afin d’exclure toute erreur de dépistage ou de notification.",
+        "subtitle1": [],
+        "images": [
+          {
+            "name": "assets/images/diagnostic.jpeg"
+          }
+        ]
       }
     ]
   },
@@ -118,13 +123,18 @@
       {
         "id": 2,
         "name": "Les ARVs disponible en Haiti",
-        "description": "voici les médicaments qui sont autorisés et utilisés par le MSPP en Haiti : Tenofovir (TDT ou TAF), Abacavir (ABC), AZTou ZDV (azidothymidine ou Zidovudine), DTG (Dolutegravir), Lamivudine (3TC), Emcitrabine (FTC), Lopinavir(LPV) ritonavir , RAL (Raltegravir), ETV (Etravirine),NVP (Nevirapine), DRV (Darunavir).",
-        "subtitle1": []
+        "description": "<strong>voici les médicaments qui sont autorisés et utilisés par le MSPP en Haiti </strong>: <br/> - Tenofovir (TDT ou TAF), Abacavir (ABC), <br/> - AZTou ZDV (azidothymidine ou Zidovudine), <br/> - DTG (Dolutegravir), <br/> - Lamivudine (3TC), <br/> - Emcitrabine (FTC), <br/> - Lopinavir(LPV) ritonavir , <br/> - RAL (Raltegravir), <br/> - ETV (Etravirine), <br/> - NVP (Nevirapine), <br/> - DRV (Darunavir).",
+        "subtitle1": [],
+        "images": [
+          {
+            "name": "assets/images/drugArvs.png"
+          }
+        ]
       },
       {
         "id": 3,
         "name": "Comment prendre ses medicaments ?",
-        "description": "Le traitement est prescrit surtout sous forme de combinaison à dose fixe et selon que le patient prend les ARVs pour la première fois (naif) ou a été déjà placé sous ARV. Le patient est encouragé à prendre ses médicaments tels que prescrit pour être toujours sous régime de 1ere ligne qui est facile à prendre et moins d'effets secondaires et toxiques. La combinaison à dose fixe TDF+3TC+DTG est le régime préférentiel pour les patients naifs donc nouvellement diagnostiqués et n'ont pas été déjà exposés aux ARV.",
+        "description": "Le traitement est prescrit surtout sous forme de combinaison à dose fixe et selon que le patient prend les ARVs pour la première fois (naif) ou a été déjà placé sous ARV. <br/><br/> Le patient est encouragé à prendre ses médicaments tels que prescrit pour être toujours sous régime de 1ere ligne qui est facile à prendre et moins d'effets secondaires et toxiques. La combinaison à dose fixe <mark>TDF+3TC+DTG</mark> est le régime préférentiel pour les patients naifs donc nouvellement diagnostiqués et n'ont pas été déjà exposés aux ARV.",
         "subtitle1": [],
         "images": [
           {
@@ -135,13 +145,18 @@
       {
         "id": 4,
         "name": "Que faire si j'ai raté une dose ?",
-        "description": "Le traitement est prescrit pour etre pris regulierement a la meme heure et sans rater de dose. Si vous ratez une dose, continuez avec la prochaine dose et en parler a votre prestataire de soins.",
-        "subtitle1": []
+        "description": "Le traitement est préscrit pour etre pris régulièrement a la même heure et sans rater de dose. Si vous ratez une dose, continuez avec la prochaine dose et en parler a votre préstataire de soins.",
+        "subtitle1": [],
+        "images": [
+          {
+            "name": "assets/images/drugArvs.png"
+          }
+        ]
       },
       {
         "id": 5,
-        "name": "Est-ce que peut prendre d’autres medicaments en meme temps que les ARVs ?",
-        "description": "Certains médicaments augmentent ou diminuent la biodisponibilité des ARV quand ils sont pris concommitemment tels que la rifampicine, omeprazole/anti acides. Il faut toujous en parler a votre prestataire si vous prenez d'autres medicaments.",
+        "name": "Est-ce qu'on peut prendre d’autres medicaments en meme temps que les ARVs ?",
+        "description": "Certains médicaments augmentent ou diminuent la biodisponibilité des ARV quand ils sont pris concommitemment tels que la <mark>rifampicine, omeprazole/anti acides</mark>. Il faut toujous en parler a votre prestataire si vous prenez d'autres medicaments.",
         "subtitle1": [],
         "images": [
           {
@@ -152,7 +167,7 @@
       {
         "id": 6,
         "name": "Association entre medicaments, alcool et drogues",
-        "description": "L'alcool affecte le systeme immunitaire (CD4). Quand pris en grande quantité, l'alcool peut reduire l'adhérence aux ARV et augmente la charge virale. L'alcool et les drogues peuvent accelérer la progression de la maladie.",
+        "description": "L'alcool affecte le systeme immunitaire (CD4).<br/><br/> Quand pris en grande quantité, l'alcool peut reduire l'adhérence aux ARV et augmente la charge virale.<br/><br/> L'alcool et les drogues peuvent accelérer la progression de la maladie.",
         "subtitle1": [],
         "images": [
           {
@@ -197,12 +212,13 @@
     "subtitle": [
       {
         "id": 1,
-        "name": "Pourquoi dois-je  prendre mes médicaments comme préscrit ?",
+        "name": "Pourquoi prendre les ARVs tel que  prescrits ?",
         "description": "Le succès du traitement dépend de l'adhérence du client. Si vous êtes pas adhérent c'est à dire vous prenez pas les ARV tel que indiqué par le prestataire, le virus va répliquer,la charge virale va augmenter donc la maladie va progresser. Le virus peut devenir résistant aux ARV à cause de votre mauvaise adhérence et vous pourrez mourir d'infections opportunistes.",
         "subtitle1": [],
+        "video": "https://youtu.be/gNMLFJxp844",
         "images": [
           {
-            "name": "assets/images/EE.jpg"
+            "name": "assets/images/prescrit.png"
           }
         ]
       }
@@ -216,12 +232,12 @@
       {
         "id": 1,
         "name": "Indetectable = Intransmisible",
-        "description": "La quantite de virus est si basse que la méthode utilisée ne permet pas de le détecter. Cela veut dire que votre traitement marche tres bien mais vous n êtes pas guéri parce que le virus est toujours là. La chargevirale peut augmenter et devenir détectable si vous prenez pas les ARV. Quand vous êtes indétectable, vous pouvez pas transmettre le virus dans un rapport sexuel non protégé ou à votre enfant si vous êtes enceinte.L'objectif du traitement est de rendre le virus indetectable. Prenez bien vos ARV pour tre indétectable.",
+        "description": "La quantite de virus est si basse que la méthode utilisée ne permet pas de le détecter. Cela veut dire que votre traitement marche tres bien mais vous n'êtes pas guéri parce que le virus est toujours là. <br/>La charge virale peut augmenter et devenir détectable si vous prenez pas les <strong>ARVs</strong>. Quand vous êtes <strong>indétectable</strong>, vous pouvez pas transmettre le virus dans un rapport sexuel non protégé ou à votre enfant si vous êtes enceinte.L'objectif du traitement est de rendre le virus <strong>indetectable</strong>. Prenez bien vos ARV pour être <strong>indétectable</strong>.",
         "subtitle1": [],
         "video": "https://youtu.be/SzosslNBEew",
         "images": [
           {
-            "name": "assets/images/EE.png"
+            "name": "assets/images/EE.jpg"
           }
         ]
       }
@@ -235,8 +251,13 @@
       {
         "id": 1,
         "name": "Telephone bleu",
-        "description": "*100",
-        "subtitle1": []
+        "description": "Le téléphone Bleu, c’est un hotline où les gens peuvent librement se renseigner sur le VIH.<br/><br/>Si vous voulez plus d'information sur le VIH vous pouvez taper sur l'icone du telephone ou sur le numero 100",
+        "subtitle1": [],
+        "images": [
+          {
+            "name": "assets/images/phone.jpeg"
+          }
+        ]
       }
     ]
   }

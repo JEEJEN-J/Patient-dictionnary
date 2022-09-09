@@ -53,7 +53,7 @@ export class DialogOrdonnComponent implements OnInit {
     let lastDate = this.datePipe.transform(this.date.value , 'yyyy-MM-dd' , null , 'en').toString();
 
     let nextDateCurrent = new Date(this.date.value);
-    nextDateCurrent.setDate(nextDateCurrent.getDate() + this.mainForm.getRawValue().valueOrdn);
+    nextDateCurrent.setDate(nextDateCurrent.getDate() + ((this.mainForm.getRawValue().valueOrdn - 1) * 30));
     let nextDate = this.datePipe.transform(nextDateCurrent , 'yyyy-MM-dd' , null , 'en').toString();
 
     this.db.updateOrdonnance(this.data.id , this.mainForm.getRawValue().valueOrdn , lastDate , nextDate).then(async (res) => {

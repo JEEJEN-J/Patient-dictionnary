@@ -42,13 +42,13 @@
 
 .iconSub {
   color: #940089;
-  background: linear-gradient(to right, #e15177, #f0be6d);
+  background: linear-gradient(to right, #e15177, #eeeeee, #55aaff);
   border-radius: 50px;
 }
 
 
 ::ng-deep ul > li:not(.active) > a {
-  background: linear-gradient(to right, #e15177, #f0be6d) !important;
+  background: linear-gradient(to right, #e15177, pink) !important;
   //background-color: #b64161 !important;
   border-color: black !important;
   border-radius: 50px;
