@@ -7,12 +7,22 @@ import {IonicModule , IonicRouteStrategy} from '@ionic/angular';
 import {AppComponent} from './app.component';
 import {AppRoutingModule} from './app-routing.module';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {HttpClientModule} from "@angular/common/http";
+import {HttpClientModule , HttpClient} from "@angular/common/http";
+import {TranslateModule , TranslateLoader} from "@ngx-translate/core";
+import {TranslateHttpLoader} from "@ngx-translate/http-loader";
 import {SQLite} from "@ionic-native/sqlite/ngx";
 import {SQLitePorter} from "@ionic-native/sqlite-porter/ngx";
 import {EmbedVideo} from "ngx-embed-video";
-import { LocalNotifications} from '@ionic-native/local-notifications/ngx'
-import { ScreenOrientation } from '@ionic-native/screen-orientation';
+import {LocalNotifications} from '@ionic-native/local-notifications/ngx'
+import {ScreenOrientation} from '@ionic-native/screen-orientation';
+import {createTranslationLoader} from "@angular-devkit/build-angular/src/utils/load-translations";
+import {LanguageService} from "./services/language.service";
+import {ProfilPageModule} from "./profil/profil.module";
+// import {IonicStorageModule} from '@ionic/storage';
+
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http , "./assets/i18n/" , ".json");
+}
 
 
 @NgModule({
@@ -22,18 +32,30 @@ import { ScreenOrientation } from '@ionic-native/screen-orientation';
     BrowserModule ,
     IonicModule.forRoot() ,
     AppRoutingModule ,
-    BrowserAnimationsModule,
-    HttpClientModule,
-    EmbedVideo.forRoot()
+    // IonicStorageModule.forRoot(),
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader ,
+        useFactory: (createTranslationLoader) ,
+        deps: [HttpClient]
+      }
+    }) ,
+    BrowserAnimationsModule ,
+    HttpClientModule ,
+    EmbedVideo.forRoot() ,
+    ProfilPageModule
   ] ,
   providers: [
-    LocalNotifications,
-    SQLite,
-    SQLitePorter,
+    LanguageService,
+    Storage,
+
+    LocalNotifications ,
+    SQLite ,
+    SQLitePorter ,
     {
-      provide: RouteReuseStrategy,
+      provide: RouteReuseStrategy ,
       useClass: IonicRouteStrategy
-    },
+    } ,
     {
       provide: RouteReuseStrategy ,
       useClass: IonicRouteStrategy
@@ -42,4 +64,5 @@ import { ScreenOrientation } from '@ionic-native/screen-orientation';
   bootstrap: [AppComponent] ,
 })
 export class AppModule {
+
 }

@@ -91,6 +91,7 @@
 .btnhome:hover {
   background-color: #dddddd;
 }
+
 .btnhome1:hover {
   background-color: #dddddd;
 }
@@ -172,3 +173,24 @@
   font-weight: lighter;
 }
 
+
+//=====================================================================================
+
+
+.example-container {
+  height: 100%;
+  width: 100%;
+  margin: 0px;
+}
+
+//mat-drawer-content {
+//  padding: 15px;
+//  display: flex;
+//  flex-direction: column;
+//  align-items: flex-start;
+//}
+
+.example-sidenav {
+  width: 70%;
+  background-color: #1a1a1a;
+}

@@ -34,6 +34,14 @@ const routes: Routes = [
   {
     path: 'calculate',
     loadChildren: () => import('./calculate/calculate.module').then( m => m.CalculatePageModule)
+  },
+  {
+    path: 'profil',
+    loadChildren: () => import('./profil/profil.module').then( m => m.ProfilPageModule)
+  },
+  {
+    path: 'lagues',
+    loadChildren: () => import('./lagues/lagues.module').then( m => m.LaguesPageModule)
   }
 ];
 

@@ -61,7 +61,7 @@ export class DashboardPage implements OnInit {
       this.title = params;
     });
 
-    fetch("./assets/dictionary/data.json")
+    fetch("./assets/i18n/cr.json")
       .then((response) => response.json())
       .then((response) => {
         this.items = response;

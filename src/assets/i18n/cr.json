@@ -1,0 +1,337 @@
+[
+  {
+    "id": 2,
+    "categorie": "Client",
+    "title": "Infomasyon general sou VIH",
+    "subtitle": [
+      {
+        "id": 1,
+        "name": "VIH",
+        "description": "<strong>Le VIH</strong> c'est le Virus de l'immuno déficience Humaine est responsable du Syndrome de l'immuno Déficience Acquise <strong>(SIDA)</strong>. être infecté au <strong>VIH</strong> ne veut pas dire avoir le <strong>SIDA</strong>.",
+        "subtitle1": [],
+        "video": "https://youtu.be/gNMLFJxp844"
+      },
+      {
+        "id": 2,
+        "name": "SIDA",
+        "description": "<strong>Le Syndrome de l'immuno Déficience Acquise (SIDA) </strong>: <br/><br/>C'est la phase critique de l'infection au VIH. Caractérisée par : <br/>diarrhée, perte de poids marques, atteintes cutanées, atteintes neurologiques, etc.  <br/><br/>Il arrive quand une personne ne reçoit pas d'ARVs ou n'est pas adhérente à son traitement ou bien est infectée d'une souche de VIH qui est déjà resistant au ARVs qu'elle est en train de recevoir. D'ou la nécessité d'être adhérent à son médicament et de contacter son prestataire de soins régulièrement.",
+        "subtitle1": [],
+        "video": "https://youtu.be/gNMLFJxp844"
+      },
+      {
+        "id": 3,
+        "name": "ARVs",
+        "description": "ARV: AntiRétroViral. Ce sont les médicaments qui sont spécifiques au type de virus comme le VIH. Ils bloquent une étape du cycle de vie du VIH.",
+        "subtitle1": [],
+        "video": "https://youtu.be/gNMLFJxp844",
+        "images": [
+          {
+            "name": "assets/images/img2.png"
+          },
+          {
+            "name": "assets/images/img22.png"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "categorie": "Client et Parent",
+    "title": "Transmission du VIH",
+    "subtitle": [
+      {
+        "id": 1,
+        "name": "Mode de transmission",
+        "description": "Le virus se transmet par voie sanguine surtout lors des rapports sexuels non protégés, par transmission verticale pendant la grossesse , l'accouchement et pendant l'allaitement maternel.",
+        "subtitle1": [],
+        "images": [
+          {
+            "name": "assets/images/img.png"
+          },
+          {
+            "name": "assets/images/imgg.png"
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "name": "Comment on ne peut pas attraper le VIH",
+        "description": "Une personne ne peut  pas être infectée par des contacts de la vie courante tels que s'embrasser, s'étreindre, serrer la main ou partager des objets personnels, de la nourriture ou de l'eau. Les personnes vivant avec le VIH qui suivent un  traitement antiretroviral (TAR) et dont la charge virale est indetectable (supprimée) ne transmettent pas le VIH à leurs partenaires sexuels.",
+        "subtitle1": [],
+        "images": [
+          {
+            "name": "assets/images/img1.png"
+          },
+          {
+            "name": "assets/images/img11.png"
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "name": "Quels sont les facteurs de risque pour attraper le VIH?",
+        "description": "a) Avoir des relations sexuelles anales ou vaginales non protégées; <br/><br/> b) Avoir une autre infection sexuellement transmissible <a href='https://www.mspp.gouv.ht/site/downloads/Strategie%20de%20communication%20pour%20la%20prevention%20du%20VIH.pdf'>(IST)</a> comme la syphilis, l'herpès, la chlamydia, la gonorrhée et la vaginose bactérienne ; <br/><br/> c) Partager d'aiguilles, de seringues et d'autre matériel d'injection et de solutions médicamenteuses contaminés lors de l'injection de drogues ;<br/><br/> d) Recevoir des injections dangereuses, des transfusions sanguines et des greffes de tissus, et des procédures médicales qui impliquent des coupures ou des perçages non stériles ; <br/><br/>e) Victimes de blessures accidentelles par piqûre d'aiguille, y compris parmi les agents de santé.",
+        "subtitle1": []
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "categorie": "Client et Parent",
+    "title": "Diagnostic du VIH",
+    "subtitle": [
+      {
+        "id": 1,
+        "name": "Comment peut-on diagnostiquer le VIH",
+        "description": "Le VIH peut être diagnostiqué grâce à des tests de diagnostic rapide qui fournissent des résultats le jour même. <br/><br/> Les gens peuvent également utiliser les autotests de dépistage du VIH pour se tester. Cependant, aucun test unique ne peut fournir un diagnostic complet du VIH. <br/><br/> Après un diagnostic positif, il convient d’effectuer un nouveau test avant de commencer le traitement et les soins afin d’exclure toute erreur de dépistage ou de notification.",
+        "subtitle1": [],
+        "images": [
+          {
+            "name": "assets/images/diagnostic.jpeg"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "categorie": "Client et Parent",
+    "title": "Traitement du VIH (TAR)",
+    "subtitle": [
+      {
+        "id": 1,
+        "name": "Généralité sur le traitement du VIH",
+        "description": "Le VIH est traité par des combinaison de trois médicaments antirétroviraux (ARVs) ou plus. La thérapie antirétrovirale (TAR) actuelle ne guérit pas l'infection par le VIH, mais supprime fortement la réplication virale dans le corps d'une personne et permet à son système immunitaire de se renforcer et de retrouver la capacité de combattre les infections opportunistes et certains cancers. Tout personne diagnostiquée positive au VIH est placé immédiatement sous Anti Rétroviral (ARV) à vie.",
+        "subtitle1": [],
+        "video": "https://youtu.be/gNMLFJxp844",
+        "images": [
+          {
+            "name": "assets/images/generaliteVIH.png"
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "name": "Les ARVs disponible en Haiti",
+        "description": "<strong>voici les médicaments qui sont autorisés et utilisés par le MSPP en Haiti </strong>: <br/> - Tenofovir (TDT ou TAF), Abacavir (ABC), <br/> - AZTou ZDV (azidothymidine ou Zidovudine), <br/> - DTG (Dolutegravir), <br/> - Lamivudine (3TC), <br/> - Emcitrabine (FTC), <br/> - Lopinavir(LPV) ritonavir , <br/> - RAL (Raltegravir), <br/> - ETV (Etravirine), <br/> - NVP (Nevirapine), <br/> - DRV (Darunavir).",
+        "subtitle1": [],
+        "images": [
+          {
+            "name": "assets/images/drugArvs.png"
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "name": "Comment prendre ses medicaments ?",
+        "description": "Le traitement est prescrit surtout sous forme de combinaison à dose fixe et selon que le patient prend les ARVs pour la première fois (naif) ou a été déjà placé sous ARV. <br/><br/> Le patient est encouragé à prendre ses médicaments tels que prescrit pour être toujours sous régime de 1ere ligne qui est facile à prendre et moins d'effets secondaires et toxiques. La combinaison à dose fixe <mark>TDF+3TC+DTG</mark> est le régime préférentiel pour les patients naifs donc nouvellement diagnostiqués et n'ont pas été déjà exposés aux ARV.",
+        "subtitle1": [],
+        "images": [
+          {
+            "name": "assets/images/Arvs.png"
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "name": "Que faire si j'ai raté une dose ?",
+        "description": "Le traitement est préscrit pour etre pris régulièrement a la même heure et sans rater de dose. Si vous ratez une dose, continuez avec la prochaine dose et en parler a votre préstataire de soins.",
+        "subtitle1": [],
+        "images": [
+          {
+            "name": "assets/images/drugArvs.png"
+          }
+        ]
+      },
+      {
+        "id": 5,
+        "name": "Est-ce qu'on peut prendre d’autres medicaments en meme temps que les ARVs ?",
+        "description": "Certains médicaments augmentent ou diminuent la biodisponibilité des ARV quand ils sont pris concommitemment tels que la <mark>rifampicine, omeprazole/anti acides</mark>. Il faut toujous en parler a votre prestataire si vous prenez d'autres medicaments.",
+        "subtitle1": [],
+        "images": [
+          {
+            "name": "assets/images/AutreMed.png"
+          }
+        ]
+      },
+      {
+        "id": 6,
+        "name": "Association entre medicaments, alcool et drogues",
+        "description": "L'alcool affecte le systeme immunitaire (CD4).<br/><br/> Quand pris en grande quantité, l'alcool peut reduire l'adhérence aux ARV et augmente la charge virale.<br/><br/> L'alcool et les drogues peuvent accelérer la progression de la maladie.",
+        "subtitle1": [],
+        "images": [
+          {
+            "name": "assets/images/medAlcool.png"
+          }
+        ]
+      },
+      {
+        "id": 7,
+        "name": "Que faire si je dois m’absenter loin de mon institution sans assez ARVs pour la periode ?",
+        "description": "Le traitement doit être pris sans rater de dose. Si vous devez vous déplacer, planifiez avec votre prestataire afin d'avoir une quantité suffisante pour toute la période de séjour (MMD) et informez vous sur la facon d'acquérir les ARV à la prochaine destination. Des points de distribution d'ARV (DDP) sont disponibles à travers le pays.",
+        "subtitle1": []
+      },
+      {
+        "id": 8,
+        "name": "Ou peut-on trouver les services de prevention ou de traitement  VIH en Haiti ?",
+        "description": "Le traitement est disponible sur tout le territoire national. En fonction de vos affinités vous pouvez au moment de votre enrollement, ou a n'importe quel moment demander la référence vers un site mieux approprié pour vos besoins. Vous pouvez aussi appeler au numero suivant pour vous guider dans le choix du site.",
+        "subtitle1": [],
+        "images": [
+          {
+            "name": "assets/images/ServicePrev.png"
+          }
+        ]
+      },
+      {
+        "id": 9,
+        "name": "C’est quoi la Resistance aux ARVs ?",
+        "description": "Normalement les ARVs bloque la multiplication du virus dans le sang et rende la charge virale indetectable\n\nLa resistance est le phénomène inverse, c’est-à-dire le médicament ARV n'arrive plus à bloquer la multiplication du virus. Celui-ci  continue à se multiplier. Cette situation arrive le plus souvent à cause de la non adhérence au traitement. Un faible quantité de cas arrive aussi parce que la personne était déjà infectée par une souche résistance au ARV en question.",
+        "subtitle1": [],
+        "images": [
+          {
+            "name": "assets/images/resistanceArvs.png"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "categorie": "Client et Parent",
+    "title": "Adhérence au TAR",
+    "subtitle": [
+      {
+        "id": 1,
+        "name": "Pourquoi prendre les ARVs tel que  prescrits ?",
+        "description": "Le succès du traitement dépend de l'adhérence du client. Si vous êtes pas adhérent c'est à dire vous prenez pas les ARV tel que indiqué par le prestataire, le virus va répliquer,la charge virale va augmenter donc la maladie va progresser. Le virus peut devenir résistant aux ARV à cause de votre mauvaise adhérence et vous pourrez mourir d'infections opportunistes.",
+        "subtitle1": [],
+        "video": "https://youtu.be/gNMLFJxp844",
+        "images": [
+          {
+            "name": "assets/images/prescrit.png"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "categorie": "Client et Parent",
+    "title": "E egal E",
+    "subtitle": [
+      {
+        "id": 1,
+        "name": "Indetectable = Intransmisible",
+        "description": "La quantite de virus est si basse que la méthode utilisée ne permet pas de le détecter. Cela veut dire que votre traitement marche tres bien mais vous n'êtes pas guéri parce que le virus est toujours là. <br/>La charge virale peut augmenter et devenir détectable si vous prenez pas les <strong>ARVs</strong>. Quand vous êtes <strong>indétectable</strong>, vous pouvez pas transmettre le virus dans un rapport sexuel non protégé ou à votre enfant si vous êtes enceinte.L'objectif du traitement est de rendre le virus <strong>indetectable</strong>. Prenez bien vos ARV pour être <strong>indétectable</strong>.",
+        "subtitle1": [],
+        "video": "https://youtu.be/SzosslNBEew",
+        "images": [
+          {
+            "name": "assets/images/EE.jpg"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "categorie": "Client",
+    "title": "Suivi du TAR",
+    "subtitle": [
+      {
+        "id": 1,
+        "name": "Prophylaxis anti-TB",
+        "description": "La TB est l'infection opportuniste la plus fréquente chez les PVVIHs et grande cause de décès. Au moment de votre diagnostic du VIH et pendant votre enrolement si vous presentez pas de signes faisant penser à la TB tels que, fièvre, Toux, perte de poids , sueurs profuses nocturnes, ganglions cervicaux et axillaires, le prestataire vous prescrira un traitement preventif a la TB constitue de INH B6 pour 6 mois ou INH associé à la Rifapentine et B6 pour 4 semaines à raison d'une dose par jour ou 12 semaines à raison d'une dose par semaine.",
+        "subtitle1": [],
+        "video": "https://youtu.be/gNMLFJxp844",
+        "images": [
+          {
+            "name": "assets/images/prophylaxie.png"
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "name": "Dois-je prendre d'autres médicaments avec les ARVs pour le VIH",
+        "description": "Le VIH affecte votre systeme de défense , c est pourquoi vous prenez les ARV pour bloquer la réplication virale et restaurer votre système immunitaire. Pendant que vous prenez les ARV, vous devez faire la prévention des infections opportunistes.Les médicaments les plus utilisés sont TMS pour la prévention de plusieurs IO et INH+Rifapentine B6 pour la prévention de laTB.",
+        "subtitle1": [],
+        "images": [
+          {
+            "name": "assets/images/vihAffecte.png"
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "name": "Suivi du traitment : charge virale",
+        "description": "La charge virale est le meilleur indicateur pour suivre l'évolution de votre traitement. Il se fera au moment de l'enrolement et après 3 mois de traitement. Si la charge virale est indétectable ou vous êtes en suppression virale, le traitement marche tres bien et le prochain test se fera après 12 mois. Si la charge virale est détctable et supérieure a 1000 copies/ ml le prestataire va refaire le test dans 3 mois après renforcement de l'adhérence et décidera des tests subséquents selon le résultat. Il est important de toujours prendre ses ARV régulierement et respecter les rendez vous de test de charge virale",
+        "subtitle1": [],
+        "video": "https://youtu.be/gNMLFJxp844",
+        "images": [
+          {
+            "name": "assets/images/SuiviTraitemt.png"
+          },
+          {
+            "name": "assets/images/SuivieTrmtChv.png"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "categorie": "Client",
+    "title": "Suivi du traitement (TAR)",
+    "subtitle": [
+      {
+        "id": 1,
+        "name": "Rendez-vous réapprovisionnement en ARVs",
+        "description": "Vous devez toujours avoir les ARV pour ne pas rater de dose. L'adhérence au traitement est capitale pour éviter l'évolution de la maladie. Vous pouvez vous reapprovisionner au niveau du site, à travers les points de distribution (DDP). Informez vous de la localisation des points de distribution au niveau de votre site de Prise en Charge.",
+        "subtitle1": []
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "categorie": "Client",
+    "title": "Numéro de téléphone important",
+    "subtitle": [
+      {
+        "id": 1,
+        "name": "Telephone bleu",
+        "description": "Le téléphone Bleu, c’est un hotline où les gens peuvent librement se renseigner sur le VIH.<br/><br/>Si vous voulez plus d'information sur le VIH vous pouvez taper sur l'icone du telephone ou sur le numero 100",
+        "subtitle1": [],
+        "images": [
+          {
+            "name": "assets/images/phone.jpeg"
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "name": "Telephone migrant",
+        "description": "En fonction de votre destination finale, vous pouvez appeler a ce numero pour vous renseigner sur la disponibilite des sites offrant les services et soins VIH. <a style='font-size: 20px;' href='Tel:8724'>8724</a>",
+        "subtitle1": [],
+        "images": [
+          {
+            "name": "assets/images/phoneMigran.jpeg"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "categorie": "Client",
+    "title": "Suivi psycho-social",
+    "subtitle": [
+      {
+        "id": 1,
+        "name": "Que dois-je faire quand le découragement et les mauvaises pensées veulent s'installer ?",
+        "description": "Vous devez toujours penser à voir un psychologue ou un trvailleur social qui sera en mesure de vous aider quand vous sentez que vous avez tendance  à avoir un sentiment de découragement ou des idées suicidaires.\n\nvous pouvez aussi appeler un numéro important comme le téléphone bleu pour partager vos inquiétudes \t",
+        "subtitle1": []
+      }
+    ]
+  }
+]

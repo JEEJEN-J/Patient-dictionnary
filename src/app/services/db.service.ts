@@ -6,6 +6,7 @@ import {SQLitePorter} from '@ionic-native/sqlite-porter/ngx';
 import {SQLite , SQLiteObject} from '@ionic-native/sqlite/ngx';
 import {Calculate} from "../models/calculate";
 import {Ordonnance} from "../models/ordonnance";
+import {Account} from "../models/account";
 
 @Injectable({
   providedIn: 'root'
@@ -15,6 +16,7 @@ export class DbService {
   private storage: SQLiteObject;
   calculatesList = new BehaviorSubject([]);
   ordonnancesList = new BehaviorSubject([]);
+  accountList = new BehaviorSubject([]);
   public isDbReady: BehaviorSubject<boolean> = new BehaviorSubject(false);
 
   constructor(
@@ -50,6 +52,10 @@ export class DbService {
     return this.ordonnancesList.asObservable();
   }
 
+  fetchAccounts(): Observable<Account[]> {
+    return this.accountList.asObservable();
+  }
+
 
   // Render fake data
   getFakeData() {
@@ -61,6 +67,7 @@ export class DbService {
         .then(_ => {
           this.getCalculates();
           this.getOrdonnances();
+          this.getAccounts();
           this.isDbReady.next(true);
         })
         .catch(error => console.error(error));
@@ -112,6 +119,29 @@ export class DbService {
   }
 
   /**
+   * Get all Accounts list
+   * */
+  getAccounts() {
+    return this.storage.executeSql('SELECT * FROM account' , []).then(res => {
+      let items: Account[] = [];
+      if (res.rows.length > 0) {
+        for (var i = 0; i < res.rows.length; i++) {
+          items.push({
+            id: res.rows.item(i).id ,
+            profil: res.rows.item(i).profil ,
+            username: res.rows.item(i).username ,
+            password: res.rows.item(i).password ,
+            createdDate: res.rows.item(i).createdDate ,
+            editedDate: res.rows.item(i).editedDate
+          });
+        }
+      }
+      this.accountList.next(items);
+      this.isDbReady.next(true);
+    });
+  }
+
+  /**
    * Add a new Calculate
    *
    * @param {numberOfDays and lastDate}
@@ -134,6 +164,19 @@ export class DbService {
     return this.storage.executeSql('INSERT INTO Ordonnance (valueOrdn, lastDate, nextDate) VALUES (?, ?, ?)' , data)
       .then((res) => {
         this.getOrdonnances();
+      });
+  }
+
+  /**
+   * Add a new Account
+   *
+   * @param {profil and createdDate}
+   * */
+  addAccount(profil , createdDate) {
+    let data = [profil , createdDate];
+    return this.storage.executeSql('INSERT INTO account (profil, createdDate) VALUES (?, ?)' , data)
+      .then((res) => {
+        this.getAccounts();
       });
   }
 
@@ -170,16 +213,34 @@ export class DbService {
   }
 
   /**
+   * Get a Account by ID
+   *
+   * @param id
+   * */
+  getAccount(id): Promise<Account> {
+    return this.storage.executeSql('SELECT * FROM account WHERE id = ?' , [id]).then(res => {
+      return {
+        id: res.rows.item(0).id ,
+        profil: res.rows.item(0).profil ,
+        username: res.rows.item(0).username ,
+        password: res.rows.item(0).password ,
+        createdDate: res.rows.item(0).createdDate ,
+        editedDate: res.rows.item(0).editedDate
+      }
+    });
+  }
+
+  /**
    * Update the Calculate
    *
    * @param {id and {calculate}}
    * */
   updateCalculate(id , status , lastDate , nextDate) {
-    let data = [status, lastDate , nextDate];
+    let data = [status , lastDate , nextDate];
     return this.storage.executeSql(`UPDATE Calculate
-                                    SET status       = ?,
-                                        lastDate     = ?,
-                                        nextDate     = ?
+                                    SET status   = ?,
+                                        lastDate = ?,
+                                        nextDate = ?
                                     WHERE id = ${id}` , data)
       .then(data => {
         this.getCalculates();
@@ -204,6 +265,25 @@ export class DbService {
   }
 
   /**
+   * Update the Account
+   *
+   * @param {id and {account}}
+   * */
+  updateAccount(id , profil , username , password , createdDate , editedDate) {
+    let data = [profil , username , password , createdDate , editedDate];
+    return this.storage.executeSql(`UPDATE account
+                                    SET profil      = ?,
+                                        username    = ?,
+                                        password    = ?,
+                                        createdDate = ?,
+                                        editedDate  = ?
+                                    WHERE id = ${id}` , data)
+      .then(data => {
+        this.getAccounts();
+      })
+  }
+
+  /**
    * Delete a Calculate
    *
    * @param id
@@ -224,6 +304,18 @@ export class DbService {
     return this.storage.executeSql('DELETE FROM Ordonnance WHERE id = ?' , [id])
       .then(_ => {
         this.getOrdonnances();
+      });
+  }
+
+  /**
+   * Delete a account
+   *
+   * @param id
+   * */
+  deleteAccount(id) {
+    return this.storage.executeSql('DELETE FROM account WHERE id = ?' , [id])
+      .then(_ => {
+        this.getAccounts();
       });
   }
 
