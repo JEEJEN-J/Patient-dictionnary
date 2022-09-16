@@ -88,7 +88,7 @@ export class DashboardPage implements OnInit {
 
 
   initializeItems() {
-    fetch("./assets/dictionary/data.json")
+    fetch("./assets/dictionary/cr.json")
       .then((response) => response.json())
       .then((response) => {
         this.data = response;

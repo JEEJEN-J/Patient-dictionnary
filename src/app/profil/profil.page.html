@@ -4,7 +4,51 @@
       <button class="btn-goback" mat-icon-button color="primary" (click)="goBack()">
         <ion-icon name="arrow-back-outline" style="font-size: x-large; margin-top: -3px;"></ion-icon>
       </button>
-      <div style="font-size: 18px; float: left; margin-top: 30px; margin-left: 20px">Profile</div>
+      <div style="font-size: 18px; float: left; margin-top: 30px; margin-left: 20px; color: black;">Profile</div>
+    </div>
+
+    <div style="width: 100%; float: left; margin-top: 20px">
+      <br/>
+      <form class="example-form" [formGroup]="mainForm">
+        <div align="center">
+          <div align="center" style="width: 90%">
+            <mat-form-field align="center" class="example-full-width" appearance="fill" style="width: 100%;">
+              <mat-label>Nom d'utilisateur</mat-label>
+              <input matInput placeholder="Nom d'utilisateur" formControlName="username">
+            </mat-form-field>
+          </div>
+
+          <div align="center" style="width: 90%">
+            <mat-form-field appearance="fill" style="width: 100%;">
+              <mat-label>Mot de passe</mat-label>
+              <input matInput [type]="hide ? 'password' : 'text'" formControlName="password">
+              <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                      [attr.aria-pressed]="hide">
+                <ion-icon style="font-size: x-large" [name]="hide ? 'eye-off-outline' : 'eye-outline'"></ion-icon>
+              </button>
+            </mat-form-field>
+          </div>
+
+          <div align="center" style="width: 90%">
+            <mat-form-field appearance="fill" style="width: 100%;">
+              <mat-label>Confirmez le mot de passe</mat-label>
+              <input matInput [type]="hide ? 'password' : 'text'" formControlName="confirmPassword">
+              <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                      [attr.aria-pressed]="hide">
+                <ion-icon style="font-size: x-large" [name]="hide ? 'eye-off-outline' : 'eye-outline'"></ion-icon>
+              </button>
+            </mat-form-field>
+          </div>
+
+          <div align="center" style="width: 90%">
+            <div class="example-button-row" style="width: 100%;">
+              <button style="width: 100%; height: 50px" mat-raised-button color="primary">Primary</button>
+            </div>
+          </div>
+
+        </div>
+
+      </form>
     </div>
 
   </div>

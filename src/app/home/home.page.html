@@ -6,7 +6,7 @@
         <span>
 <!--          <img style="" src="./assets/images/vihruban.png" width="25"/>-->
         </span>
-        <span align="center">SETTINGS</span>
+        <span align="center" [innerHTML]="settings"></span>
       </h1>
       <div align="center">
         <img src="./assets/icon/user_circle_icon_152504.png" width="100"/>
@@ -16,14 +16,14 @@
           </button>
         </p>
         <h2>Jeejen JOSEPH</h2>
-        <h4 style="margin-top: -18px; color: gray">Parent Client</h4>
+        <h4 style="margin-top: -18px; color: gray" [innerHTML]="parent"></h4>
       </div>
     </div>
     <mat-divider style="background-color: #404040; width: 90%; margin-left: auto; margin-right: auto"></mat-divider>
     <section>
       <div class="example-button-row" style="margin: 10px">
         <button (click)="openLagues()" mat-flat-button color="primary"
-                style="margin-left: 10px; background-color: #1a1a1a; font-size: 18px; padding: 0px; color: grey">Langues
+                style="margin-left: 10px; background-color: #1a1a1a; font-size: 18px; padding: 0px; color: grey" [innerHTML]="languages">
         </button>
         <button (click)="openLagues()" mat-flat-button color="accent"
                 style="float: right; background-color: #1a1a1a; margin-right: 5px">
@@ -50,7 +50,7 @@
               <strong align="center" style="margin-right: auto; color: #fff; font-size: x-large">PEK</strong>
             </ion-title>
 
-            <button style="float: left; margin-left: 2%; margin-top: -7%;" (click)="drawer.toggle()" mat-icon-button
+            <button style="float: left; margin-left: 2%; margin-top: -30px;" (click)="drawer.toggle()" mat-icon-button
                     color="primary" aria-label="Example icon button with a menu icon">
               <ion-icon style="color: white; font-size: x-large" name="menu" slot="end"></ion-icon>
             </button>
@@ -59,34 +59,25 @@
 
 
           <div style="margin-top: 48%">
-            <h1 style="font-size: 55px; font-family: 'Century Schoolbook L'; color: #ffffff; margin-bottom: 10px">
-              Bienvenue</h1><br/>
-            <h3 style="color: white; font-size: x-large; margin-bottom: 10px;">Dans</h3><br/>
-            <h2 style="color: #eeeeee; font-size: 35px; font-family: 'Century Schoolbook L';">Platfòm Edikasyon
-              Kliyan</h2>
+            <h1 style="font-size: 55px; font-family: 'Century Schoolbook L'; color: #ffffff; margin-bottom: 10px" [innerHTML]="bienvenu"></h1><br/>
+            <h3 style="color: white; font-size: x-large; margin-bottom: 10px;" [innerHTML]="app"></h3><br/>
+            <h2 style="color: #eeeeee; font-size: 35px; font-family: 'Century Schoolbook L';" [innerHTML]="AppTitle"></h2>
           </div>
 
           <div style="text-shadow: black">
             <ion-slides #slides pager="true" color="warn">
               <ion-slide>
-                <h4 style="color: #ffffff; font-size: 16px; width: 80%; font-weight: lighter"><br/>
-                  Cette application, developpée par <a href="https://www.facebook.com/Cippress-100117798061997"
-                                                       style="font-weight: bold; font-size: 14px; text-shadow: none">CIPPRESS</a>
-                  avec le support de <a href="https://panoshaiti.org/"
-                                        style="font-weight: bold; font-size: 12px; text-shadow: none">PANOS</a>,
-                  est dediée à
-                  l'éducation sur
-                  la prévention et le traitement du VIH, ainsi que la lutte contre la stigmatisation et
-                  la discrimination des personnes infectées ou affectées.
+                <h4 style="color: #ffffff; font-size: 16px; width: 80%; font-weight: lighter"
+                    [innerHTML]="simple"><br/>
                 </h4>
               </ion-slide>
               <ion-slide>
                 <section style="width: 100%; color: #eeeeee">
-                  <h3 class="example-label">Démarer avec</h3>
+                  <h3 class="example-label" [innerHTML]="start"></h3>
                   <div class="example-button-row">
-                    <a class="btnhome" mat-raised-button color="primary" (click)="openPage()">Patient</a>
+                    <a class="btnhome" mat-raised-button color="primary" (click)="openPage()" [innerHTML]="client"></a>
                     <h3 class="social-login-title">OU</h3>
-                    <a class="btnhome1" mat-raised-button color="primary" (click)="openParentPage()">Parent patient
+                    <a class="btnhome1" mat-raised-button color="primary" (click)="openParentPage()" [innerHTML]="parent">
                     </a>
                   </div>
                   <br/><br/>
@@ -99,18 +90,18 @@
             <ion-button class="btnSlides" color="warn" style="color:#ffffff; border-radius: 20px;"
                         (click)="slides.slidePrev()">
               <ion-icon name="chevron-back"></ion-icon>
-              Precedent
+              <span [innerHTML]="precd"></span>
             </ion-button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <ion-button *ngIf="Data.length==0" class="btnSlides" color="warn"
                         style="color: #ffffff; border-radius: 20px;"
                         (click)="slides.slideNext()">
-              Suivant
+              <span [innerHTML]="next"></span>
               <ion-icon name="chevron-forward"></ion-icon>
             </ion-button>
             <ion-button *ngIf="Data.length>0" class="btnSlides" color="warn"
                         style="color: #ffffff; border-radius: 20px;"
                         (click)="openPage()">
-              Suivant
+              <span [innerHTML]="next"></span>
               <ion-icon name="chevron-forward"></ion-icon>
             </ion-button>
           </div>
