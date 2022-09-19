@@ -5,6 +5,7 @@ import {MatDialog} from "@angular/material/dialog";
 import {DialogCalculateComponent} from "./dialog-calculate/dialog-calculate.component";
 import {DbService} from "../services/db.service";
 import {LocalNotifications} from "@ionic-native/local-notifications/ngx";
+import {DialogAuthComponent} from "./dialog-auth/dialog-auth.component";
 
 
 @Component({
@@ -52,8 +53,8 @@ export class DashboardPage implements OnInit {
 
 
   openDialog(title) {
-    const dialogRef = this.dialog.open(DialogCalculateComponent , {
-      width: '80%' ,
+    const dialogRef = this.dialog.open(DialogAuthComponent , {
+      width: '60%' ,
       disableClose: true ,
       closeOnNavigation: false ,
       data: title
@@ -96,7 +97,6 @@ export class DashboardPage implements OnInit {
       .then((response) => {
         this.itemsInfos = response[0];
         this.items = response;
-        console.log("response" , response);
         this.title_chvr = this.itemsInfos.infos.dash_client.dialog.title_chvr;
         this.title_ordn = this.itemsInfos.infos.dash_client.dialog.title_ordn;
         this.btn_rdv_chgv = this.itemsInfos.infos.dash_client.btn_rdv_chgv;
@@ -119,7 +119,6 @@ export class DashboardPage implements OnInit {
         });
       }
     });
-
   }
 
 

@@ -1,0 +1,24 @@
+<h2 mat-dialog-title align="center">{{dialogTitle}}</h2>
+<mat-dialog-content class="mat-typography">
+  <form class="example-form" [formGroup]="mainForm">
+    <div align="center" style="width: 100%">
+      <mat-form-field appearance="fill" style="width: 100%;">
+        <mat-label>{{password}}</mat-label>
+        <input matInput [type]="hide ? 'password' : 'text'" formControlName="password">
+        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                [attr.aria-pressed]="hide">
+          <ion-icon style="font-size: x-large" [name]="hide ? 'eye-off-outline' : 'eye-outline'"></ion-icon>
+        </button>
+      </mat-form-field>
+    </div>
+  </form>
+</mat-dialog-content>
+
+<mat-dialog-actions align="center">
+  <div align="center" class="example-button-row">
+    <button align="center" mat-raised-button [mat-dialog-close]="true">{{btn_clear}}</button>&nbsp;&nbsp;&nbsp;
+    <button align="center" mat-raised-button color="primary" (click)="submitPassword()" [disabled]="!mainForm.valid"
+            [mat-dialog-close]="true" type="submit">{{btn_search}}</button>
+    <br/>
+  </div>
+</mat-dialog-actions>

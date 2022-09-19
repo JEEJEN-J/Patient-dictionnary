@@ -20,6 +20,7 @@ import {MatButtonToggleModule} from "@angular/material/button-toggle";
 import {MatListModule} from "@angular/material/list";
 import {MatRadioModule} from "@angular/material/radio";
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import {DialogAuthComponent} from "./dialog-auth/dialog-auth.component";
 
 
 @NgModule({
@@ -53,6 +54,6 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
     MatDatepickerModule,
     { provide: MAT_DATE_LOCALE, useValue: 'en-GB' }
   ],
-  declarations: [DashboardPage, DialogCalculateComponent]
+  declarations: [DashboardPage, DialogCalculateComponent, DialogAuthComponent]
 })
 export class DashboardPageModule {}

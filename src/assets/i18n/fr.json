@@ -2,6 +2,12 @@
   {
     "id": 0,
     "header": "Table Patient",
+    "auth":{
+      "title": "Authentification",
+      "password": "Votre mot de passe",
+      "btn_clear": "Quitter",
+      "btn_search": "Rechercher"
+    },
     "infos": {
       "home": {
         "next": "Suivant",

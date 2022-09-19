@@ -2,6 +2,12 @@
   {
     "id": 0,
     "header": "Tab Pasyan",
+    "auth":{
+      "title": "Otantifikasyon",
+      "password": "Modpas ou",
+      "btn_clear": "Kite",
+      "btn_search": "Rechèch"
+    },
     "infos": {
       "home": {
         "next": "Pwochen",
