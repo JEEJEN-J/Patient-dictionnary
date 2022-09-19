@@ -48,6 +48,7 @@ export class CalculatePage implements OnInit {
   stat;
   rendv;
   parent;
+  tablePatient;
 
   constructor(public navController: NavController ,
               private activatedRoute: ActivatedRoute ,
@@ -101,6 +102,7 @@ export class CalculatePage implements OnInit {
       .then((response) => response.json())
       .then((response) => {
         this.itemsInfos = response[0];
+        this.tablePatient = this.itemsInfos.header;
         this.title = this.itemsInfos.infos.calculate.title;
         this.percent_tile = this.itemsInfos.infos.calculate.percent_tile;
         this.infomations = this.itemsInfos.infos.calculate.infomations;
@@ -164,7 +166,7 @@ export class CalculatePage implements OnInit {
 
 
   goBack() {
-    this.navController.navigateBack("dashboard" , {queryParams: {title: 'Dashboard patient'}});
+    this.navController.navigateBack("dashboard" , {queryParams: {title: this.tablePatient}});
   }
 
 }

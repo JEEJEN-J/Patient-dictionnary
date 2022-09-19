@@ -27,6 +27,8 @@ export class HomePage implements OnInit {
   header;
   username;
 
+  tablePatient;
+
   langs: any[] = [];
   lang;
   accounts: any[] = [];
@@ -75,7 +77,7 @@ export class HomePage implements OnInit {
 
 
   openPage() {
-    this.navController.navigateForward(["dashboard"] , {queryParams: {title: this.header}});
+    this.navController.navigateForward(["dashboard"] , {queryParams: {title: this.tablePatient}});
     // this.db.addAccount('Patient', new Date());
   }
 
@@ -100,12 +102,12 @@ export class HomePage implements OnInit {
   }
 
   initializeItems() {
-    console.log('langue : ',this.lang)
-    fetch("./assets/i18n/"+this.lang+".json")
+    console.log('langue : ' , this.lang)
+    fetch("./assets/i18n/" + this.lang + ".json")
       .then((response) => response.json())
       .then((response) => {
         this.items = response[0];
-        console.log("response home : " , response);
+        this.tablePatient = this.items.header;
         this.simple = this.items.infos.home.SimpleText;
         this.AppTitle = this.items.infos.home.AppTitle;
         this.app = this.items.infos.home.app;

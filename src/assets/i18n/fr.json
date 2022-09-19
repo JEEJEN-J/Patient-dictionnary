@@ -1,6 +1,7 @@
 [
   {
     "id": 0,
+    "header": "Table Patient",
     "infos": {
       "home": {
         "next": "Suivant",
@@ -13,7 +14,7 @@
         "parent": "Parent patient",
         "bienvenu": "Bienvenue",
         "start": "Démarer avec",
-        "SimpleText": "Cette application, developpe par <a href='https://www.facebook.com/Cippress-100117798061997' style='font-weight: bold; font-size: 14px; text-shadow: none'>Cipress</a> avec le support de PANOS dediee a l'education sur la prevention et le traitement du VIH "
+        "SimpleText": "Cette application, développée par <a href='https://www.facebook.com/Cippress-100117798061997' style='font-weight: bold; font-size: 14px; text-shadow: none'>Cipress</a> avec le support de <a href='https://panoshaiti.org' style='font-weight: bold; font-size: 14px; text-shadow: none'>PANOS</a>, dédiée a l'éducation sur la prevention et le traitement du VIH, ainsi que la lutte contre la stigmatisation et la discrimination des personnes infectées ou afféctées."
       },
       "profil": {
         "title": "Profile",

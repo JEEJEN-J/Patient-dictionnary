@@ -19,6 +19,7 @@ export class DefinitionPage implements OnInit {
   vihDef;
   langs: any[] = [];
   lang;
+  tablePatient;
 
   // link = 'https://youtu.be/Pg83WeGB2CQ';
 
@@ -54,6 +55,7 @@ export class DefinitionPage implements OnInit {
       .then((response) => response.json())
       .then((response) => {
         this.itemsInfos = response[0];
+        this.tablePatient = this.itemsInfos.header;
         this.vihDef = this.itemsInfos.infos.def_client.def_vih;
         console.log("response" , response);
       });
@@ -85,7 +87,7 @@ export class DefinitionPage implements OnInit {
 
 
   goBack() {
-    this.navController.navigateBack("dashboard" , {queryParams: {title: 'Dashboard patient'}});
+    this.navController.navigateBack("dashboard" , {queryParams: {title: this.tablePatient}});
   }
 
 

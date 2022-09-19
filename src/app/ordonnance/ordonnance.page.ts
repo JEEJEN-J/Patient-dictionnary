@@ -43,6 +43,7 @@ export class OrdonnancePage implements OnInit {
   next_date;
   aprovmnt;
   nb_days;
+  tablePatient;
 
 
   constructor(public navController: NavController ,
@@ -95,6 +96,7 @@ export class OrdonnancePage implements OnInit {
       .then((response) => response.json())
       .then((response) => {
         this.itemsInfos = response[0];
+        this.tablePatient = this.itemsInfos.header;
         this.title = this.itemsInfos.infos.ordonnance.title;
         this.percent_tile = this.itemsInfos.infos.ordonnance.percent_tile;
         this.infomations = this.itemsInfos.infos.ordonnance.infomations;
@@ -156,7 +158,7 @@ export class OrdonnancePage implements OnInit {
 
 
   goBack() {
-    this.navController.navigateBack("dashboard" , {queryParams: {title: 'Dashboard patient'}});
+    this.navController.navigateBack("dashboard" , {queryParams: {title: this.tablePatient}});
   }
 
 }
