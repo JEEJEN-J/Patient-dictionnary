@@ -2,29 +2,29 @@
 <mat-dialog-content class="mat-typography">
   <form class="example-form" [formGroup]="mainForm">
 
-    <section class="example-section" *ngIf="title=='Charge virale'">
-      <label class="example-margin"><strong>Resultat charge virale : </strong></label><br/><br/>
+    <section class="example-section" *ngIf="title=='Charge virale' || title=='Chaj viral'">
+      <label class="example-margin"><strong>{{result_chv}} : </strong></label><br/><br/>
       <mat-radio-group formControlName="status">
         <mat-radio-button class="example-margin" value="Détectable">
-          Détectable
+          {{detectable}}
         </mat-radio-button>
         <mat-radio-button class="example-margin" value="Indétectable" style="float: right; margin-right: 5px">
-          Indétectable
+          {{indetectable}}
         </mat-radio-button>
       </mat-radio-group>
     </section>
     <br/>
 
     <mat-form-field appearance="fill" style="width: 100%;">
-      <mat-label>Date de la derniere viste</mat-label>
+      <mat-label>{{date_visit}}</mat-label>
       <input #minmaxInput matInput readonly [matDatepicker]="picker1" [max]="currentDate" [formControl]=date>
       <mat-hint>DD/MM/YYYY</mat-hint>
       <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
       <mat-datepicker #picker1></mat-datepicker>
     </mat-form-field>
 
-    <mat-form-field class="example-full-width" appearance="fill" *ngIf="title=='Ordonnance'">
-      <mat-label>Nombre de mois d'aprivisionnement</mat-label>
+    <mat-form-field class="example-full-width" appearance="fill" *ngIf="title=='Ordonnance' || title=='òdonans'">
+      <mat-label>{{nb_aprovmnt}}</mat-label>
       <input matInput placeholder="Nombre de mois" type="number" min="1" formControlName="valueOrdn">
     </mat-form-field>
 
@@ -34,9 +34,9 @@
 
 <mat-dialog-actions align="end">
   <div class="example-button-row">
-    <button class="btnhome" mat-raised-button color="warn" [mat-dialog-close]="true">Annuler</button>&nbsp;&nbsp;&nbsp;
+    <button class="btnhome" mat-raised-button color="warn" [mat-dialog-close]="true">{{btn_annuler}}</button>&nbsp;&nbsp;&nbsp;
     <button class="btnhome1" mat-raised-button color="primary" [disabled]="!mainForm.valid" [mat-dialog-close]="true" type="submit"
-            (click)="storeData()">Valider
+            (click)="storeData()">{{btn_valider}}
     </button>
     <br/>
   </div>

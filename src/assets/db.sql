@@ -15,11 +15,13 @@ CREATE TABLE IF NOT EXISTS Ordonnance(
 
 CREATE TABLE IF NOT EXISTS account(
   id INTEGER PRIMARY KEY AUTOINCREMENT,
-  profil TEXT,
   username TEXT,
-  pssword TEXT,
-  createdDate TEXT,
-  editedDate TEXT
+  password TEXT
+);
+
+CREATE TABLE IF NOT EXISTS languages(
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  lang TEXT
 );
 
 -- INSERT or IGNORE INTO Calculate(id, numberOfDays, lastDate, nextDate) VALUES (1, 867, '2022-07-21T16:51:08.681Z', '2022-07-21T16:51:08.681Z');

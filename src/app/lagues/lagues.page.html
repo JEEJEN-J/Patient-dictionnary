@@ -4,29 +4,46 @@
       <button class="btn-goback" mat-icon-button color="primary" (click)="goBack()">
         <ion-icon name="arrow-back-outline" style="font-size: x-large; margin-top: -3px;"></ion-icon>
       </button>
-      <div style="font-size: 18px; float: left; margin-top: 30px; margin-left: 20px; color: black;">Langues</div>
+      <div style="font-size: 18px; float: left; margin-top: 30px; margin-left: 20px; color: black;">{{title}}</div>
     </div>
 
-    <div align="center" style="float: left; width: 100%; margin-top: 10px">
-      <mat-radio-group
-        class="example-radio-group">
-        <div style="margin: 10px; width: 87%">
-          <mat-radio-button class="example-radio-button" style="background: white; border-radius: 20px; width: 100%; padding: 10px" value="fr">Francais</mat-radio-button>
-          <img src="assets/icon/france.png" width="30" style="float: right; position: absolute; margin-left: -40px; margin-top: 5px; border-radius: 100px">
-        </div>
-        <div style="margin: 10px; margin-top: 18px; width: 87%">
-          <mat-radio-button selected class="example-radio-button" style="background: white; border-radius: 20px; width: 100%; padding: 10px" value="cr">Creole</mat-radio-button>
-          <img src="assets/icon/haiti.png" width="30" style="float: right; position: absolute; margin-left: -40px; margin-top: 5px; border-radius: 100px">
-        </div>
-      </mat-radio-group>
-    </div>
-
-    <div style="float:left; width: 100%; margin-top: 10px">
-      <div align="center" class="example-button-row" style="width: 100%;">
-        <button align="center" mat-flat-button color="primary" style="width: 87%; border-radius: 20px; height: 40px">Enregistrer</button>
+    <form [formGroup]="mainForm">
+      <div align="center" style="float: left; width: 100%; margin-top: 10px; color: black">
+        <mat-radio-group class="example-radio-group" formControlName="lang">
+          <div style="margin: 10px; width: 87%">
+            <mat-radio-button class="example-radio-button" checked
+                              style="background: white; border-radius: 20px; width: 100%; padding: 10px" value="fr">
+              {{french}}
+            </mat-radio-button>
+            <img src="assets/icon/france.png" width="30"
+                 style="float: right; position: absolute; margin-left: -40px; margin-top: 5px; border-radius: 100px">
+          </div>
+          <div style="margin: 10px; margin-top: 18px; width: 87%">
+            <mat-radio-button selected class="example-radio-button"
+                              style="background: white; border-radius: 20px; width: 100%; padding: 10px" value="cr">
+              {{creole}}
+            </mat-radio-button>
+            <img src="assets/icon/haiti.png" width="30"
+                 style="float: right; position: absolute; margin-left: -40px; margin-top: 5px; border-radius: 100px">
+          </div>
+        </mat-radio-group>
       </div>
-    </div>
 
+      <div style="float:left; width: 100%; margin-top: 10px">
+        <div align="center" class="example-button-row" style="width: 100%;">
+          <button type="submit" (click)="submit()" align="center" mat-flat-button color="primary"
+                  style="width: 87%; border-radius: 20px; height: 40px">
+            {{save}}
+          </button>
+        </div>
+      </div>
+    </form>
+
+<!--    <ion-content>-->
+<!--      <ion-refresher slot="fixed" pullFactor="0.5" pullMin="100" pullMax="200">-->
+<!--        <ion-refresher-content></ion-refresher-content>-->
+<!--      </ion-refresher>-->
+<!--    </ion-content>-->
 
   </div>
 </ion-content>

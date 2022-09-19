@@ -10,6 +10,7 @@ import {ActivatedRoute} from "@angular/router";
 export class DashParentPage implements OnInit {
 
   items;
+  don = [];
   data;
   cp: number = 1;
   panelOpenState = false;
@@ -27,6 +28,9 @@ export class DashParentPage implements OnInit {
         this.data = response;
       });
     this.items = this.data;
+    this.items.forEach((item) => {
+      console.log('item-parent : ' , item)
+    })
   }
 
   getInfo() {

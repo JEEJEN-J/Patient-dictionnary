@@ -14,6 +14,71 @@
         "bienvenu": "Byenvini",
         "start": "Demare ak",
         "SimpleText": "<a href='https://www.facebook.com/Cippress-100117798061997' style='font-weight: bold; font-size: 14px; text-shadow: none'>Cipress</a> devlope aplikasyon sa a dirèkteman pou fè edikasyon, prevansyon ak trètman VIH.Aplikasyon sa a ap sèvi tou pou goumen kont estigmatizasyon ak diskriminasyon sou moun ki enfekte ak moun ki afekte."
+      },
+      "profil": {
+        "title": "Pwofil",
+        "username": "Nom itilizatè a",
+        "password": "Mo de pas itilizatè a",
+        "save": "Anrejistre"
+      },
+      "edit_profile": {
+        "title": "Modifye pwofil ou",
+        "username": "Nom itilizatè a",
+        "oldPassword": "Ansyen mo de pas",
+        "newPassword": "Nouvo mo de pas",
+        "resetPassword": "Reyajiste mo de pas ou",
+        "save": "Modifye"
+      },
+      "langue": {
+        "title": "Lang",
+        "french": "Fransè",
+        "creole": "Kreyòl",
+        "save": "Anrejistre"
+      },
+      "dash_client": {
+        "title": "Dashboard Pasyan",
+        "btn_rdv_chgv": "Randev. Chaj viral",
+        "btn_reaprv": "Renouvèlman",
+        "btn_stat": "Estatistik",
+        "dialog": {
+          "title_chvr": "Chaj viral",
+          "modif_title_chvr": "Modifye pwogresyon ou",
+          "title_ordn": "òdonans",
+          "modif_title_ordn": "Modifikasyon òdonans",
+          "result_chv": "Rezilta chaj viral",
+          "detectable": "Detektab",
+          "indetectable": "Endetektab",
+          "date_visit": "Dat dènye vizit ou",
+          "btn_annuler": "Anile",
+          "btn_valider": "Valide",
+          "btn_modif": "Modifye",
+          "nb_aprovmnt": "Kantite mwa rezèv"
+        }
+      },
+      "dash_parent": {
+        "title": "Dashboard Paran Pasyan"
+      },
+      "def_client": {
+        "def_vih": "Viris Imino defisyans Imèn"
+      },
+      "calculate": {
+        "title": "Maj pwogresyon Chaj viral la",
+        "percent_tile": "Pousantaj nan kantite jou ki rete",
+        "infomations": "Enfòmasyon esansyèl",
+        "status": "Detektab",
+        "last_date": "Dènye dat",
+        "next_date": "pwochen dat",
+        "stat": "Estati",
+        "rendv": "Chaj viral nan"
+      },
+      "ordonnance": {
+        "title": "Maj pwogresyon amelyorasyon Preskripsyon medikal",
+        "percent_tile": "Pousantaj nan kantite jou ki rete",
+        "infomations": "Enfòmasyon esansyèl",
+        "aprovmnt": "Randevou nan",
+        "last_date": "Dènye dat",
+        "next_date": "pwochen dat",
+        "nb_days": "jou ki rete"
       }
     }
   },
@@ -25,7 +90,7 @@
       {
         "id": 1,
         "name": "VIH",
-        "description": "<strong>VIH</strong> se viris Imino Defisyans Imèn Akiz ki reskonsab Sendwom Imino Defisyans Akiz  <strong>(SIDA)</strong> la. Lè yon moun trape <strong>VIH</strong> sa pa vle di li genyen <strong>SIDA</strong> pou sa..",
+        "description": "<strong>VIH</strong> se Viris Imino defisyans Imèn Akiz ki reskonsab Sendwom Imino Defisyans Akiz  <strong>(SIDA)</strong> la. Lè yon moun trape <strong>VIH</strong> sa pa vle di li genyen <strong>SIDA</strong> pou sa..",
         "subtitle1": [],
         "video": "https://youtu.be/gNMLFJxp844"
       },
@@ -97,7 +162,7 @@
   {
     "id": 5,
     "categorie": "Client et Parent",
-    "title": "Diagnostike VIH la",
+    "title": "Dyagnostik VIH la",
     "subtitle": [
       {
         "id": 1,

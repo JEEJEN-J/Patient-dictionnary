@@ -1,37 +1,38 @@
 <mat-drawer-container style="" class="example-container" hasBackdrop="true">
   <mat-drawer #drawer mode="over" class="example-sidenav">
 
-    <div style="color: white">
-      <h1 align="center" style="background-color: #1e2023; padding: 10px">
-        <span>
-<!--          <img style="" src="./assets/images/vihruban.png" width="25"/>-->
-        </span>
-        <span align="center" [innerHTML]="settings"></span>
+    <div style="color: black">
+      <h1 align="center" style="background-color: #eeeeee; padding: 10px">
+        <ion-icon
+          style="position: relative;margin-bottom: -3px; color: darkred; border-radius: 50px"
+          name="settings-outline"></ion-icon>
+        <span style="color: black" align="center" [innerHTML]="settings"></span>
       </h1>
       <div align="center">
         <img src="./assets/icon/user_circle_icon_152504.png" width="100"/>
         <p style="">
           <button mat-icon-button (click)="openProfil()">
-            <ion-icon style="font-size: x-large" name="create-outline"></ion-icon>
+            <ion-icon style="font-size: x-large" color="primary" name="create-outline"></ion-icon>
           </button>
         </p>
-        <h2>Jeejen JOSEPH</h2>
-        <h4 style="margin-top: -18px; color: gray" [innerHTML]="parent"></h4>
+        <h2 *ngIf="username" style="color: gray">{{username}}</h2>
       </div>
     </div>
-    <mat-divider style="background-color: #404040; width: 90%; margin-left: auto; margin-right: auto"></mat-divider>
+    <mat-divider style="background-color: #eeeeee; width: 90%; margin-left: auto; margin-right: auto"></mat-divider>
     <section>
       <div class="example-button-row" style="margin: 10px">
         <button (click)="openLagues()" mat-flat-button color="primary"
-                style="margin-left: 10px; background-color: #1a1a1a; font-size: 18px; padding: 0px; color: grey" [innerHTML]="languages">
+                style="margin-left: 10px; background-color: #ffffff; font-size: 18px; padding: 0px; color: black"
+                [innerHTML]="languages">
         </button>
         <button (click)="openLagues()" mat-flat-button color="accent"
-                style="float: right; background-color: #1a1a1a; margin-right: 5px">
-          <img src="assets/icon/france.png" width="25">
+                style="float: right; background-color: #ffffff; margin-right: 5px">
+          <img *ngIf="lang=='fr'" src="assets/icon/france.png" width="25">
+          <img *ngIf="lang=='cr'" src="assets/icon/haiti.png" width="25">
         </button>
       </div>
     </section>
-    <mat-divider style="background-color: #404040; width: 90%; margin-left: auto; margin-right: auto"></mat-divider>
+    <mat-divider style="background-color: #eeeeee; width: 90%; margin-left: auto; margin-right: auto"></mat-divider>
 
 
   </mat-drawer>
@@ -59,9 +60,11 @@
 
 
           <div style="margin-top: 48%">
-            <h1 style="font-size: 55px; font-family: 'Century Schoolbook L'; color: #ffffff; margin-bottom: 10px" [innerHTML]="bienvenu"></h1><br/>
+            <h1 style="font-size: 55px; font-family: 'Century Schoolbook L'; color: #ffffff; margin-bottom: 10px"
+                [innerHTML]="bienvenu"></h1><br/>
             <h3 style="color: white; font-size: x-large; margin-bottom: 10px;" [innerHTML]="app"></h3><br/>
-            <h2 style="color: #eeeeee; font-size: 35px; font-family: 'Century Schoolbook L';" [innerHTML]="AppTitle"></h2>
+            <h2 style="color: #eeeeee; font-size: 35px; font-family: 'Century Schoolbook L';"
+                [innerHTML]="AppTitle"></h2>
           </div>
 
           <div style="text-shadow: black">
@@ -77,7 +80,8 @@
                   <div class="example-button-row">
                     <a class="btnhome" mat-raised-button color="primary" (click)="openPage()" [innerHTML]="client"></a>
                     <h3 class="social-login-title">OU</h3>
-                    <a class="btnhome1" mat-raised-button color="primary" (click)="openParentPage()" [innerHTML]="parent">
+                    <a class="btnhome1" mat-raised-button color="primary" (click)="openParentPage()"
+                       [innerHTML]="parent">
                     </a>
                   </div>
                   <br/><br/>

@@ -30,7 +30,7 @@ export class LanguageService {
 
   getLanguages() {
     return [
-      {text: 'Francais' , value: 'en' , img: ''} ,
+      {text: 'Francais' , value: 'fr' , img: ''} ,
       {text: 'Creole' , value: 'cr' , img: ''}
     ];
   }

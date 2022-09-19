@@ -19,6 +19,16 @@ export class DialogOrdonnComponent implements OnInit {
   mainForm: FormGroup;
   currentDate = new Date();
 
+  langs: any[] = [];
+  lang;
+  itemsInfos;
+  title_ordn;
+  modif_title_ordn;
+  nb_aprovmnt;
+  date_visit;
+  btn_annuler;
+  btn_modif;
+
   constructor(public navController: NavController ,
               private activatedRoute: ActivatedRoute ,
               public formBuilder: FormBuilder ,
@@ -35,6 +45,32 @@ export class DialogOrdonnComponent implements OnInit {
         });
       }
     });
+
+    this.db.dbState().subscribe((res) => {
+      if (res) {
+        this.db.fetchLangs().subscribe(lng => {
+          this.langs = lng;
+          if (this.langs.length == 0) {
+            this.lang = 'fr';
+          } else {
+            this.lang = this.langs[0].lang;
+          }
+        });
+      }
+    });
+
+    fetch("./assets/i18n/" + this.lang + ".json")
+      .then((response) => response.json())
+      .then((response) => {
+        this.itemsInfos = response[0];
+        this.modif_title_ordn = this.itemsInfos.infos.dash_client.dialog.modif_title_ordn;
+        this.nb_aprovmnt = this.itemsInfos.infos.dash_client.dialog.nb_aprovmnt;
+        this.date_visit = this.itemsInfos.infos.dash_client.dialog.date_visit;
+        this.btn_annuler = this.itemsInfos.infos.dash_client.dialog.btn_annuler;
+        this.btn_modif = this.itemsInfos.infos.dash_client.dialog.btn_modif;
+      });
+
+
     this.mainForm = this.formBuilder.group({
       valueOrdn: [this.data.valueOrdn , Validators.required] ,
       date: [this.date]

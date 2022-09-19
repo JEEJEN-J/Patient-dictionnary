@@ -42,6 +42,10 @@ const routes: Routes = [
   {
     path: 'lagues',
     loadChildren: () => import('./lagues/lagues.module').then( m => m.LaguesPageModule)
+  },
+  {
+    path: 'edit-profil',
+    loadChildren: () => import('./edit-profil/edit-profil.module').then( m => m.EditProfilPageModule)
   }
 ];
 

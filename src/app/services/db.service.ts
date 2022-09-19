@@ -6,7 +6,7 @@ import {SQLitePorter} from '@ionic-native/sqlite-porter/ngx';
 import {SQLite , SQLiteObject} from '@ionic-native/sqlite/ngx';
 import {Calculate} from "../models/calculate";
 import {Ordonnance} from "../models/ordonnance";
-import {Account} from "../models/account";
+import {Account , Languages} from "../models/account";
 
 @Injectable({
   providedIn: 'root'
@@ -17,6 +17,7 @@ export class DbService {
   calculatesList = new BehaviorSubject([]);
   ordonnancesList = new BehaviorSubject([]);
   accountList = new BehaviorSubject([]);
+  languagesList = new BehaviorSubject([]);
   public isDbReady: BehaviorSubject<boolean> = new BehaviorSubject(false);
 
   constructor(
@@ -56,6 +57,10 @@ export class DbService {
     return this.accountList.asObservable();
   }
 
+  fetchLangs(): Observable<Languages[]> {
+    return this.languagesList.asObservable();
+  }
+
 
   // Render fake data
   getFakeData() {
@@ -68,6 +73,7 @@ export class DbService {
           this.getCalculates();
           this.getOrdonnances();
           this.getAccounts();
+          this.getLangs();
           this.isDbReady.next(true);
         })
         .catch(error => console.error(error));
@@ -128,15 +134,31 @@ export class DbService {
         for (var i = 0; i < res.rows.length; i++) {
           items.push({
             id: res.rows.item(i).id ,
-            profil: res.rows.item(i).profil ,
             username: res.rows.item(i).username ,
-            password: res.rows.item(i).password ,
-            createdDate: res.rows.item(i).createdDate ,
-            editedDate: res.rows.item(i).editedDate
+            password: res.rows.item(i).password
           });
         }
       }
       this.accountList.next(items);
+      this.isDbReady.next(true);
+    });
+  }
+
+  /**
+   * Get all Lang list
+   * */
+  getLangs() {
+    return this.storage.executeSql('SELECT * FROM languages' , []).then(res => {
+      let items: Languages[] = [];
+      if (res.rows.length > 0) {
+        for (var i = 0; i < res.rows.length; i++) {
+          items.push({
+            id: res.rows.item(i).id ,
+            lang: res.rows.item(i).lang
+          });
+        }
+      }
+      this.languagesList.next(items);
       this.isDbReady.next(true);
     });
   }
@@ -170,13 +192,26 @@ export class DbService {
   /**
    * Add a new Account
    *
-   * @param {profil and createdDate}
+   * @param {username and password}
    * */
-  addAccount(profil , createdDate) {
-    let data = [profil , createdDate];
-    return this.storage.executeSql('INSERT INTO account (profil, createdDate) VALUES (?, ?)' , data)
+  addAccount(username , password) {
+    let data = [username , password];
+    return this.storage.executeSql('INSERT INTO account (username, password) VALUES (?, ?)' , data)
       .then((res) => {
         this.getAccounts();
+      });
+  }
+
+  /**
+   * Add a new Lang
+   *
+   * @param {lang}
+   * */
+  addLang(lang) {
+    let data = [lang];
+    return this.storage.executeSql('INSERT INTO languages (lang) VALUES (?)' , data)
+      .then((res) => {
+        this.getLangs();
       });
   }
 
@@ -221,11 +256,52 @@ export class DbService {
     return this.storage.executeSql('SELECT * FROM account WHERE id = ?' , [id]).then(res => {
       return {
         id: res.rows.item(0).id ,
-        profil: res.rows.item(0).profil ,
         username: res.rows.item(0).username ,
-        password: res.rows.item(0).password ,
-        createdDate: res.rows.item(0).createdDate ,
-        editedDate: res.rows.item(0).editedDate
+        password: res.rows.item(0).password
+      }
+    });
+  }
+
+  /**
+   * Get a Account by username
+   *
+   * @param username
+   * */
+  getAccountByUsername(username): Promise<Account> {
+    return this.storage.executeSql('SELECT * FROM account WHERE username = ?' , [username]).then(res => {
+      return {
+        id: res.rows.item(0).id ,
+        username: res.rows.item(0).username ,
+        password: res.rows.item(0).password
+      }
+    });
+  }
+
+  /**
+   * Get a Account by password
+   *
+   * @param password
+   * */
+  getAccountByPassword(password): Promise<Account> {
+    return this.storage.executeSql('SELECT * FROM account WHERE password = ?' , [password]).then(res => {
+      return {
+        id: res.rows.item(0).id ,
+        username: res.rows.item(0).username ,
+        password: res.rows.item(0).password
+      }
+    });
+  }
+
+  /**
+   * Get a Lang by ID
+   *
+   * @param id
+   * */
+  getLang(id): Promise<Languages> {
+    return this.storage.executeSql('SELECT * FROM languages WHERE id = ?' , [id]).then(res => {
+      return {
+        id: res.rows.item(0).id ,
+        lang: res.rows.item(0).lang
       }
     });
   }
@@ -269,17 +345,29 @@ export class DbService {
    *
    * @param {id and {account}}
    * */
-  updateAccount(id , profil , username , password , createdDate , editedDate) {
-    let data = [profil , username , password , createdDate , editedDate];
+  updateAccount(id , username , password) {
+    let data = [username , password];
     return this.storage.executeSql(`UPDATE account
-                                    SET profil      = ?,
-                                        username    = ?,
-                                        password    = ?,
-                                        createdDate = ?,
-                                        editedDate  = ?
+                                    SET username    = ?,
+                                        password    = ?
                                     WHERE id = ${id}` , data)
       .then(data => {
         this.getAccounts();
+      })
+  }
+
+  /**
+   * Update the Lang
+   *
+   * @param {id and lang}
+   * */
+  updateLang(id , lang) {
+    let data = [lang];
+    return this.storage.executeSql(`UPDATE languages
+                                    SET lang = ?
+                                    WHERE id = ${id}` , data)
+      .then(data => {
+        this.getLangs();
       })
   }
 

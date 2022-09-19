@@ -33,6 +33,17 @@ export class OrdonnancePage implements OnInit {
   seconds: any;
   myInterval: any;
 
+  itemsInfos;
+  langs: any[] = [];
+  lang;
+  title;
+  percent_tile;
+  infomations;
+  last_date;
+  next_date;
+  aprovmnt;
+  nb_days;
+
 
   constructor(public navController: NavController ,
               private activatedRoute: ActivatedRoute ,
@@ -66,6 +77,32 @@ export class OrdonnancePage implements OnInit {
         });
       }
     });
+
+    this.db.dbState().subscribe((res) => {
+      if (res) {
+        this.db.fetchLangs().subscribe(lng => {
+          this.langs = lng;
+          if (this.langs.length == 0) {
+            this.lang = 'fr';
+          } else {
+            this.lang = this.langs[0].lang;
+          }
+        });
+      }
+    });
+
+    fetch("./assets/i18n/" + this.lang + ".json")
+      .then((response) => response.json())
+      .then((response) => {
+        this.itemsInfos = response[0];
+        this.title = this.itemsInfos.infos.ordonnance.title;
+        this.percent_tile = this.itemsInfos.infos.ordonnance.percent_tile;
+        this.infomations = this.itemsInfos.infos.ordonnance.infomations;
+        this.last_date = this.itemsInfos.infos.ordonnance.last_date;
+        this.next_date = this.itemsInfos.infos.ordonnance.next_date;
+        this.aprovmnt = this.itemsInfos.infos.ordonnance.aprovmnt;
+        this.nb_days = this.itemsInfos.infos.ordonnance.nb_days;
+      });
 
     this.myInterval = setInterval(() => {
       this.commingSoonTime();

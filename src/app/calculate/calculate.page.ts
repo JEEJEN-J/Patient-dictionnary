@@ -36,6 +36,18 @@ export class CalculatePage implements OnInit {
   seconds: any;
   myInterval: any;
 
+  itemsInfos;
+  langs: any[] = [];
+  lang;
+  title;
+  percent_tile;
+  infomations;
+  status;
+  last_date;
+  next_date;
+  stat;
+  rendv;
+  parent;
 
   constructor(public navController: NavController ,
               private activatedRoute: ActivatedRoute ,
@@ -47,7 +59,7 @@ export class CalculatePage implements OnInit {
 
   openDialog(item) {
     const dialogRef = this.dialog.open(DialogFormComponent , {
-      width: '80%',
+      width: '80%' ,
       disableClose: true ,
       closeOnNavigation: false ,
       data: item
@@ -71,6 +83,34 @@ export class CalculatePage implements OnInit {
 
 
   ngOnInit() {
+
+    this.db.dbState().subscribe((res) => {
+      if (res) {
+        this.db.fetchLangs().subscribe(lng => {
+          this.langs = lng;
+          if (this.langs.length == 0) {
+            this.lang = 'fr';
+          } else {
+            this.lang = this.langs[0].lang;
+          }
+        });
+      }
+    });
+
+    fetch("./assets/i18n/" + this.lang + ".json")
+      .then((response) => response.json())
+      .then((response) => {
+        this.itemsInfos = response[0];
+        this.title = this.itemsInfos.infos.calculate.title;
+        this.percent_tile = this.itemsInfos.infos.calculate.percent_tile;
+        this.infomations = this.itemsInfos.infos.calculate.infomations;
+        this.status = this.itemsInfos.infos.calculate.status;
+        this.last_date = this.itemsInfos.infos.calculate.last_date;
+        this.next_date = this.itemsInfos.infos.calculate.next_date;
+        this.rendv = this.itemsInfos.infos.calculate.rendv;
+        this.stat = this.itemsInfos.infos.calculate.stat;
+      });
+
     this.db.dbState().subscribe((res) => {
       if (res) {
         this.db.fetchCalculates().subscribe(item => {
@@ -82,9 +122,9 @@ export class CalculatePage implements OnInit {
           const difference = this.dateDiffInDays(date , b);
           this.remainingDays = difference;
 
-          if ((this.data[0].status == 'Indétectable'))
+          if ((this.data[0].status == 'Indétectable' || this.data[0].status == 'Endetektab'))
             this.realValue = Math.round(((difference) / 90) * 100);
-          else if ((this.data[0].status == 'Détectable'))
+          else if ((this.data[0].status == 'Détectable' || this.data[0].status == 'Detektab'))
             this.realValue = Math.round(((difference) / 365) * 100);
         });
       }

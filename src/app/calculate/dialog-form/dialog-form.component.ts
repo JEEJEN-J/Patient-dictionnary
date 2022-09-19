@@ -25,6 +25,19 @@ export class DialogFormComponent implements OnInit {
   mainForm: FormGroup;
   currentDate = new Date();
 
+  langs: any[] = [];
+  lang;
+  itemsInfos;
+  title_chvr;
+  modif_title_chvr;
+  result_chv;
+  detectable;
+  indetectable;
+  date_visit;
+  btn_annuler;
+  btn_valider;
+  btn_modif;
+
   constructor(public navController: NavController ,
               private activatedRoute: ActivatedRoute ,
               public formBuilder: FormBuilder ,
@@ -42,6 +55,35 @@ export class DialogFormComponent implements OnInit {
         });
       }
     });
+
+    this.db.dbState().subscribe((res) => {
+      if (res) {
+        this.db.fetchLangs().subscribe(lng => {
+          this.langs = lng;
+          if (this.langs.length == 0) {
+            this.lang = 'fr';
+          } else {
+            this.lang = this.langs[0].lang;
+          }
+        });
+      }
+    });
+
+    fetch("./assets/i18n/" + this.lang + ".json")
+      .then((response) => response.json())
+      .then((response) => {
+        this.itemsInfos = response[0];
+        this.title_chvr = this.itemsInfos.infos.dash_client.dialog.title_chvr;
+        this.result_chv = this.itemsInfos.infos.dash_client.dialog.result_chv;
+        this.detectable = this.itemsInfos.infos.dash_client.dialog.detectable;
+        this.indetectable = this.itemsInfos.infos.dash_client.dialog.indetectable;
+        this.date_visit = this.itemsInfos.infos.dash_client.dialog.date_visit;
+        this.btn_annuler = this.itemsInfos.infos.dash_client.dialog.btn_annuler;
+        this.btn_valider = this.itemsInfos.infos.dash_client.dialog.btn_valider;
+        this.btn_modif = this.itemsInfos.infos.dash_client.dialog.btn_modif;
+        this.modif_title_chvr = this.itemsInfos.infos.dash_client.dialog.modif_title_chvr;
+      });
+
     this.mainForm = this.formBuilder.group({
       status: [this.data.status , Validators.required] ,
       date: [this.date]

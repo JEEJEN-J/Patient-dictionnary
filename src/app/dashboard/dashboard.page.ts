@@ -15,17 +15,26 @@ import {LocalNotifications} from "@ionic-native/local-notifications/ngx";
 export class DashboardPage implements OnInit {
 
   items;
+  itemsInfos;
   data;
   Data: any[] = [];
   Data1: any[] = [];
   cp: number = 1;
   panelOpenState = false;
   title;
+  langs: any[] = [];
+  lang;
+  accounts: any[] = [];
 
+  btn_rdv_chgv;
+  btn_reaprv;
+  btn_stat;
+  title_chvr;
+  title_ordn;
 
   constructor(public navController: NavController ,
               private activatedRoute: ActivatedRoute ,
-              private localNotifications: LocalNotifications,
+              private localNotifications: LocalNotifications ,
               public dialog: MatDialog ,
               private db: DbService) {
     this.initializeItems();
@@ -35,18 +44,18 @@ export class DashboardPage implements OnInit {
 
   simpleNotif() {
     this.localNotifications.schedule({
-      id: 1,
-      text: 'Single Local Notification',
-      data: { secret: 'secret' }
+      id: 1 ,
+      text: 'Single Local Notification' ,
+      data: {secret: 'secret'}
     });
   }
 
 
   openDialog(title) {
     const dialogRef = this.dialog.open(DialogCalculateComponent , {
-      width: '80%',
-      disableClose: true,
-      closeOnNavigation: false,
+      width: '80%' ,
+      disableClose: true ,
+      closeOnNavigation: false ,
       data: title
     });
     dialogRef.afterClosed().subscribe(result => {
@@ -61,11 +70,38 @@ export class DashboardPage implements OnInit {
       this.title = params;
     });
 
-    fetch("./assets/i18n/cr.json")
+    this.db.dbState().subscribe((res) => {
+      if (res) {
+        this.db.fetchLangs().subscribe(lng => {
+          this.langs = lng;
+          if (this.langs.length == 0) {
+            this.lang = 'fr';
+          } else {
+            this.lang = this.langs[0].lang;
+          }
+        });
+      }
+    });
+
+    this.db.dbState().subscribe((res) => {
+      if (res) {
+        this.db.fetchAccounts().subscribe(acc => {
+          this.accounts = acc;
+        });
+      }
+    });
+
+    fetch("./assets/i18n/" + this.lang + ".json")
       .then((response) => response.json())
       .then((response) => {
+        this.itemsInfos = response[0];
         this.items = response;
         console.log("response" , response);
+        this.title_chvr = this.itemsInfos.infos.dash_client.dialog.title_chvr;
+        this.title_ordn = this.itemsInfos.infos.dash_client.dialog.title_ordn;
+        this.btn_rdv_chgv = this.itemsInfos.infos.dash_client.btn_rdv_chgv;
+        this.btn_stat = this.itemsInfos.infos.dash_client.btn_stat;
+        this.btn_reaprv = this.itemsInfos.infos.dash_client.btn_reaprv;
       });
 
     this.db.dbState().subscribe((res) => {
@@ -88,7 +124,7 @@ export class DashboardPage implements OnInit {
 
 
   initializeItems() {
-    fetch("./assets/dictionary/cr.json")
+    fetch("./assets/dictionary/" + this.lang + ".json")
       .then((response) => response.json())
       .then((response) => {
         this.data = response;

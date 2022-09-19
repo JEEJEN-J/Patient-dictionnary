@@ -1,15 +1,15 @@
-<h2 mat-dialog-title align="center">Modification Ordonnance</h2>
+<h2 mat-dialog-title align="center">{{modif_title_ordn}}</h2>
 <mat-dialog-content class="mat-typography">
 <!--  <h3>Develop across all platforms</h3>-->
 
   <form class="example-form" [formGroup]="mainForm">
     <mat-form-field class="example-full-width" appearance="fill" style="width: 100%;">
-      <mat-label>Nombre de mois d'aprivisionnement</mat-label>
+      <mat-label>{{nb_aprovmnt}}</mat-label>
       <input matInput placeholder="Nombre de mois" type="number" min="1" formControlName="valueOrdn">
     </mat-form-field>
 
     <mat-form-field appearance="fill" style="width: 100%;">
-      <mat-label>Derniere date charge virale</mat-label>
+      <mat-label>{{date_visit}}</mat-label>
       <input #minmaxInput matInput readonly [matDatepicker]="picker1" [max]="currentDate" [formControl]=date>
       <mat-hint>DD/MM/YYYY</mat-hint>
       <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
@@ -21,7 +21,7 @@
 
 <mat-dialog-actions align="end">
   <div class="example-button-row">
-    <button class="btnhome" mat-raised-button color="warn" [mat-dialog-close]="true">Annuler</button>&nbsp;&nbsp;&nbsp;
-    <button class="btnhome1" mat-raised-button color="primary" [disabled]="!mainForm.valid" [mat-dialog-close]="true" type="submit" (click)="storeData()">Modifier</button><br/>
+    <button class="btnhome" mat-raised-button color="warn" [mat-dialog-close]="true">{{btn_annuler}}</button>&nbsp;&nbsp;&nbsp;
+    <button class="btnhome1" mat-raised-button color="primary" [disabled]="!mainForm.valid" [mat-dialog-close]="true" type="submit" (click)="storeData()">{{btn_modif}}</button><br/>
   </div>
 </mat-dialog-actions>

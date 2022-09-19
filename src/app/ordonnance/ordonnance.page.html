@@ -13,12 +13,11 @@
 
     <mat-card style="box-shadow: none; width: 90%; margin-left: auto; margin-right: auto; border-radius: 20px;">
       <mat-card-content>
-        <h2 class="example-h2" align="center"><u>Marge de progression Ordonnance medicale</u></h2><br/>
+        <h2 class="example-h2" align="center"><u>{{title}}</u></h2><br/>
       </mat-card-content>
 
       <mat-card-content align="center">
-        <p class="example-h2" style="font-size: 16px; margin-left: auto; margin-right: auto;" align="center">Pourcentage
-          de nombre de jour restant</p><br/>
+        <p class="example-h2" style="font-size: 16px; margin-left: auto; margin-right: auto;" align="center">{{percent_tile}}</p><br/>
         <div style="width: 100px; margin-left: auto; margin-right: auto;">
           <mat-progress-spinner [color]="color"
                                 [mode]="mode"
@@ -35,14 +34,14 @@
 
       <ion-list style="margin-top: -5%;">
         <ion-list-header>
-          Informations essentielles
+          {{infomations}}
         </ion-list-header>
         <ion-item lines="inset" *ngFor="let data of data">
           <ion-label>
-            <h4>{{remainingDays}} jour restant</h4>
-            <p>Aprovisionnemen dans : {{(data.valueOrdn - 1) * 30}} jours</p>
-            <p>Dernière date : {{data.lastDate}}</p>
-            <p>Prochaine date : {{data.nextDate}}</p>
+            <h4>{{remainingDays}} {{nb_days}}</h4>
+            <p>{{aprovmnt}} : {{(data.valueOrdn - 1) * 30}} jr(s)</p>
+            <p>{{last_date}} : {{data.lastDate}}</p>
+            <p>{{next_date}} : {{data.nextDate}}</p>
           </ion-label>
 
           <div class="item-note" item-end>

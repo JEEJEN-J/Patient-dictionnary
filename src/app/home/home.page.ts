@@ -25,10 +25,54 @@ export class HomePage implements OnInit {
   settings;
   languages;
   header;
+  username;
+
+  langs: any[] = [];
+  lang;
+  accounts: any[] = [];
+
 
   constructor(public navController: NavController ,
               private db: DbService) {
   }
+
+
+  ngOnInit(): void {
+    // window.location.reload();
+
+    this.db.dbState().subscribe((res) => {
+      if (res) {
+        this.db.fetchLangs().subscribe(lng => {
+          this.langs = lng;
+          if (this.langs.length == 0) {
+            this.lang = 'fr';
+          } else {
+            this.lang = this.langs[0].lang;
+          }
+          this.initializeItems();
+        });
+      }
+    });
+
+    this.db.dbState().subscribe((res) => {
+      if (res) {
+        this.db.fetchAccounts().subscribe(acc => {
+          this.accounts = acc;
+          this.username = this.accounts[0].username;
+        });
+      }
+    });
+
+
+    this.db.dbState().subscribe((res) => {
+      if (res) {
+        this.db.fetchCalculates().subscribe(item => {
+          this.Data = item;
+        });
+      }
+    });
+  }
+
 
   openPage() {
     this.navController.navigateForward(["dashboard"] , {queryParams: {title: this.header}});
@@ -48,11 +92,16 @@ export class HomePage implements OnInit {
 
 
   openProfil() {
-    this.navController.navigateForward(["profil"] , {});
+    console.log('akkkkk : ' , this.accounts.length)
+    if (this.accounts.length == 0)
+      this.navController.navigateForward(["profil"] , {});
+    else if (this.accounts.length == 1)
+      this.navController.navigateForward(["edit-profil"] , {});
   }
 
   initializeItems() {
-    fetch("./assets/i18n/cr.json")
+    console.log('langue : ',this.lang)
+    fetch("./assets/i18n/"+this.lang+".json")
       .then((response) => response.json())
       .then((response) => {
         this.items = response[0];
@@ -68,24 +117,8 @@ export class HomePage implements OnInit {
         this.parent = this.items.infos.home.parent;
         this.languages = this.items.infos.home.languages;
         this.settings = this.items.infos.home.settings;
-
-        this.header = 'Dashboard Pasyan';
+        this.header = this.items.infos.dash_client.title;
       });
-  }
-
-
-  ngOnInit(): void {
-
-    this.initializeItems();
-
-    this.db.dbState().subscribe((res) => {
-      if (res) {
-        this.db.fetchCalculates().subscribe(item => {
-          this.Data = item;
-        });
-      }
-    });
-    console.log("Account : ", this.Data.length)
   }
 
 

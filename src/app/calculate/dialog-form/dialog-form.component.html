@@ -1,23 +1,23 @@
-<h2 mat-dialog-title align="center">Modifier votre progression</h2>
+<h2 mat-dialog-title align="center">{{modif_title_chvr}}</h2>
 <mat-dialog-content class="mat-typography">
 <!--  <h3>Develop across all platforms</h3>-->
 
   <form class="example-form" [formGroup]="mainForm">
 
     <section class="example-section">
-      <label class="example-margin"><strong>Resultat charge virale :</strong></label><br/><br/>
+      <label class="example-margin"><strong>{{result_chv}} :</strong></label><br/><br/>
       <mat-radio-group formControlName="status">
         <mat-radio-button class="example-margin" value="Détectable">
-          Détectable
+          {{detectable}}
         </mat-radio-button>
         <mat-radio-button class="example-margin" value="Indétectable" style="float: right; margin-right: 5px">
-          Indétectable
+          {{indetectable}}
         </mat-radio-button>
       </mat-radio-group>
     </section><br/>
 
     <mat-form-field appearance="fill" style="width: 100%;">
-      <mat-label>Derniere date charge virale</mat-label>
+      <mat-label>{{date_visit}}</mat-label>
       <input #minmaxInput matInput readonly [matDatepicker]="picker1" [max]="currentDate" [formControl]=date>
       <mat-hint>DD/MM/YYYY</mat-hint>
       <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
@@ -29,7 +29,7 @@
 
 <mat-dialog-actions align="end">
   <div class="example-button-row">
-    <button class="btnhome" mat-raised-button color="warn" [mat-dialog-close]="true">Annuler</button>&nbsp;&nbsp;&nbsp;
-    <button class="btnhome1" mat-raised-button color="primary" [disabled]="!mainForm.valid" [mat-dialog-close]="true" type="submit" (click)="storeData()">Modifier</button><br/>
+    <button class="btnhome" mat-raised-button color="warn" [mat-dialog-close]="true">{{btn_annuler}}</button>&nbsp;&nbsp;&nbsp;
+    <button class="btnhome1" mat-raised-button color="primary" [disabled]="!mainForm.valid" [mat-dialog-close]="true" type="submit" (click)="storeData()">{{btn_modif}}</button><br/>
   </div>
 </mat-dialog-actions>

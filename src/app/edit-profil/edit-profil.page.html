@@ -19,8 +19,25 @@
           </div>
 
           <div align="center" style="width: 90%">
+            <div class="example-button-row" style="width: 100%;">
+              <button type="submit" (click)="submitUsername()" [disabled]="!mainForm.valid" style="height: 45px; float: left; width: 100%;"
+                      mat-raised-button color="primary">{{save}}
+              </button>
+            </div>
+          </div>
+        </div>
+        <span *ngIf="message">{{message}}</span>
+      </form>
+    </div>
+
+    <div style="width: 100%; float: left; margin-top: 20px">
+      <br/>
+      <form class="example-form" [formGroup]="mainForm1">
+        <div align="center" style="color: black">
+          <h3>{{resetPassword}}</h3>
+          <div align="center" style="width: 90%">
             <mat-form-field appearance="fill" style="width: 100%;">
-              <mat-label>{{password}}</mat-label>
+              <mat-label>{{oldPassword}}</mat-label>
               <input matInput [type]="hide ? 'password' : 'text'" formControlName="password">
               <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
                       [attr.aria-pressed]="hide">
@@ -30,14 +47,25 @@
           </div>
 
           <div align="center" style="width: 90%">
+            <mat-form-field appearance="fill" style="width: 100%;">
+              <mat-label>{{newPassword}}</mat-label>
+              <input matInput [type]="hide1 ? 'newPassword' : 'text'" formControlName="newPassword">
+              <button mat-icon-button matSuffix (click)="hide1 = !hide1" [attr.aria-label]="'Hide newPassword'"
+                      [attr.aria-pressed]="hide1">
+                <ion-icon style="font-size: x-large" [name]="hide1 ? 'eye-off-outline' : 'eye-outline'"></ion-icon>
+              </button>
+            </mat-form-field>
+          </div>
+
+          <div align="center" style="width: 90%">
             <div class="example-button-row" style="width: 100%;">
-              <button type="submit" (click)="submit()" [disabled]="!mainForm.valid" style="width: 100%; height: 50px"
+              <button type="submit" (click)="submitPassword()" [disabled]="!mainForm1.valid" style="height: 45px; float: left; width: 100%;"
                       mat-raised-button color="primary">{{save}}
               </button>
             </div>
           </div>
         </div>
-<!--        <span *ngIf="message">{{message}}</span>-->
+        <span *ngIf="message">{{message}}</span>
       </form>
     </div>
 

@@ -1,5 +1,88 @@
 [
   {
+    "id": 0,
+    "infos": {
+      "home": {
+        "next": "Suivant",
+        "settings": "Paramètre",
+        "languages": "Langue",
+        "precd": "Précédent",
+        "AppTitle": "Platfòm Edikasyon Kliyan",
+        "app": "dans",
+        "client": "Patient",
+        "parent": "Parent patient",
+        "bienvenu": "Bienvenue",
+        "start": "Démarer avec",
+        "SimpleText": "Cette application, developpe par <a href='https://www.facebook.com/Cippress-100117798061997' style='font-weight: bold; font-size: 14px; text-shadow: none'>Cipress</a> avec le support de PANOS dediee a l'education sur la prevention et le traitement du VIH "
+      },
+      "profil": {
+        "title": "Profile",
+        "username": "Nom d'utilisateur",
+        "password": "Mot de passe",
+        "save": "Enregistrer"
+      },
+      "edit_profile": {
+        "title": "Editer votre profile",
+        "username": "Nom d'utilisateur",
+        "oldPassword": "Ancien mot de passe",
+        "newPassword": "Nouveau mot de passe",
+        "resetPassword": "Réinitialiser le mot de passe",
+        "save": "Modifier"
+      },
+      "langue": {
+        "title": "Langues",
+        "french": "Français",
+        "creole": "Créole",
+        "save": "Sauvegarder"
+      },
+      "dash_client": {
+        "title": "Dashboard Patient",
+        "btn_rdv_chgv": "Rendz-v. Charge virale",
+        "btn_reaprv": "Réaprovisionnement",
+        "btn_stat": "Statistique",
+        "dialog": {
+          "title_chvr": "Charge virale",
+          "modif_title_chvr": "Modifer votre progression",
+          "title_ordn": "Ordonnance",
+          "modif_title_ordn": "Modification Ordonnance",
+          "result_chv": "Résultat charge virale",
+          "detectable": "Détectable",
+          "indetectable": "Indétectable",
+          "date_visit": "Date de la dernière visite",
+          "btn_annuler": "Annuler",
+          "btn_valider": "Valider",
+          "btn_modif": "Modifier",
+          "nb_aprovmnt": "Nombre de mois d'aprovisionnement"
+        }
+      },
+      "dash_parent": {
+        "title": "Dashboard Parent Patient"
+      },
+      "def_client": {
+        "def_vih": "Virus de l'Immunodeficience Humaine"
+      },
+      "calculate": {
+        "title": "Marge de progression Charge virale",
+        "percent_tile": "Pourcentage de nombre de jour restant",
+        "infomations": "Informations essentielles",
+        "status": "Détectable",
+        "last_date": "Dernière date",
+        "next_date": "Prochaine date",
+        "stat": "Status",
+        "rendv": "Charge virale dans"
+      },
+      "ordonnance": {
+        "title": "Marge de progression Ordonnance médicale",
+        "percent_tile": "Pourcentage de nombre de jour restant",
+        "infomations": "Informations essentielles",
+        "aprovmnt": "Aprovisionnement dans",
+        "last_date": "Dernière date",
+        "next_date": "Prochaine date",
+        "nb_days": "jour(s) restant"
+      }
+    }
+  },
+  {
     "id": 2,
     "categorie": "Client",
     "title": "Information générale sur le VIH",
