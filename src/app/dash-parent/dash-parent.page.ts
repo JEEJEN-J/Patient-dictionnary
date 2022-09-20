@@ -1,6 +1,7 @@
 import {Component , OnInit} from '@angular/core';
 import {NavController} from "@ionic/angular";
 import {ActivatedRoute} from "@angular/router";
+import {DbService} from "../services/db.service";
 
 @Component({
   selector: 'app-dash-parent' ,
@@ -16,24 +17,51 @@ export class DashParentPage implements OnInit {
   panelOpenState = false;
   title;
 
+  itemsInfos;
+  langs: any[] = [];
+  lang;
 
-  constructor(public navController: NavController , private activatedRoute: ActivatedRoute) {
+  constructor(public navController: NavController ,
+              private activatedRoute: ActivatedRoute ,
+              private db: DbService) {
     this.initializeItems();
   }
 
+
+  ngOnInit() {
+    this.activatedRoute.queryParamMap.subscribe(params => {
+      this.title = params;
+    });
+
+    this.db.dbState().subscribe((res) => {
+      if (res) {
+        this.db.fetchLangs().subscribe(lng => {
+          this.langs = lng;
+          if (this.langs.length == 0) {
+            this.lang = 'fr';
+          } else {
+            this.lang = this.langs[0].lang;
+          }
+        });
+      }
+    });
+
+    fetch("./assets/i18n/" + this.lang + "p.json")
+      .then((response) => response.json())
+      .then((response) => {
+        this.items = response;
+        console.log("response" , response);
+      });
+  }
+
+
   initializeItems() {
-    fetch("./assets/dictionary/dataParent.json")
+    fetch("./assets/i18n/" + this.lang + "p.json")
       .then((response) => response.json())
       .then((response) => {
         this.data = response;
       });
     this.items = this.data;
-    this.items.forEach((item) => {
-      console.log('item-parent : ' , item)
-    })
-  }
-
-  getInfo() {
 
   }
 
@@ -53,17 +81,6 @@ export class DashParentPage implements OnInit {
     }
   }
 
-  ngOnInit() {
-    this.activatedRoute.queryParamMap.subscribe(params => {
-      this.title = params;
-    });
-    fetch("./assets/dictionary/dataParent.json")
-      .then((response) => response.json())
-      .then((response) => {
-        this.items = response;
-        console.log("response" , response);
-      });
-  }
 
   openPage(header , item: any) {
     this.navController.navigateForward("definition-parent" , {

@@ -96,15 +96,9 @@
               <ion-icon name="chevron-back"></ion-icon>
               <span [innerHTML]="precd"></span>
             </ion-button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <ion-button *ngIf="Data.length==0" class="btnSlides" color="warn"
+            <ion-button class="btnSlides" color="warn"
                         style="color: #ffffff; border-radius: 20px;"
                         (click)="slides.slideNext()">
-              <span [innerHTML]="next"></span>
-              <ion-icon name="chevron-forward"></ion-icon>
-            </ion-button>
-            <ion-button *ngIf="Data.length>0" class="btnSlides" color="warn"
-                        style="color: #ffffff; border-radius: 20px;"
-                        (click)="openPage()">
               <span [innerHTML]="next"></span>
               <ion-icon name="chevron-forward"></ion-icon>
             </ion-button>

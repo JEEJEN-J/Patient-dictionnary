@@ -18,7 +18,7 @@
                          style="margin: 15px; box-shadow: 0px 25px 20px -40px; border-radius: 15px; border: 1px solid #eeeeee"
                          *ngFor="let item of items | paginate: { itemsPerPage: 7, currentPage: cp }">
 
-      <ion-accordion value="first" style="border-radius: 15px;">
+      <ion-accordion *ngIf="item.categorie!='app_config'" value="first" style="border-radius: 15px;">
         <ion-item slot="header" color="warn"
                   style="background: #ffffff; border-radius: 15px 15px 0px 0px; border-bottom: 1px solid #eeeeee; font-size: 16px; color: #9f3954">
           <ion-label>{{item.title}}</ion-label>
@@ -28,7 +28,6 @@
           {{(i + 1) + '. '}}<span [innerHTML]="subT.name"></span>
         </h5>
       </ion-accordion>
-
     </ion-accordion-group>
 
     <pagination-controls color="warn" (pageChange)="cp = $event"

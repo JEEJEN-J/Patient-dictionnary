@@ -2,9 +2,7 @@ import {Component , OnInit} from '@angular/core';
 import {NavController} from "@ionic/angular";
 import {ActivatedRoute} from "@angular/router";
 import {MatDialog} from "@angular/material/dialog";
-import {DialogCalculateComponent} from "./dialog-calculate/dialog-calculate.component";
 import {DbService} from "../services/db.service";
-import {LocalNotifications} from "@ionic-native/local-notifications/ngx";
 import {DialogAuthComponent} from "./dialog-auth/dialog-auth.component";
 
 
@@ -35,20 +33,10 @@ export class DashboardPage implements OnInit {
 
   constructor(public navController: NavController ,
               private activatedRoute: ActivatedRoute ,
-              private localNotifications: LocalNotifications ,
               public dialog: MatDialog ,
               private db: DbService) {
     this.initializeItems();
     this.ngOnInit();
-    this.simpleNotif()
-  }
-
-  simpleNotif() {
-    this.localNotifications.schedule({
-      id: 1 ,
-      text: 'Single Local Notification' ,
-      data: {secret: 'secret'}
-    });
   }
 
 

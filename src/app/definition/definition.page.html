@@ -49,18 +49,18 @@
 
         <span *ngIf="desciption.images">
           <span *ngIf="desciption.name === content.params.header">
-            <span *ngIf="desciption.name=='Telephone migrant'">
-              <span *ngFor="let image of desciption.images">
-                <a href="Tel:8427"><img [src]="image.name" style="width: 100%"></a>
-              </span>
-            </span>
-            <span *ngIf="desciption.name=='Telephone bleu'">
-              <span *ngFor="let image of desciption.images">
-                <a href="Tel:100"><img [src]="image.name" style="width: 100%"></a>
-              </span>
-            </span>
-            <span *ngIf="desciption.name!='Telephone migrant' && desciption.name!='Telephone bleu'">
-              <span *ngFor="let image of desciption.images">
+<!--            <span *ngIf="(desciption.name=='Téléphone migrant')">-->
+<!--              <span *ngFor="let image of desciption.images">-->
+<!--                <a href="Tel:8427"><img [src]="image.name" style="width: 100%"></a>-->
+<!--              </span>-->
+<!--            </span>-->
+<!--            <span *ngIf="(desciption.name=='Téléphone bleu')">-->
+<!--              <span *ngFor="let image of desciption.images">-->
+<!--                <a href="Tel:100"><img [src]="image.name" style="width: 100%"></a>-->
+<!--              </span>-->
+<!--            </span>-->
+            <span style="width: 100%;">
+              <span style="width: 100%" *ngFor="let image of desciption.images">
                 <img [src]="image.name" style="width: 100%">
               </span>
             </span>

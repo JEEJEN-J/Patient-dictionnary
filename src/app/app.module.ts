@@ -46,9 +46,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     ProfilPageModule
   ] ,
   providers: [
-    LanguageService,
     Storage,
-
     LocalNotifications ,
     SQLite ,
     SQLitePorter ,
@@ -59,7 +57,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     {
       provide: RouteReuseStrategy ,
       useClass: IonicRouteStrategy
-    }
+    },
+    LanguageService
   ] ,
   bootstrap: [AppComponent] ,
 })

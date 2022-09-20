@@ -7,6 +7,7 @@ import {DbService} from "../services/db.service";
 import {MatDialog} from "@angular/material/dialog";
 import {DialogFormComponent} from "./dialog-form/dialog-form.component";
 import {DatePipe} from "@angular/common";
+import {LocalNotifications} from "@ionic-native/local-notifications/ngx";
 
 
 @Component({
@@ -52,6 +53,7 @@ export class CalculatePage implements OnInit {
 
   constructor(public navController: NavController ,
               private activatedRoute: ActivatedRoute ,
+              private localNotifications: LocalNotifications ,
               private db: DbService ,
               public dialog: MatDialog) {
     // this.ngOnInit();
@@ -82,8 +84,18 @@ export class CalculatePage implements OnInit {
     return Math.floor((utc2 - utc1) / this.MS_PER_DAY);
   }
 
+  registerNotifications() {
+    this.localNotifications.schedule({
+      text: 'Delayed ILocalNotification' ,
+      trigger: {at: new Date(new Date().getTime() + 3600)} ,
+      led: 'FF0000' ,
+      sound: 'sound: isAndroid ? \'file://Spaceline.caf\': \'file://beep.caf\','
+    });
+  }
 
   ngOnInit() {
+
+    this.registerNotifications();
 
     this.db.dbState().subscribe((res) => {
       if (res) {
@@ -168,5 +180,6 @@ export class CalculatePage implements OnInit {
   goBack() {
     this.navController.navigateBack("dashboard" , {queryParams: {title: this.tablePatient}});
   }
+
 
 }

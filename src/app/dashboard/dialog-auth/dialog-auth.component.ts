@@ -121,7 +121,7 @@ export class DialogAuthComponent implements OnInit {
     } else if (this.accounts[0].password != this.mainForm.getRawValue().password) {
       let toast = await this.toast.create({
         message: "Mot de passe introuvable !" ,
-        duration: 2000 ,
+        duration: 2200 ,
         color: "warning"
       });
       toast.present();
