@@ -16,19 +16,12 @@
         <button class="btn" mat-flat-button color="primary"
                 (click)="openDialog(title_chvr)">{{btn_rdv_chgv}}
         </button>
-<!--        <button class="btn" *ngIf="Data.length>0" mat-flat-button color="primary"-->
-<!--                (click)="openCalculate(title_chvr)">{{btn_rdv_chgv}}-->
-<!--        </button>-->
-
         <button class="btn" mat-flat-button color="primary"><a style="text-decoration: none"
                                                                href="https://www.mesi.ht/">{{btn_stat}}</a></button>
 
         <button class="btn" mat-flat-button color="warn" (click)="openDialog(title_ordn)">
           {{btn_reaprv}}
         </button>
-<!--        <button class="btn" *ngIf="Data1.length>0" mat-flat-button color="warn" (click)="openOrdonnance(title_ordn)">-->
-<!--          {{btn_reaprv}}-->
-<!--        </button>-->
       </div>
     </div>
 
@@ -38,7 +31,7 @@
 
     <ion-accordion-group color="warn"
                          style="margin: 15px; box-shadow: 0px 25px 20px -40px; border-radius: 15px; border: 1px solid #eeeeee"
-                         *ngFor="let item of items | paginate: { itemsPerPage: 8, currentPage: cp }">
+                         *ngFor="let item of items | paginate: { itemsPerPage: 7, currentPage: cp }">
 
       <ion-accordion *ngIf="item.categorie!='app_config'" value="first" style="border-radius: 15px;">
         <ion-item slot="header" color="warn"

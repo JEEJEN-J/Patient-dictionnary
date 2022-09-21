@@ -2,7 +2,7 @@
   {
     "id": 0,
     "categorie": "app_config",
-    "header": "Table Patient",
+    "header": "Table Client",
     "auth":{
       "title": "Authentification",
       "password": "Votre mot de passe",
@@ -17,8 +17,8 @@
         "precd": "Précédent",
         "AppTitle": "Platfòm Edikasyon Kliyan",
         "app": "dans",
-        "client": "Patient",
-        "parent": "Parent patient",
+        "client": "Client",
+        "parent": "Accompagnateur",
         "bienvenu": "Bienvenue",
         "start": "Démarer avec",
         "SimpleText": "Cette application, développée par <a href='https://www.facebook.com/Cippress-100117798061997' style='font-weight: bold; font-size: 14px; text-shadow: none'>Cipress</a> avec le support de <a href='https://panoshaiti.org' style='font-weight: bold; font-size: 14px; text-shadow: none'>PANOS</a>, dédiée a l'éducation sur la prevention et le traitement du VIH, ainsi que la lutte contre la stigmatisation et la discrimination des personnes infectées ou afféctées."
@@ -44,7 +44,7 @@
         "save": "Sauvegarder"
       },
       "dash_client": {
-        "title": "Dashboard Patient",
+        "title": "Table Client",
         "btn_rdv_chgv": "Rendz-v. Charge virale",
         "btn_reaprv": "Réaprovisionnement",
         "btn_stat": "Statistique",
@@ -64,7 +64,7 @@
         }
       },
       "dash_parent": {
-        "title": "Dashboard Parent Patient"
+        "title": "Table Accompagnateur"
       },
       "def_client": {
         "def_vih": "Virus de l'Immunodeficience Humaine"

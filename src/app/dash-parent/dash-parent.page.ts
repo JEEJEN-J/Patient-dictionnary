@@ -20,6 +20,7 @@ export class DashParentPage implements OnInit {
   itemsInfos;
   langs: any[] = [];
   lang;
+  header;
 
   constructor(public navController: NavController ,
               private activatedRoute: ActivatedRoute ,
@@ -50,7 +51,8 @@ export class DashParentPage implements OnInit {
       .then((response) => response.json())
       .then((response) => {
         this.items = response;
-        console.log("response" , response);
+        this.itemsInfos = response[0];
+        this.header = this.itemsInfos.header;
       });
   }
 

@@ -2,10 +2,10 @@
   {
     "id": 0,
     "categorie": "app_config",
-    "header": "Tab Paran Pasyan",
+    "header": "Tab Gid",
     "infos": {
       "dash_parent": {
-        "title": "Tab Paran Pasyan"
+        "title": "Tab Gid"
       },
       "def_client": {
         "def_vih": "Viris Iminodefisyans Imèn"

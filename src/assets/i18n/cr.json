@@ -2,7 +2,7 @@
   {
     "id": 0,
     "categorie": "app_config",
-    "header": "Tab Pasyan",
+    "header": "Tab Kliyan",
     "auth":{
       "title": "Otantifikasyon",
       "password": "Modpas ou",
@@ -17,8 +17,8 @@
         "precd": "Anvan",
         "AppTitle": "Platfòm Edikasyon Kliyan",
         "app": "nan",
-        "client": "Pasyan",
-        "parent": "Paran pasyan",
+        "client": "Kliyan",
+        "parent": "Gid",
         "bienvenu": "Byenvini",
         "start": "Demare ak",
         "SimpleText": "<a href='https://www.facebook.com/Cippress-100117798061997' style='font-weight: bold; font-size: 14px; text-shadow: none'>Cipress</a> devlope aplikasyon sa a dirèkteman pou fè edikasyon, prevansyon ak trètman VIH.Aplikasyon sa a ap sèvi tou pou goumen kont estigmatizasyon ak diskriminasyon sou moun ki enfekte ak moun ki afekte."
@@ -44,7 +44,7 @@
         "save": "Anrejistre"
       },
       "dash_client": {
-        "title": "Dashboard Pasyan",
+        "title": "Tab Kliyan",
         "btn_rdv_chgv": "Randev. Chaj viral",
         "btn_reaprv": "Renouvèlman",
         "btn_stat": "Estatistik",
@@ -64,7 +64,7 @@
         }
       },
       "dash_parent": {
-        "title": "Dashboard Paran Pasyan"
+        "title": "Tab Gid"
       },
       "def_client": {
         "def_vih": "Viris Iminodefisyans Imèn"

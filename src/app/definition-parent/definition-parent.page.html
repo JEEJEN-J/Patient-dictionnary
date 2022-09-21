@@ -18,7 +18,7 @@
                     style="font-size: xx-large; color: pink; background: #ffffff; border-radius: 50px;"></ion-icon>
         </button>
         <mat-menu #menu="matMenu">
-          <h4 style="margin-left: 15px; font-size: 13px;">{{content.params.data.title}}</h4>
+          <h4 style="margin-left: 15px; font-size: 13px; color: black;">{{content.params.data.title}}</h4>
           <button mat-menu-item style="font-size: 14px" *ngFor="let menuItem of content.params.data.subtitle"
                   (click)="onChange(content, menuItem.name)">
             <ion-icon name="arrow-redo-circle-outline"
@@ -40,8 +40,7 @@
                style="height: 40px; border-radius: 50px; border: 1px solid #eeeeee; padding: 5px">
         </ion-avatar>
         <h4 style="float: left; margin-left: 5px; color: gray">VIH</h4>
-        <p style="font-size: small; float: left; margin-top: 25px; margin-left: -20px; color: gray">(virus de
-          l’immunodeficience humaine)</p>
+        <p style="font-size: small; float: left; margin-top: 25px; margin-left: -20px; color: gray">({{vihDef}})</p>
       </ion-item>
 
       <ion-card-content>

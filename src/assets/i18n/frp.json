@@ -2,10 +2,10 @@
   {
     "id": 0,
     "categorie": "app_config",
-    "header": "Table Parent Patient",
+    "header": "Table Accompagnateur",
     "infos": {
       "dash_parent": {
-        "title": "Table Parent Patient"
+        "title": "Table Accompagnateur"
       },
       "def_client": {
         "def_vih": "Virus de l'Immunodeficience Humaine"
